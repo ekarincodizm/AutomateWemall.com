@@ -1,0 +1,34 @@
+{
+  "version": "draft",
+  "type": "banner",
+  "data": [
+    {
+      "title": "Active Range Date",
+      "order": 15,
+      "status": "active",
+      "target": "_blank",
+      "start_date": "2015-06-28T11:00:00+0700",
+      "end_date": "2016-03-11T00:00:00+0700",
+      "name": {
+        "alt": "Active Range Date"
+      },
+      "name_translation": {
+        "alt": "Active Range Date"
+      }
+    },
+    {
+      "title": "Active Range Date Overlap Time",
+      "order": 15,
+      "status": "active",
+      "target": "_blank",
+      "start_date": "2015-11-05T11:00:00+0700",
+      "end_date": "2016-03-11T00:00:00+0700",
+      "name": {
+        "alt": "Active Forever"
+      },
+      "name_translation": {
+        "alt": "Active Forever"
+      }
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "logo": null,
+  "menus": [
+    {
+      "order": 1,
+      "target": "_blank",
+      "name": {
+        "link": "http://www.itruemart.com",
+        "name": "แม็ค"
+      },
+      "name_translation": {
+        "link": "http://www.itruemart.com/en",
+        "name": "Mac"
+      },
+      "children": [
+        {
+          "order": 1,
+          "target": "_blank",
+          "name": {
+            "link": "http://www.itruemart.com",
+            "name": "แม็คบุ๊ค"
+          },
+          "name_translation": {
+            "link": "http://www.itruemart.com/en",
+            "name": "Macbook"
+          }
+        },
+        {
+          "order": 2,
+          "target": "_blank",
+          "name": {
+            "link": "http://www.itruemart.com",
+            "name": "ไอแม็ค"
+          },
+          "name_translation": {
+            "link": "http://www.itruemart.com/en",
+            "name": "iMac"
+          }
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "target": "_blank",
+      "name": {
+        "link": "http://www.itruemart.com",
+        "name": "ไอแพด"
+      },
+      "name_translation": {
+        "link": "http://www.itruemart.com/en",
+        "name": "iPad"
+      }
+    },
+    {
+      "order": 3,
+      "target": "_blank",
+      "name": {
+        "link": "http://www.itruemart.com",
+        "name": "ไอโฟน"
+      },
+      "name_translation": {
+        "link": "http://www.itruemart.com/en",
+        "name": "iPhone"
+      }
+    },
+    {
+      "order": 4,
+      "target": "_blank",
+      "name": {
+        "link": "http://www.itruemart.com",
+        "name": "นาฬิกา"
+      },
+      "name_translation": {
+        "link": "http://www.itruemart.com/en",
+        "name": "Watch"
+      }
+    },
+    {
+      "order": 5,
+      "target": "_blank",
+      "name": {
+        "link": "http://www.itruemart.com",
+        "name": "ทีวี"
+      },
+      "name_translation": {
+        "link": "http://www.itruemart.com/en",
+        "name": "TV"
+      }
+    },
+    {
+      "order": 6,
+      "target": "_blank",
+      "name": {
+        "link": "http://www.itruemart.com",
+        "name": "บริการช่วยเหลือ"
+      },
+      "name_translation": {
+        "link": "http://www.itruemart.com/en",
+        "name": "Support"
+      }
+    }
+  ],
+  "status": "inactive"
+}

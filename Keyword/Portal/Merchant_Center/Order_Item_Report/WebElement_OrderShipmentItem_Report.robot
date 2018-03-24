@@ -1,0 +1,12 @@
+*** Variables ***
+${MchReportOrderNo_Locator}    //*[@id="criteria_orderNo"]
+${MchReportSkuName_Locator}    //*[@id="criteria_skuName"]
+${MchReportSkuNumber_Locator}    //*[@id="criteria_skuNumber"]
+${MchReportTrackingNumber_Locator}    //*[@id="criteria_TrackingNumber"]
+${MchReportItemStatus_Locator}    //*[@id="criteria_itemStatus"]
+${MchReportPaymentStatus_Locator}    //*[@id="criteria_paymentStatus"]
+${MchReportPaymentChannel_Locator}    //*[@id="criteria_paymentChannel"]
+${MchReportOrderDateFromTo_Locator}    //*[@id="criteria_orderDateFromTo"]
+${MchReportPaymentDateFromTo_Locator}    //*[@id="criteria_paymentDateFromTo"]
+${MchReportDeliveryDateFromTo_Locator}    //*[@id="criteria_deliveryDateFromTo"]
+${MchReportSearchBtn_Locator}    //*[@id="searchBtn"]

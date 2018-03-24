@@ -1,0 +1,20 @@
+{
+  "version": "draft",
+  "type": "banner",
+  "data": [
+    {
+      "order": 2,
+      "status": "active",
+      "name": "#2",
+      "en_US": {},
+      "th_TH": {}
+    },
+    {
+      "order": 4,
+      "status": "active",
+      "name": "#4",
+      "en_US": {},
+      "th_TH": {}
+    }
+  ]
+}

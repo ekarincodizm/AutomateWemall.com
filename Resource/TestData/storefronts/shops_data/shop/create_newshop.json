@@ -1,0 +1,12 @@
+{
+	"id":"ceef79c8e6b22a10",
+    "merchant_id":"MTH10000",
+	"name":"ROBOTHULK SHOP",
+    "slug":"robothulk-shop",
+	"shop_status":"inactive",
+	"logo":{
+				"web":"",
+				"mobile":""
+			},
+	"updated_by":"Hulk"
+}

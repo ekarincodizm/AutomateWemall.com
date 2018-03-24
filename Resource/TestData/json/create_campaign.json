@@ -1,0 +1,9 @@
+{
+  "name": "Robot Test Campaign Name2",
+  "name_translation": "Robot Test Campaign Name",
+  "detail": "Robot test",
+  "detail_translation": "",
+  "start_period": 1456790400000,
+  "end_period": 1908982800000,
+  "enable": true
+}

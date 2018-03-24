@@ -1,0 +1,16 @@
+*** Variables ***
+${SS_Shipping_Title}                     //*[@data-id="tracking_title"]
+${SS_Shipping_Order_Title}               //*[@data-id="tracking_order_title"]
+${SS_Shipping_Tracking_Title}            //*[@data-id="tracking_shipment_title"]
+${SS_Shipping_Step_Table}                //*[@id="step_tracking_detail"]
+${SS_Shipping_Product_Name_Title}        //*[@data-id="tracking_product_name_title"]
+${SS_Shipping_Product_Name}              //*[@data-id="tracking_product_name"]
+${SS_Shipping_Product_Qty}               //*[@data-id="tracking_product_qty"]
+${SS_Shipping_Customer_Address_Tiltle}   //*[@data-id="tracking_address_title"]
+${SS_Shipping_Customer_Name}             //*[@data-id="tracking_customer_name"]
+${SS_Shipping_Customer_Address}          //*[@data-id="tracking_customer_address"]
+${SS_Shipping_Customer_Tel}              //*[@data-id="tracking_customer_tel"]
+${SS_Shipping_Close_Btn}                 //*[@data-id="tracking_close_btn"]
+
+&{SS_Shipping_Step}             txt_datetime=//*[@data-id="ss_shipping_datetime"]
+...   txt_description=//*[@data-id="ss_shipping_description"]

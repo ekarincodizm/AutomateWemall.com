@@ -1,0 +1,37 @@
+.store-vendor-nav {
+	/* backgroud-color of Menu Lv1 */
+    background-color: #8E8574;
+}
+
+.store-vendor-nav .menu .brand-name {
+	/* backgroud-color of brand logo */
+    background-color: #716B5F;
+}
+
+.store-vendor-nav .menu > li > a {
+	/* Link color in Menu Lv1 */
+    color: #fff;
+    /* Font size of Menu Lv1 */
+    font-size: 16px;
+    /*font-weight: bold;*/
+    /*font-family: monospace;*/
+}
+
+.store-vendor-nav .sub-menu {
+	/* background-color in Menu Lv2 */
+    background-color: #8E8574;
+    /* Link color in Menu Lv2 */
+    color: #fff;
+    /*font-weight: bold;*/
+    /*font-family: monospace;*/
+}
+
+.no-touch .store-vendor-nav .menu > li > a:hover, .touch .store-vendor-nav .menu > li > a.touch {
+    /* background-color on hover or on touch*/
+    background-color: #8E8574;
+}
+
+.no-touch .store-vendor-nav .menu > li.sub:hover, .touch .store-vendor-nav .menu > li.sub.touch {
+    /* background-color Menu Lv1 on hover or on touch*/
+    background-color: #8E8574;
+}

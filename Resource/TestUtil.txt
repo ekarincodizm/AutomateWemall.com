@@ -1,0 +1,193 @@
+*** Settings ***
+Resource          ../resources/site_config.txt
+Resource          ../resources/common_config.txt
+Library           OperatingSystem
+Library           String
+Library           ../../../execution/lib/ConfigKeyword.py
+Library           ../../../execution/lib/SystemKeyword.py
+Resource          SiteEnv.txt
+Library           ../../../execution/lib/DBKeyword.py
+Library           Collections
+Library           DateTime
+
+*** Keywords ***
+Init Robot
+    Log    Robot Started!
+    # Init System
+    ${RUNTIME}=    Get Current DateTime
+    Set Global Variable    ${RUNTIME}
+    ${OS_NAME}=    Get OS
+    Set Global Variable    ${OS_NAME}
+    Log    EXECDIR = ${EXECDIR}
+    ${PATH_ENV}=    Add Path Environment    ${EXECDIR}/../execution/bin/${OS_NAME}
+    Log    PATH_ENV = ${PATH_ENV}
+    Set Global Variable    ${SSLKEY_FILE}    ${EXECDIR}/../execution/config/id_rsa
+    # Init Python config
+    Init Python Config
+    # execute env script
+    ${output} =    Run Keyword If    '${OS_NAME}'=='linux'    Run    . ${EXECDIR}/common/resources/${SETENV_SCRIPT}
+    ${output} =    Run Keyword If    '${OS_NAME}'=='win'    Run    ${EXECDIR}/common/resources/${SETENV_SCRIPT}
+    # set site environment
+    Run Keyword If    '${SITE_NAME}'=='dev'    Set Environment Dev
+    Run Keyword If    '${SITE_NAME}'=='alpha'    Set Environment Alpha
+    Run Keyword If    '${SITE_NAME}'=='staging'    Set Environment Staging
+    # Init helper variable
+    Set Variable If Not Exist    \${RUNNING_TAG}    test
+    Variable Should Exist    ${RUNNING_TAG}    RUNNING_TAG variable must be defined in pyboot command line with '--variable'
+
+Init TestSuite
+    Log    Init TestSuite started
+    # Init helper variables
+    ${SUITE_SHORTNAME}=    Get Suite Shortname
+    Set Suite Variable    ${SUITE_SHORTNAME}
+    # Create folder to store result file of this test suite
+    Set Suite Variable    ${RESULT_ROOT_DIR}    ../result/${RUNTIME}_${RUNNING_TAG}/${SUITE_SHORTNAME}
+    Create Directory    ${RESULT_ROOT_DIR}
+    Log    ${RESULT_ROOT_DIR}
+
+Init TestCase
+    Log    Init TestCase[${TEST_NAME}] started
+    # Create folder to store result file of this test case
+    ${TEST_ID}=    Get Test Sub Module Name
+    Set Test Variable    ${TEST_ID}    ${TEST_ID}
+    Set Test Variable    ${RESULT_DIR}    ${RESULT_ROOT_DIR}/${TEST_ID}
+    Create Directory    ${RESULT_DIR}
+    Log    ${RESULT_DIR}
+
+Create Result Folder
+    Create Directory    ${RESULT_DIR}
+
+Get Current DateTime
+    ${yyyy}    ${mm}    ${dd}    ${hh}    ${mmm}    ${ss}=    Get Time
+    ...    year,month,day,hour,min,sec
+    ${now}    Catenate    SEPARATOR=    ${yyyy}    ${mm}    ${dd}    ${hh}
+    ...    ${mmm}    ${ss}
+    Return From Keyword    ${now}
+
+Get Test Sub Module Name
+    @{words}=    Split String    ${TEST_NAME}    ${SPACE}
+    Set Test Variable    ${tsm_id}    ${words[0]}
+    Return From Keyword    ${words[0]}
+
+Init Mockup Framework
+    # mockup enable
+    ${GLOBAL_MOCKUP_ENABLE}=    Convert To Boolean    ${GLOBAL_MOCKUP_ENABLE}
+    ${COMPONENT_MOCKUP_ENABLE}=    Get Variable Value    ${COMPONENT_MOCKUP_ENABLE}    TRUE
+    ${COMPONENT_MOCKUP_ENABLE}=    Convert To Boolean    ${COMPONENT_MOCKUP_ENABLE}
+    ${MOCKUP_ENABLE}=    Evaluate    ${GLOBAL_MOCKUP_ENABLE} & ${COMPONENT_MOCKUP_ENABLE}
+    Set Global Variable    ${MOCKUP_ENABLE}
+    Run Keyword If    ${MOCKUP_ENABLE}==${TRUE}    Log    Mockup is enable
+    ...    ELSE    Log    Mockup is disable
+    # preloaded data
+    ${PRELOADED_MOCKUP_DATA}=    Convert To Boolean    ${PRELOADED_MOCKUP_DATA}
+    Set Global Variable    ${PRELOADED_MOCKUP_DATA}
+
+Init Python Config
+    [Documentation]    this keyword pass through configurations from robot framework layer into python libraries
+    Set Python Config    LOG_LEVEL    ${PYTHON_LOG_LEVEL}
+    Set Python Config As Int    HTTP_TIMEOUT    ${HTTP_TIMEOUT}
+    Set Python Config As Int    HTTP_RETRY_LIMIT    ${HTTP_RETRY_LIMIT}
+    Set Python Config As Int    HTTP_RETRY_INTERVAL    ${HTTP_RETRY_INTERVAL}
+    Update Python Config    # must finalize config change with this keyword
+
+Set Variable If Not Exist
+    [Arguments]    ${name}    ${value}
+    ${status}    ${message} =    Run Keyword And Ignore Error    Variable Should Exist    ${name}
+    Comment    Log    ${status}    ${message}
+    Run Keyword If    "${status}" == "FAIL"    Set Global Variable    ${name}    ${value}
+
+Get Suite Shortname
+    Log    ${SUITE_NAME}
+    Comment    ${result}=    Evaluate    str("${SUITE_NAME}").replace(".","/")
+    @{words}=    Split String    ${SUITE_NAME}    .
+    ${result}=    Evaluate    "/".join((@{words})[2:])
+    Comment    Log    ${words[-1]}
+    Return From Keyword    ${result}
+
+Get Next AutoNumber
+    [Documentation]    Get auto increment number starting from 0. The number is valid in Test scope and will be reset whtn end test
+    Set Variable If Not Exist    \${auto_no}    0
+    ${auto_no}=    Evaluate    ${auto_no}+1
+    Set Test Variable    ${auto_no}
+    Return From Keyword    ${auto_no}
+
+Testcase ID is ${tc_id}
+    Set Test Variable    ${tc_id}
+    ${sub_id}=    Get Next AutoNumber
+    Set Test Variable    ${sub_id}
+    Log    TestcaseID[${tc_id}] is SubID[${sub_id}]
+
+Get Unique ID
+    ${now}=    Get Current DateTime
+    ${random}=    Evaluate    random.randint(1,1000000)    random
+    ${id}=    Catenate    SEPARATOR=    ${now}    ${random}
+    Return From Keyword    ${id}
+
+Generate TransactionID
+    ${now}=    Get Current DateTime
+    ${transaction_random}=    Evaluate    random.randint(1,1000000)    random
+    ${transaction_id}=    Catenate    SEPARATOR=    ${now}    ${transaction_random}
+    Return From Keyword    ${transaction_id}
+
+Init DBConnect
+    [Arguments]    ${host}    ${port}    ${sid}    ${username}    ${password}
+    ${config}=    Create Dictionary    host    ${host}    port    ${port}    sid
+    ...    ${sid}    username    ${username}    password    ${password}
+    ${DB_CONNECT}=    Connect DB    ${config}
+    Close Db    ${DB_CONNECT}
+
+Get First Date of Current Month
+    [Arguments]    ${format}=%Y-%m-%d
+    [Documentation]    Get the first date of current month
+    ${date}=    Get Current Date    result_format=${format}
+    ${date}=    Convert Date    ${date}    datetime
+    ${day}=    Set Variable    ${date.day}
+    ${month}=    Set Variable    ${date.month}
+    ${year}=    Set Variable    ${date.year}
+    ${result}=    Catenate    SEPARATOR=-    ${year}    ${month}    1
+    ${result}=    Convert Date    ${result}    date_format=${format}    result_format=${format}
+    [Return]    ${result}
+
+Get Last Date of Current Month
+    [Arguments]    ${format}=%Y-%m-%d
+    [Documentation]    Get the last date of current month
+    ${date}=    Get Current Date    result_format=${format}
+    ${date}=    Convert Date    ${date}    datetime
+    ${day}=    Set Variable    ${date.day}
+    ${month}=    Set Variable    ${date.month}
+    ${year}=    Set Variable    ${date.year}
+    ${result}=    Evaluate    calendar.monthrange(${year},${month})    calendar
+    ${last_date_of_month}=    Set Variable    ${result[1]}
+    ${result}=    Catenate    SEPARATOR=-    ${year}    ${month}    ${last_date_of_month}
+    ${result}=    Convert Date    ${result}    date_format=${format}    result_format=${format}
+    [Return]    ${result}
+
+Get Date before ${num} years ago with format ${format}
+    [Documentation]    Get Date before x year(s) : Assume that 1 year=365.24 days. Calculation based on current date
+    ${current_date}=    Get Current Date    result_format=${format}
+    ${date}=    Convert Date    ${current_date}    datetime    date_format=${format}
+    ${num_days}=    Evaluate    (${num}*365.24)
+    ${result}=    Subtract Time From Date    ${date}    ${num_days} days    result_format=${format}
+    [Return]    ${result}
+
+Get Yesterday Date with format ${format}
+    [Documentation]    Get yesterday date
+    ${date}=    Get Current Date    result_format=${format}
+    ${date}=    Convert Date    ${date}    date_format=${format}
+    ${yesterday}=    Subtract Time From Date    ${date}    1 day    result_format=${format}
+    [Return]    ${yesterday}
+
+Get Tomorrow Date with format ${format}
+    [Documentation]    Get tomorrow date
+    ${date}=    Get Current Date    result_format=${format}
+    ${date}=    Convert Date    ${date}    date_format=${format}
+    ${yesterday}=    Add Time To Date    ${date}    1 day    result_format=${format}
+    [Return]    ${yesterday}
+
+Get Current DateTime Last2Digits
+    ${yy}    ${mm}    ${dd}    ${hh}    ${mmm}    ${ss}=    Get Time
+    ...    year,month,day,hour,min,sec
+    ${yy}    Get Substring    ${yy}    -2
+    ${now}    Catenate    SEPARATOR=    ${yy}    ${mm}    ${dd}    ${hh}
+    ...    ${mmm}    ${ss}
+    Return From Keyword    ${now}

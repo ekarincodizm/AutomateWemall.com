@@ -1,0 +1,12 @@
+{
+  "require" : "POS4009",
+  "invalid_input" : "POS4000",
+  "token_expired" : "POS4002",
+  "invalid_api_key" : "POS4011",
+  "server_not_found" : "POS4012",
+  "invalid_token" : "POS4013",
+  "partner_id_wrong" : "POS4003",
+  "numeric" : "POS4010",
+  "invalid_api_key_or_api_secret" : "POS4008",
+  "cannot_connect_partner" : "POS5002"
+}

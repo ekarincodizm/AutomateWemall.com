@@ -1,0 +1,338 @@
+{
+    "en_US": {
+      "brands": [
+        {
+          "brand_id": 0,
+          "link_url": "http://nike.com/en",
+          "sort_index": 1,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/01.png?v=7db3ae2c",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/01.png?v=7db3ae2c",
+          "target": "_blank",
+          "title": "Nike"
+        },
+        {
+          "brand_id": 1,
+          "link_url": "http://hm.com/en",
+          "sort_index": 2,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/02.png?v=fcad8d58",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/02.png?v=fcad8d58",
+          "title": "H&M"
+        },
+        {
+          "brand_id": 2,
+          "link_url": "http://singha.com/en",
+          "sort_index": 3,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/03.png?v=d3229af8",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/03.png?v=d3229af8",
+          "title": "Singha"
+        },
+        {
+          "brand_id": 3,
+          "link_url": "http://มาม่า.com/en",
+          "sort_index": 4,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/04.png?v=1e94dea5",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/04.png?v=1e94dea5",
+          "title": "มาม่า"
+        },
+        {
+          "brand_id": 4,
+          "link_url": "http://puma.com/en",
+          "sort_index": 5,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/05.png?v=456a57b3",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/05.png?v=456a57b3",
+          "title": "Puma"
+        },
+        {
+          "brand_id": 5,
+          "link_url": "http://puma.com/en",
+          "sort_index": 6,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/06.png?v=c55c6d41",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/06.png?v=c55c6d41",
+          "title": "Puma"
+        },
+        {
+          "brand_id": 6,
+          "link_url": "http://nike.com/en",
+          "sort_index": 7,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/07.png?v=ed26fc40",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/07.png?v=ed26fc40",
+          "title": "Nike"
+        },
+        {
+          "brand_id": 7,
+          "link_url": "http://hm.com/en",
+          "sort_index": 8,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/08.png?v=386678a9",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/08.png?v=386678a9",
+          "title": "H&M"
+        },
+        {
+          "brand_id": 8,
+          "link_url": "http://singha.com/en",
+          "sort_index": 9,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/09.png?v=7687b2d2",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/09.png?v=7687b2d2",
+          "title": "Singha"
+        },
+        {
+          "brand_id": 9,
+          "link_url": "http://มาม่า.com/en",
+          "sort_index": 10,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/10.png?v=e1cf66d1",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/10.png?v=e1cf66d1",
+          "title": "มาม่า"
+        },
+        {
+          "brand_id": 10,
+          "link_url": "http://มาม่า.com/en",
+          "sort_index": 11,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/11.png?v=ca4358cc",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/11.png?v=ca4358cc",
+          "title": "มาม่า"
+        },
+        {
+          "brand_id": 11,
+          "link_url": "http://puma.com/th",
+          "sort_index": 12,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/12.png?v=77328f0c",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/12.png?v=77328f0c",
+          "title": "Puma"
+        },
+        {
+          "brand_id": 12,
+          "link_url": "http://nike.com/en",
+          "sort_index": 13,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/13.png?v=d0798355",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/13.png?v=d0798355",
+          "title": "Nike"
+        },
+        {
+          "brand_id": 13,
+          "link_url": "http://hm.com/en",
+          "sort_index": 14,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/14.png?v=3039cb44",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/14.png?v=3039cb44",
+          "title": "H&M"
+        },
+        {
+          "brand_id": 14,
+          "link_url": "http://singha.com/en",
+          "sort_index": 15,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/15.png?v=435a791c",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/15.png?v=435a791c",
+          "title": "Singha"
+        },
+        {
+          "brand_id": 15,
+          "link_url": "http://singha.com/en",
+          "sort_index": 16,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/16.png?v=72ecd621",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/16.png?v=72ecd621",
+          "title": "Singha"
+        },
+        {
+          "brand_id": 16,
+          "link_url": "http://มาม่า.com/th",
+          "sort_index": 17,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/17.png?v=e276988a",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/17.png?v=e276988a",
+          "title": "มาม่า"
+        },
+        {
+          "brand_id": 17,
+          "link_url": "http://puma.com/en",
+          "sort_index": 18,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/18.png?v=ce8e256f",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/18.png?v=ce8e256f",
+          "title": "Puma"
+        },
+        {
+          "brand_id": 18,
+          "link_url": "http://nike.com/en",
+          "sort_index": 19,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/19.png?v=e8eab61d",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/19.png?v=e8eab61d",
+          "title": "Nike"
+        },
+        {
+          "brand_id": 19,
+          "link_url": "http://hm.com/en",
+          "sort_index": 20,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/20.png?v=a23e2aa5",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/20.png?v=a23e2aa5",
+          "title": "H&M"
+        }
+      ],
+      "merchant_zone_group_id": "55f0ff9eb38f5",
+      "sort_index": 3,
+      "title": "All Brands"
+    },
+    "th_TH": {
+      "brands": [
+        {
+          "brand_id": 0,
+          "link_url": "http://nike.com/th",
+          "sort_index": 1,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/01.png?v=7db3ae2c",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/01.png?v=7db3ae2c",
+          "target": "_blank",
+          "title": "Nike"
+        },
+        {
+          "brand_id": 1,
+          "link_url": "http://hm.com/th",
+          "sort_index": 2,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/02.png?v=fcad8d58",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/02.png?v=fcad8d58",
+          "title": "H&M"
+        },
+        {
+          "brand_id": 2,
+          "link_url": "http://singha.com/th",
+          "sort_index": 3,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/03.png?v=d3229af8",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/03.png?v=d3229af8",
+          "title": "Singha"
+        },
+        {
+          "brand_id": 3,
+          "link_url": "http://มาม่า.com/th",
+          "sort_index": 4,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/04.png?v=1e94dea5",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/04.png?v=1e94dea5",
+          "title": "มาม่า"
+        },
+        {
+          "brand_id": 4,
+          "link_url": "http://puma.com/th",
+          "sort_index": 5,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/05.png?v=456a57b3",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/05.png?v=456a57b3",
+          "title": "Puma"
+        },
+        {
+          "brand_id": 5,
+          "link_url": "http://puma.com/th",
+          "sort_index": 6,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/06.png?v=c55c6d41",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/06.png?v=c55c6d41",
+          "title": "Puma"
+        },
+        {
+          "brand_id": 6,
+          "link_url": "http://nike.com/th",
+          "sort_index": 7,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/07.png?v=ed26fc40",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/07.png?v=ed26fc40",
+          "title": "Nike"
+        },
+        {
+          "brand_id": 7,
+          "link_url": "http://hm.com/th",
+          "sort_index": 8,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/08.png?v=386678a9",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/08.png?v=386678a9",
+          "title": "H&M"
+        },
+        {
+          "brand_id": 8,
+          "link_url": "http://singha.com/th",
+          "sort_index": 9,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/09.png?v=7687b2d2",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/09.png?v=7687b2d2",
+          "title": "Singha"
+        },
+        {
+          "brand_id": 9,
+          "link_url": "http://มาม่า.com/th",
+          "sort_index": 10,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/10.png?v=e1cf66d1",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/10.png?v=e1cf66d1",
+          "title": "มาม่า"
+        },
+        {
+          "brand_id": 10,
+          "link_url": "http://มาม่า.com/th",
+          "sort_index": 11,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/11.png?v=ca4358cc",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/11.png?v=ca4358cc",
+          "title": "มาม่า"
+        },
+        {
+          "brand_id": 11,
+          "link_url": "http://puma.com/th",
+          "sort_index": 12,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/12.png?v=77328f0c",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/12.png?v=77328f0c",
+          "title": "Puma"
+        },
+        {
+          "brand_id": 12,
+          "link_url": "http://nike.com/th",
+          "sort_index": 13,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/13.png?v=d0798355",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/13.png?v=d0798355",
+          "title": "Nike"
+        },
+        {
+          "brand_id": 13,
+          "link_url": "http://hm.com/th",
+          "sort_index": 14,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/14.png?v=3039cb44",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/14.png?v=3039cb44",
+          "title": "H&M"
+        },
+        {
+          "brand_id": 14,
+          "link_url": "http://singha.com/th",
+          "sort_index": 15,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/15.png?v=435a791c",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/15.png?v=435a791c",
+          "title": "Singha"
+        },
+        {
+          "brand_id": 15,
+          "link_url": "http://singha.com/th",
+          "sort_index": 16,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/16.png?v=72ecd621",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/16.png?v=72ecd621",
+          "title": "Singha"
+        },
+        {
+          "brand_id": 16,
+          "link_url": "http://มาม่า.com/th",
+          "sort_index": 17,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/17.png?v=e276988a",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/17.png?v=e276988a",
+          "title": "มาม่า"
+        },
+        {
+          "brand_id": 17,
+          "link_url": "http://puma.com/th",
+          "sort_index": 18,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/18.png?v=ce8e256f",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/18.png?v=ce8e256f",
+          "title": "Puma"
+        },
+        {
+          "brand_id": 18,
+          "link_url": "http://nike.com/th",
+          "sort_index": 19,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/19.png?v=e8eab61d",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/19.png?v=e8eab61d",
+          "title": "Nike"
+        },
+        {
+          "brand_id": 19,
+          "link_url": "http://hm.com/th",
+          "sort_index": 20,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/20.png?v=a23e2aa5",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/20.png?v=a23e2aa5",
+          "title": "H&M"
+        }
+      ],
+      "merchant_zone_group_id": "55f0ff9eb38f5",
+      "sort_index": 3,
+      "title": "ทั้งหมด"
+    }
+  }

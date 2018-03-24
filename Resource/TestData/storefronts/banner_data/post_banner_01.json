@@ -1,0 +1,42 @@
+{
+  "version": "draft",
+  "type": "banner",
+  "data": [
+    {
+      "start_date": null,
+      "end_date": null,
+      "order": 1,
+      "status": "active",
+      "title": "New Banner",
+      "target": "_blank",
+      "name": {
+        "alt": "ไทย",
+        "link": null,
+        "image": null
+      },
+      "name_translation": {
+        "alt": "English",
+        "link": null,
+        "image": null
+      }
+    },
+    {
+      "start_date": null,
+      "end_date": null,
+      "order": 2,
+      "status": "active",
+      "title": "New Banner",
+      "target": "_blank",
+      "name": {
+        "alt": "ไทย",
+        "link": null,
+        "image": null
+      },
+      "name_translation": {
+        "alt": "English",
+        "link": null,
+        "image": null
+      }
+    }
+  ]
+}

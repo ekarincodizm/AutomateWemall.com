@@ -1,0 +1,12 @@
+{
+  "version": "draft",
+  "type": "footer",
+  "data": {
+    "name": {
+      "content": "<div id=\"updated-footer-storefront-test\"><img alt=\"\" src=\"//sandbox-cdn.wemall-dev.com/th/Footer/MTH10000_images/hqdefault.jpg\" /></div>\n"
+    },
+    "name_translation": {
+      "content": "<div id=\"updated-footer-storefront-test-en\"><img alt=\"\" src=\"//sandbox-cdn.wemall-dev.com/th/Footer/MTH10000_images/hqdefault.jpg\" /></div>\n"
+    }
+  }
+}

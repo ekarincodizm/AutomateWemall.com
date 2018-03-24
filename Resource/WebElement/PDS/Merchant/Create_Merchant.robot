@@ -1,0 +1,20 @@
+*** Variables ***
+${MerchantShopName}    //*[@name=\"shopName\"]
+${MerchantShopURL}    //*[@name=\"shopUrl\"]
+${MerchantSlug}    //*[@name=\"slug\"]
+${MerchantCompanyName}    //*[@name=\"companyName\"]
+${MerchantContactPerson}    //*[@name=\"contactName\"]
+${MerchantContactPhone}    //*[@name=\"contactPhone\"]
+${MerchantContactEmail}    //*[@name=\"contactEmail\"]
+${MerchantShopCate}    //div/a/span[@class='select2-chosen'][contains(text(),\"Select...\")]
+${MerchantShopCate_No_Result}    //ul[@class=\"select2-results\"]/li[@class=\"select2-no-results\"]
+${Input_MerchantShopCate}    //*[@class=\"select2-input\"]
+${First_MerchantShopCate}    //*[@id='select2-drop']/ul/li
+${MerchantAddContact}    //button[@name=\"addBtn\"]
+${MerchantCreateBtn}    //*[@name=\"createBtn\"]
+${MerchantCreateContact}    //*[@name=\"createButton\"]
+${MerchantMobileLogoUpload}    //div[@name="mobileDrop"]/div/input
+${MerchantDesktopLogoUpload}    //div[@name="desktopDrop"]/div/input
+${MerchantShopNameEN}    //*[@name=\"shopNameTranslation\"]
+${Img_MLogo}      //*[@data-reactid=".0.1.0.1.1.0.0.0.0.0.0.0.0.0.6.0.0.1.0.1"]/div/img
+${Img_DLogo}      //*[@data-reactid=".0.1.0.1.1.0.0.0.0.0.0.0.0.0.7.0.0.1.0.1"]/div/img

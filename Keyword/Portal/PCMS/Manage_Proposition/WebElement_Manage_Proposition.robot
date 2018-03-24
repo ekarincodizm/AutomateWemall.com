@@ -1,0 +1,16 @@
+*** Variables ***
+${Filter_PropositionName}    //*[@id="proposition_name"]
+${Select_SubProposition}    //*[@id='tb-order']/tbody/tr[1]/td[2]/*[contains(text(),"Gold iTrueMart")]/../../td[5]/a
+${Btn_SearchProposition}    //*[@value="Search"]
+${Btn_CreateSubProposition}    //*[@value="Create"]
+${Input_SubPropositionName}    //*[@id="txtName"]
+${Create_NewSubProposition}    //*[contains(@class,"btn btn-default")]
+${Input_SubPropositionCode}    //*[@id="txtCampaign_code"]
+${Input_SubPropositionNASCode}    //*[@id="txtNascode"]
+${Input_SubPropositionMonth}    //*[@id="txtContract"]
+${Input_SubPropositionPenalty}    //*[@id="txtPenalty"]
+${Input_SubPropositionShortDesc}    //*[@id="txtShot"]
+${Btn_Save}       //*[@value="Save"]
+${List_PricePlan}    //*[@id="m-selectable"]
+${Btn_Map}        //*[@class="multis-right"]
+${Assert_PricePlan}    //*[@id="m-selected"]/option[contains(text(),"REPLACE_ME")]

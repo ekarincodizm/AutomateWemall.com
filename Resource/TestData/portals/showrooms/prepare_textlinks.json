@@ -1,0 +1,34 @@
+{
+  "en_US": [
+    {
+      "id": 0,
+      "link_target": "_blank",
+      "link_url": "http://www.itruemart.com",
+      "sort_index": 1,
+      "text": "Baby Carriage and Accessories"
+    },
+    {
+      "id": 1,
+      "link_target": "_blank",
+      "link_url": "http://www.itruemart.com",
+      "sort_index": 2,
+      "text": "Kid Toys"
+    }
+  ],
+  "th_TH": [
+    {
+      "id": 0,
+      "link_target": "_blank",
+      "link_url": "http://www.itruemart.com/en",
+      "sort_index": 1,
+      "text": "รถเข็นเด็กและอุปกรณ์เสริม"
+    },
+    {
+      "id": 1,
+      "link_target": "_blank",
+      "link_url": "http://www.itruemart.com/en",
+      "sort_index": 2,
+      "text": "ของเล่นเสริมทักษะ"
+    }
+  ]
+}

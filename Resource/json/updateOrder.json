@@ -1,0 +1,14 @@
+[
+  {
+    "order_id":${order_id},
+    "order_shipment_item_id":${order_shipment_item_id},
+    "item_status":"picked",
+    "sap_material_code":"300011666",
+    "material_id":"SDSD-300011666",
+    "stock_type":"RT",
+    "tracking_number":"AD15A000371V",
+    "logistic_code":"ADENMM",
+    "serial_number":"CM14081005633",
+    "timestamp_status":"1451985055"
+  }
+]

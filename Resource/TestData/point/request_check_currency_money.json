@@ -1,0 +1,17 @@
+{
+	"api_token" : "2927dd1d68df9f7348f0a6a6705c82",
+	"partner_id" : "1",
+	"total_point" : "0",
+	"keys" : [{
+				"sequence" : 1,
+				"key" : "AAA", 
+				"price" : 100,
+				"point" : 10000
+			},
+			{
+				"sequence" : 2,
+				"key" : "BBB", 
+				"price" : 200,
+				"point" : 20000
+			}]
+}

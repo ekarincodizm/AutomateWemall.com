@@ -1,0 +1,40 @@
+{
+  "name_local": "Robot Test Bundle Campaign Name",
+  "name_en": "Robot Test Bundle Campaign Name",
+  "description_local": "Test Promotion Description",
+  "description_en": "Test Promotion Description",
+  "short_description_local": "Test desc",
+  "short_description_en": "Test dese",
+  "start_period": 1456790400000,
+  "end_period": 1908982800000,
+  "enable": true,
+  "member": true,
+  "non_member": false,
+  "app_ids": "true",
+  "channel_type": "1",
+  "merchant_ids": "itruemart",
+  "type": "itm-bundle",
+  "img_web": null,
+  "img_web_translation": null,
+  "img_mobile": null,
+  "img_mobile_translation": null,
+  "campaign": {
+    "id": "^^campaign_id^^"
+  },
+  "condition_data": {
+    "bundle_conditions": [
+      {
+        "bundle_variant": "^^inventory_id^^",
+        "discount_percent": "^^discount_value^^"
+      },
+      {
+        "bundle_variant": "^^inventory_id2^^",
+        "discount_percent": "^^discount_value2^^"
+      }
+    ]
+  },
+  "detail_data": {
+    "html_note": "Note ja",
+    "html_note_translation": "Note ja"
+  }
+}

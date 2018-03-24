@@ -1,0 +1,15 @@
+*** Variables ***
+${Addnewaddress_dropdown_locator}    //*[@id="shipping_address_list"]/option[1]
+${FirstAvaliableAddress_dropdown_locator}    //*[@id="shipping_address_list"]/option[2]
+${User_menu_locator}    //span[contains(@class, "text ng-binding ng")]
+${User_information_locator}    //a[contains(@ng-click , "profile()")]
+${Enter_displayname_usrFormationPage_locator}    //*[@id="shipping_fullname"]
+${Select_province_usrFormationPage_locator}    //*[@id="shipping_province_code"]/option[3]
+${Select_city_usrFormationPage_locator}    //*[@id="shipping_city_code"]/option[8]
+${Select_distric_usrFormationPage_locator}    //*[@id="shipping_district_code"]/option
+${Enter_address_usrFormationPage_locator}    //*[@id="shipping_address"]
+${Enter_postcode_usrFormationPage_locator}    //*[@id="shipping_postcode"]
+${Enter_mobile_usrFormationPage_locator}    //*[@id="shipping_phone"]
+${Enter_email_usrFormationPage_locator}    //*[@id="shipping_email"]
+${Submit_newaddress_locator}    //*[@id="submit_addr"]
+${Logout_locator}    //a[contains(@ng-click , "logout()")]

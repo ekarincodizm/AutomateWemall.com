@@ -1,0 +1,1669 @@
+*** Settings ***
+Library           HttpLibrary.HTTP
+Resource          ${CURDIR}/../../../Keyword/Common/Keywords_Common.robot
+Resource          ${CURDIR}/../../../Keyword/Portal/iTrueMart/Cart_light_box/Keywords_CartLightBox.robot
+Resource          ${CURDIR}/../../../Keyword/Portal/iTrueMart/Checkout_3/Keywords_Checkout3.robot
+Resource          ${CURDIR}/../../../Keyword/Portal/iTrueMart/Mini Cart/Keywords_MiniCart.robot
+Resource          ${CURDIR}/../../../Keyword/Portal/iTrueMart/Cart_pop_up/Keywords_CartPopUp.robot
+Resource          ${CURDIR}/../../../Keyword/Portal/iTrueMart/Login/keywords_login.robot
+Resource          ${CURDIR}/../../../Keyword/Portal/PCMS/Product/Keywords_Product.robot
+Resource          ${CURDIR}/../../../Keyword/Portal/iTrueMart/Full_cart/keywords_full_cart.robot
+Resource          ../../Portal/KBANK_Payment_Gateway/Keyword_KBank_PaymentGateway.txt
+Resource          ../../Portal/iTrueMart/Level_d_page/keywords_leveld.robot
+Resource          ${CURDIR}/../../../Keyword/API/PCMS/Item_status/update_item_status.robot
+Resource          ${CURDIR}/../../../Keyword/API/PCMS/Stock/keywords_stock.robot
+Resource          ${CURDIR}/../../../Keyword/API/PCMS/Create_Order_API/Create_Order_API.robot
+Resource          ../../Portal/PCMS/Login/keywords_login.robot
+
+*** Keywords ***
+Buy Product with Freebie and assert Freebie information is correcylt displayed in Checkout process with CC payment
+    [Arguments]    ${Lvl_D_Url}    ${variance}    ${FreebieName}    ${FreebiePrice}    ${FreebieAmount}    ${TotalCartItem}
+    ...    ${Text_FreebieShortDesc}    ${Text_Email}    ${Text_Name}    ${Text_Phone}    ${Text_Address}    ${Text_CWName}
+    ...    ${Text_CWCardNo}    ${Text_CWCCV}    ${Text_Code}
+    Go to    ${Lvl_D_Url}
+    Maximize Browser Window
+    Wemall Common - Close Live Chat
+    Run Keyword If    '${variance}' != '${EMPTY}'    Level D Select Product Variance in Level D    ${variance}
+    Level D Click Add To Cart success case
+    #sleep    60
+    Keywords_CartLightBox.Assert Freebie Item    ${FreebieName}    ${FreebiePrice}    ${FreebieAmount}
+    Keywords_CartLightBox.Assert Freebie amount    สินค้าแถมฟรีของคุณ (${FreebieAmount} ชิ้น)
+    Keywords_CartLightBox.Assert total cart item    ${TotalCartItem}
+    Keywords_CartLightBox.Assert Freebie short description    ${Text_FreebieShortDesc}
+    Keywords_CartLightBox.Next to Checkout 1
+    Guest Fill Data and Submit Checkout1    ${Text_Email}
+    Keywords_MiniCart.Assert total cart item    ${TotalCartItem}
+    Keywords_MiniCart.Assert Freebie amount    สินค้าแถมฟรีของคุณ (${FreebieAmount} ชิ้น)
+    Keywords_MiniCart.Assert Freebie Item    ${FreebieName}    ${FreebieAmount}
+    Guest Fill Data and Submit Checkout2    ${Text_Name}    ${Text_Phone}    ${Text_Address}
+    CC Payment Fill Data and Submit Checkout3    ${Text_CWName}    ${Text_CWCardNo}    ${Text_CWCCV}    ${Text_Code}
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID
+    [Return]    ${order_id}
+
+Buy Product with Freebie and assert Freebie information is correcylt displayed in Checkout process with COD payment
+    [Arguments]    ${Lvl_D_Url}    ${variance}    ${Text_FreebieShortDesc}    ${Text_Email}    ${Text_Name}    ${Text_Phone}
+    ...    ${Text_Address}
+    Go to    ${Lvl_D_Url}
+    Maximize Browser Window
+    Wemall Common - Close Live Chat
+    Level D Select Product Variance in Level D    1
+    Level D Click Add To Cart success case
+    Keywords_CartLightBox.Assert Freebie short description    ${Text_FreebieShortDesc}
+    Keywords_CartLightBox.Next to Checkout 1
+    Guest Fill Data and Submit Checkout1    ${Text_Email}
+    Guest Fill Data and Submit Checkout2    ${Text_Name}    ${Text_Phone}    ${Text_Address}
+    Keywords_Checkout3.Checkout3 - COD payment same address and Submit
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID
+    [Return]    ${order_id}
+
+Buy Product with Freebie and assert Freebie information is correcylt displayed in Checkout process with Installment payment
+    [Arguments]    ${Lvl_D_Url}    ${variance}    ${FreebieName}    ${FreebiePrice}    ${FreebieAmount}    ${TotalCartItem}
+    ...    ${Text_FreebieShortDesc}    ${Text_Email}    ${Text_Name}    ${Text_Phone}    ${Text_Address}    ${installment_provider}
+    ...    ${installment_plan}    ${CC_Type}    ${CC_Number}    ${CC_Code}    ${CC_Month}    ${CC_Year}
+    ...    ${CC_Name}
+    Go to    ${Lvl_D_Url}
+    Maximize Browser Window
+    Wemall Common - Close Live Chat
+    Run Keyword If    '${variance}' != '${EMPTY}'    Level D Select Product Variance in Level D    ${variance}
+    Level D Click Add To Cart success case
+    Keywords_CartLightBox.Assert Freebie Item    ${FreebieName}    ${FreebiePrice}    ${FreebieAmount}
+    Keywords_CartLightBox.Assert Freebie amount    สินค้าฟรีของคุณ (${FreebieAmount} ชิ้น)
+    Keywords_CartLightBox.Assert total cart item    ${TotalCartItem}
+    Keywords_CartLightBox.Assert Freebie short description    ${Text_FreebieShortDesc}
+    Keywords_CartLightBox.Next to Checkout 1
+    Guest Fill Data and Submit Checkout1    ${Text_Email}
+    Keywords_MiniCart.Assert total cart item    ${TotalCartItem}
+    Keywords_MiniCart.Assert Freebie amount    สินค้าฟรีของคุณ (${FreebieAmount} ชิ้น)
+    Keywords_MiniCart.Assert Freebie Item    ${FreebieName}    ${FreebieAmount}
+    Guest Fill Data and Submit Checkout2    ${Text_Name}    ${Text_Phone}    ${Text_Address}
+    Checkout3 - Installment payment and Submit    ${installment_provider}    ${installment_plan}
+    Fill in KBank CC payment gateway and submit    ${CC_Type}    ${CC_Number}    ${CC_Code}    ${CC_Month}    ${CC_Year}    ${CC_Name}
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID
+    [Return]    ${order_id}
+
+Get One Inventory ID
+    Connect DB ITM
+    ${inv_id}=    query    SELECT variants.inventory_id FROM variants, products, imported_materials, (SELECT product_style_type.product_id, sum(product_style_type.style_type_id) number FROM product_style_type GROUP BY product_style_type.product_id) style WHERE `products`.`id` = `variants`.`product_id` AND variants.deleted_at is null AND variants.status = 'active' AND variants.stock_type = 1 AND products.status = 'publish' AND products.active = 1 AND products.has_variants = 1 AND products.deleted_at is null AND style.product_id = products.id AND style.number = 1 AND variants.inventory_id = imported_materials.inventory_id ORDER BY products.id, variants.id desc
+    [Return]    ${inv_id[0][0]}
+
+Guest Buy Product Success with CCW
+    [Arguments]    ${Text_Email}    ${inventory_id}=random
+    ${Text_Name}    Set Variable    Robot_Name
+    ${Text_Phone}    Set Variable    0900000000
+    ${Text_Address}    Set Variable    Robot_Address
+    ${Text_CWName}    Set Variable    test
+    ${Text_CWCardNo}    Set Variable    5555555555554444
+    ${Text_CWCCV}    Set Variable    123
+    ${inv_id}=    Run Keyword If    'random' == '${inventory_id}'    Get One Inventory ID
+    ...    ELSE    Set Variable    ${inventory_id}
+    Adjust Stock By inventory_id    ${inv_id}
+    ${product_pkey}=    Get Product Pkey    ${inv_id}
+    Open Browser    ${ITM_URL}/products/item-${product_pkey}.html    chrome
+    Maximize Browser Window
+    Wemall Common - Close Live Chat
+    Level D Select Product Variance in Level D
+    Level D Click Add To Cart success case
+    sleep    5
+    Keywords_CartLightBox.Next to Checkout 1
+    Guest Fill Data and Submit Checkout1    ${Text_Email}
+    Keywords_Checkout2.Checkout2 - Input Name    ${Text_Name}
+    Keywords_Checkout2.Checkout2 - Input Phone    ${Text_Phone}
+    Keywords_Checkout2.Checkout2 - Select Province
+    Keywords_Checkout2.Checkout2 - Select District
+    Keywords_Checkout2.Checkout2 - Select SubDistrict
+    Keywords_Checkout2.Checkout2 - Select ZipCode
+    Keywords_Checkout2.Checkout2 - Input Address    ${Text_Address}
+    Keywords_Checkout2.Checkout2 - Click Next
+    #    Checkout3 - Select payment channal    ${Payment_Channal_CC}
+    Keywords_Checkout3.Checkout3 - Apply CCW    ${Text_CWName}    ${Text_CWCardNo}    ${Text_CWCCV}
+    Keywords_Checkout3.Checkout3 - Click Submit
+    Keywords_Checkout3.Checkout3 - Confirm CCW
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID
+    [Return]    ${order_id}
+
+Guest buy product(pkey) success with CCW
+    [Arguments]    ${pkey}
+    ${Text_CWName}    Set Variable    test
+    ${Text_CWCardNo}    Set Variable    5555555555554444
+    ${Text_CWCCV}    Set Variable    123
+    ${ProductURL}=    Set Variable    ${ITM_URL}/products/item-${pkey}.html
+    Open Browser    ${ProductURL}    chrome
+    Maximize Browser Window
+    Sleep    5
+    Wemall Common - Close Live Chat
+    Level D - User Click Add To Cart Button
+    Display Full Cart
+    User Click Next Process On Full Cart
+    Display Checkout Step1 Page
+    Keywords_Checkout1.Checkout1 - Input Email    ${Text_Email}
+    Keywords_Checkout1.Checkout1 - Click Next
+    Keywords_Checkout1.Checkout1 - Wait Loading
+    Display Checkout Step2 Page
+    Keywords_Checkout2.Checkout2 - Input Name    ${Text_Name}
+    Keywords_Checkout2.Checkout2 - Input Phone    ${Text_Phone}
+    Keywords_Checkout2.Checkout2 - Select Province
+    Keywords_Checkout2.Checkout2 - Select District
+    Keywords_Checkout2.Checkout2 - Select SubDistrict
+    Keywords_Checkout2.Checkout2 - Select ZipCode
+    Keywords_Checkout2.Checkout2 - Input Address    ${Text_Address}
+    Keywords_Checkout2.Checkout2 - Click Next
+    Keywords_Checkout3.Checkout3 - Apply CCW    ${Text_CWName}    ${Text_CWCardNo}    ${Text_CWCCV}
+    Keywords_Checkout3.Checkout3 - Click Submit
+    Keywords_Checkout3.Checkout3 - Confirm CCW
+    sleep    3
+    ${get_order_id}=    Thankyou - Get order id
+    [Return]    ${get_order_id}
+
+Guest buy multiple-product(pkey) success with CCW
+    [Arguments]    ${pkeyR}    ${pkeyM}
+    ${ProductR_URL}=    Set Variable    ${ITM_URL}/products/item-${pkeyR}.html
+    Open Browser    ${ProductR_URL}    chrome
+    Maximize Browser Window
+    Sleep    5
+    Wemall Common - Close Live Chat
+    Level D - User Click Add To Cart Button
+    Display Full Cart
+    Sleep    3
+    ${ProductM_URL}=    Set Variable    ${ITM_URL}/products/item-${pkeyM}.html
+    Go To    ${ProductM_URL}
+    Maximize Browser Window
+    Sleep    5
+    Level D - User Click Add To Cart Button
+    Display Full Cart
+    User Click Next Process On Full Cart
+    Display Checkout Step1 Page
+    Keywords_Checkout1.Checkout1 - Input Email    ${Text_Email}
+    Keywords_Checkout1.Checkout1 - Click Next
+    Keywords_Checkout1.Checkout1 - Wait Loading
+    Display Checkout Step2 Page
+    Keywords_Checkout2.Checkout2 - Input Name    ${Text_Name}
+    Keywords_Checkout2.Checkout2 - Input Phone    ${Text_Phone}
+    Keywords_Checkout2.Checkout2 - Select Province
+    Keywords_Checkout2.Checkout2 - Select District
+    Keywords_Checkout2.Checkout2 - Select SubDistrict
+    Keywords_Checkout2.Checkout2 - Select ZipCode
+    Keywords_Checkout2.Checkout2 - Input Address    ${Text_Address}
+    Keywords_Checkout2.Checkout2 - Click Next
+    Keywords_Checkout3.Checkout3 - Display Checkout Step3 Page
+    Keywords_Checkout3.User Click Payment Channel CCW Tab
+    Keywords_Checkout3.Checkout 3 - User Enter Valid Data Master Card As Member
+    Sleep    3
+    ${get_order_id}=    Thankyou - Get order id
+    [Return]    ${get_order_id}
+
+Guest Buy Product Success with COD
+    [Arguments]    ${Text_Email}    ${inventory_id}=random
+    ${Text_Name}    Set Variable    Robot_Name
+    ${Text_Phone}    Set Variable    0900000000
+    ${Text_Address}    Set Variable    Robot_Address
+    ${inv_id}=    Run Keyword If    'random' == '${inventory_id}'    Get One Inventory ID
+    ...    ELSE    Set Variable    ${inventory_id}
+    Adjust Stock By inventory_id    ${inv_id}
+    ${product_pkey}=    Get Product Pkey    ${inv_id}
+    LOGIN PCMS
+    SET ALLOW COD    ${inv_id}
+    Open Browser    ${ITM_URL}/products/item-${product_pkey}.html    chrome
+    Maximize Browser Window
+    Wemall Common - Close Live Chat
+    Level D Select Product Variance in Level D
+    Level D Click Add To Cart success case
+    sleep    5
+    Keywords_CartLightBox.Next to Checkout 1
+    Guest Fill Data and Submit Checkout1    ${Text_Email}
+    Keywords_Checkout2.Checkout2 - Input Name    ${Text_Name}
+    Keywords_Checkout2.Checkout2 - Input Phone    ${Text_Phone}
+    Keywords_Checkout2.Checkout2 - Select Province
+    Keywords_Checkout2.Checkout2 - Select District
+    Keywords_Checkout2.Checkout2 - Select SubDistrict
+    Keywords_Checkout2.Checkout2 - Select ZipCode
+    Keywords_Checkout2.Checkout2 - Input Address    ${Text_Address}
+    Keywords_Checkout2.Checkout2 - Click Next
+    Keywords_Checkout3.Checkout3 - Select payment channal    ${Payment_Channal_COD}
+    Sleep    2
+    Keywords_Checkout3.Checkout3 - Click Submit
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID For Member
+    # unset channel
+    # LOGIN PCMS
+    # SET NOT ALLOW COD    ${inv_id}
+    [Return]    ${order_id}
+
+Guest Buy Product Success with CS
+    [Arguments]    ${Text_Email}    ${inventory_id}=random
+    ${Text_Name}    Set Variable    Robot_Name
+    ${Text_Phone}    Set Variable    0900000000
+    ${Text_Address}    Set Variable    Robot_Address
+    ${inv_id}=    Run Keyword If    'random' == '${inventory_id}'    Get One Inventory ID
+    ...    ELSE    Set Variable    ${inventory_id}
+    Adjust Stock By inventory_id    ${inv_id}
+    ${product_pkey}=    product.Get Product Pkey    ${inv_id}
+    LOGIN PCMS
+    SET ALLOW CS CHANNEL    ${inv_id}
+    Open Browser    ${ITM_URL}/products/item-${product_pkey}.html    chrome
+    Maximize Browser Window
+    Wemall Common - Close Live Chat
+    Level D Select Product Variance in Level D
+    Level D Click Add To Cart success case
+    sleep    5
+    Keywords_CartLightBox.Next to Checkout 1
+    Guest Fill Data and Submit Checkout1    ${Text_Email}
+    Keywords_Checkout2.Checkout2 - Input Name    ${Text_Name}
+    Keywords_Checkout2.Checkout2 - Input Phone    ${Text_Phone}
+    Keywords_Checkout2.Checkout2 - Select Province
+    Keywords_Checkout2.Checkout2 - Select District
+    Keywords_Checkout2.Checkout2 - Select SubDistrict
+    Keywords_Checkout2.Checkout2 - Select ZipCode
+    Keywords_Checkout2.Checkout2 - Input Address    ${Text_Address}
+    Keywords_Checkout2.Checkout2 - Click Next
+    Keywords_Checkout3.Checkout3 - Select payment channal    ${Payment_Channal_CounterService}
+    Sleep    2
+    Keywords_Checkout3.Checkout3 - Click Submit
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID For Member
+    Create_order.Set Payment Success For CS    ${order_id}
+    Log to console    ${order_id}
+    # unset channel
+    # LOGIN PCMS
+    # SET NOT ALLOW CS CHANNEL    ${inv_id}
+    [Return]    ${order_id}
+
+Guest Buy Product Unsuccess with TM
+    [Arguments]    ${TM_Email}    ${TM_Password}    ${inventory_id}=${default_inventoryID_tm}
+    ${Text_Name}    Set Variable    Robot_Name
+    ${Text_Phone}    Set Variable    0900000000
+    ${Text_Address}    Set Variable    Robot_Address
+    ${Text_CWName}    Set Variable    test
+    ${Text_CWCardNo}    Set Variable    5555555555554444
+    ${Text_CWCCV}    Set Variable    123
+    ${inv_id}=    Set Variable    ${inventory_id}
+    Adjust Stock By inventory_id    ${inv_id}
+    ${product_pkey}=    Get Product Pkey    ${inv_id}
+    Open Browser    ${ITM_URL}/products/item-${product_pkey}.html    chrome
+    Maximize Browser Window
+    Wemall Common - Close Live Chat
+    Level D Select Product Variance in Level D
+    Level D Click Add To Cart success case
+    sleep    5
+    Keywords_CartLightBox.Next to Checkout 1
+    Guest Fill Data and Submit Checkout1    test@test.com
+    Checkout2 - Input Name    ${Text_Name}
+    Checkout2 - Input Phone    ${Text_Phone}
+    Checkout2 - Select Province
+    Checkout2 - Select District
+    Checkout2 - Select SubDistrict
+    Checkout2 - Select ZipCode
+    Checkout2 - Input Address    ${Text_Address}
+    Checkout2 - Click Next
+    #    Checkout3 - Select payment channal    ${Payment_Channal_CC}
+    Keywords_Checkout3.Checkout3 - Select payment channal    //*[@class="tmn_wallet"]
+    Checkout3 - Click Submit
+    Wait Until Element is ready and click    //*[@id="confirm-payment-tmn_wallet-submit"]    60s
+    Wait Until Element is ready and type    //*[@id="form-email"]    ${TM_Email}    60s
+    Wait Until Element is ready and type    //*[@id="form-password"]    ${TM_Password}    60s
+    Wait Until Element is ready and click    //*[@id="walletSignOn"]    60s
+    Wait Until Element is ready and click    //*[@id="myPayChangeMethod"]    60s
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID
+    [Return]    ${order_id}
+
+Member Buy Product Success with COD
+    [Arguments]    ${Text_Email}    ${Text_Password}    ${inventory_id}=random
+    ${Text_Name}    Set Variable    Robot_Name
+    ${Text_Phone}    Set Variable    0900000000
+    ${Text_Address}    Set Variable    Robot_Address
+    ${inv_id}=    Run Keyword If    'random' == '${inventory_id}'    Get One Inventory ID
+    ...    ELSE    Set Variable    ${inventory_id}
+    Adjust Stock By inventory_id    ${inv_id}
+    ${product_pkey}=    Get Product Pkey    ${inv_id}
+    LOGIN PCMS
+    SET ALLOW COD    ${inv_id}
+    Open Browser    ${ITM_URL}/products/item-${product_pkey}.html    chrome
+    Maximize Browser Window
+    Level D Select Product Variance in Level D
+    Level D Click Add To Cart success case
+    sleep    5
+    Keywords_CartLightBox.Next to Checkout 1
+    Keywords_Checkout1.Checkout1 - Click Have Member Radio Button
+    Keywords_Checkout1.Checkout1 - Input Email    ${Text_Email}
+    Keywords_Checkout1.Checkout1 - Input Password    ${Text_Password}
+    Keywords_Checkout1.Checkout1 - Click Next
+    Keywords_Checkout2.Checkout2 - Click Next Member
+    Keywords_Checkout3.Checkout3 - Select payment channal    ${Payment_Channal_COD}
+    Sleep    2
+    Keywords_Checkout3.Checkout3 - Click Submit
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID For Member
+    # unset channel
+    # LOGIN PCMS
+    # SET NOT ALLOW COD    ${inv_id}
+    [Return]    ${order_id}
+
+Member Buy Product Success with CCW
+    [Arguments]    ${Text_Email}    ${Text_Password}    ${inventory_id}=random
+    ${Text_Name}    Set Variable    Robot_Name
+    ${Text_Phone}    Set Variable    0900000000
+    ${Text_Address}    Set Variable    Robot_Address
+    ${Text_CWName}    Set Variable    test
+    ${Text_CWCardNo}    Set Variable    5555555555554444
+    ${Text_CWCCV}    Set Variable    123
+    ${inv_id}=    Run Keyword If    'random' == '${inventory_id}'    Get One Inventory ID
+    ...    ELSE    Set Variable    ${inventory_id}
+    Adjust Stock By inventory_id    ${inv_id}
+    ${product_pkey}=    Get Product Pkey    ${inv_id}
+    Open Browser    ${ITM_URL}/products/item-${product_pkey}.html    chrome
+    Maximize Browser Window
+    Level D Select Product Variance in Level D
+    Level D Click Add To Cart success case
+    sleep    5
+    Keywords_CartLightBox.Next to Checkout 1
+    Checkout1 - Click Have Member Radio Button
+    Keywords_Checkout1.Checkout1 - Input Email    ${Text_Email}
+    Keywords_Checkout1.Checkout1 - Input Password    ${Text_Password}
+    Keywords_Checkout1.Checkout1 - Click Next
+    Keywords_Checkout2.Checkout2 - Click Next Member
+    #    Checkout3 - Select payment channal    ${Payment_Channal_CC}
+    Keywords_Checkout3.Checkout3 - Apply CCW    ${Text_CWName}    ${Text_CWCardNo}    ${Text_CWCCV}
+    Keywords_Checkout3.Checkout3 - Click Submit
+    Keywords_Checkout3.Checkout3 - Confirm CCW
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID For Member
+    [Return]    ${order_id}
+
+Member Buy Product Success with CS
+    [Arguments]    ${Text_Email}    ${Text_Password}    ${inventory_id}=random
+    ${Text_Name}    Set Variable    Robot_Name
+    ${Text_Phone}    Set Variable    0900000000
+    ${Text_Address}    Set Variable    Robot_Address
+    ${inv_id}=    Run Keyword If    'random' == '${inventory_id}'    Get One Inventory ID
+    ...    ELSE    Set Variable    ${inventory_id}
+    Adjust Stock By inventory_id    ${inv_id}
+    ${product_pkey}=    Get Product Pkey    ${inv_id}
+    LOGIN PCMS
+    SET ALLOW CS CHANNEL    ${inv_id}
+    Open Browser    ${ITM_URL}/products/item-${product_pkey}.html    chrome
+    Maximize Browser Window
+    Level D Select Product Variance in Level D
+    Level D Click Add To Cart success case
+    sleep    5
+    Keywords_CartLightBox.Next to Checkout 1
+    Keywords_Checkout1.Checkout1 - Click Have Member Radio Button
+    Keywords_Checkout1.Checkout1 - Input Email    ${Text_Email}
+    Keywords_Checkout1.Checkout1 - Input Password    ${Text_Password}
+    Keywords_Checkout1.Checkout1 - Click Next
+    Keywords_Checkout2.Checkout2 - Click Next Member
+    Keywords_Checkout3.Checkout3 - Select payment channal    ${Payment_Channal_CounterService}
+    Sleep    2
+    Keywords_Checkout3.Checkout3 - Click Submit
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID For Member
+    Set Payment Success For CS    ${order_id}
+    # unset channel
+    # LOGIN PCMS
+    # SET NOT ALLOW CS CHANNEL    ${inv_id}
+    [Return]    ${order_id}
+
+Guest Buy Multiple-item Success with CCW
+    [Arguments]    ${Text_Email}    ${inventory_id}=random
+    ${Text_Name}    Set Variable    Robot_Name
+    ${Text_Phone}    Set Variable    0900000000
+    ${Text_Address}    Set Variable    Robot_Address
+    ${Text_CWName}    Set Variable    test
+    ${Text_CWCardNo}    Set Variable    5555555555554444
+    ${Text_CWCCV}    Set Variable    123
+    ${inv_id}=    Run Keyword If    'random' == '${inventory_id}'    Get 1inventory id
+    ...    ELSE    Set Variable    ${inventory_id}
+    Increase Stock After Check Remaining Stock Number    ${inv_id}    2
+    ${product_pkey}=    Get Product Pkey    ${inv_id}
+    Open Browser    ${ITM_URL}/products/item-${product_pkey}.html    chrome
+    Maximize Browser Window
+    Level D Select Product Variance in Level D
+    Level D Add Quantity
+    Level D Click Add To Cart success case
+    sleep    5
+    Keywords_CartLightBox.Next to Checkout 1
+    Guest Fill Data and Submit Checkout1    ${Text_Email}
+    Keywords_Checkout2.Checkout2 - Input Name    ${Text_Name}
+    Keywords_Checkout2.Checkout2 - Input Phone    ${Text_Phone}
+    Keywords_Checkout2.Checkout2 - Select Province
+    Keywords_Checkout2.Checkout2 - Select District
+    Keywords_Checkout2.Checkout2 - Select SubDistrict
+    Keywords_Checkout2.Checkout2 - Select ZipCode
+    Keywords_Checkout2.Checkout2 - Input Address    ${Text_Address}
+    Keywords_Checkout2.Checkout2 - Click Next
+    #    Checkout3 - Select payment channal    ${Payment_Channal_CC}
+    Keywords_Checkout3.Checkout3 - Apply CCW    ${Text_CWName}    ${Text_CWCardNo}    ${Text_CWCCV}
+    Keywords_Checkout3.Checkout3 - Click Submit
+    Keywords_Checkout3.Checkout3 - Confirm CCW
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID
+    [Return]    ${order_id}
+
+Guest Buy Multiple-item Success with installment
+    [Arguments]    ${Text_Email}    ${installment_provider}    ${installment_plan}    ${inventory_id}=random
+    ${Text_Name}    Set Variable    Robot_Name
+    ${Text_Phone}    Set Variable    0900000000
+    ${Text_Address}    Set Variable    Robot_Address
+    ${Text_CWName}    Set Variable    test
+    ${Text_CWCardNo}    Set Variable    5555555555554444
+    ${Text_CWCCV}    Set Variable    123
+    ${inv_id}=    Run Keyword If    'random' == '${inventory_id}'    Get One Inventory ID
+    ...    ELSE    Set Variable    ${inventory_id}
+    Adjust Stock By inventory_id    ${inv_id}
+    Increase Stock After Check Remaining Stock Number    ${inv_id}    2
+    LOGIN PCMS
+    Go To Edit Payment Channel Page    ${inv_id}
+    Set Kbank Installment Payment
+    ${product_pkey}=    Get Product Pkey    ${inv_id}
+    Open Browser    ${ITM_URL}/products/item-${product_pkey}.html    chrome
+    Maximize Browser Window
+    Level D Select Product Variance in Level D
+    Level D Add Quantity
+    Level D Click Add To Cart success case
+    sleep    5
+    Keywords_CartLightBox.Next to Checkout 1
+    Guest Fill Data and Submit Checkout1    ${Text_Email}
+    Checkout2 - Input Name    ${Text_Name}
+    Checkout2 - Input Phone    ${Text_Phone}
+    Checkout2 - Select Province
+    Checkout2 - Select District
+    Checkout2 - Select SubDistrict
+    Checkout2 - Select ZipCode
+    Checkout2 - Input Address    ${Text_Address}
+    Checkout2 - Click Next
+    Checkout3 - Installment payment and Submit    ${installment_provider}    ${installment_plan}
+    Fill in KBank payment gateway and submit    MasterCard    5555    5555    5555    4444    111
+    ...    08    2036    Test
+    Sleep    15s
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID
+    [Return]    ${order_id}
+
+Guest Buy Multiple-item Success with COD
+    [Arguments]    ${Text_Email}    ${inventory_id}=random
+    ${Text_Name}    Set Variable    Robot_Name
+    ${Text_Phone}    Set Variable    0900000000
+    ${Text_Address}    Set Variable    Robot_Address
+    ${inv_id}=    Run Keyword If    'random' == '${inventory_id}'    Get One Inventory ID
+    ...    ELSE    Set Variable    ${inventory_id}
+    Increase Stock After Check Remaining Stock Number    ${inv_id}    2
+    ${product_pkey}=    Get Product Pkey    ${inv_id}
+    LOGIN PCMS
+    SET ALLOW COD    ${inv_id}
+    Open Browser    ${ITM_URL}/products/item-${product_pkey}.html    chrome
+    Maximize Browser Window
+    Level D Select Product Variance in Level D
+    Level D Add Quantity
+    Level D Click Add To Cart success case
+    sleep    5
+    Keywords_CartLightBox.Next to Checkout 1
+    Guest Fill Data and Submit Checkout1    ${Text_Email}
+    Checkout2 - Input Name    ${Text_Name}
+    Checkout2 - Input Phone    ${Text_Phone}
+    Checkout2 - Select Province
+    Checkout2 - Select District
+    Checkout2 - Select SubDistrict
+    Checkout2 - Select ZipCode
+    Checkout2 - Input Address    ${Text_Address}
+    Checkout2 - Click Next
+    Checkout3 - Select payment channal    ${Payment_Channal_COD}
+    Sleep    2
+    Checkout3 - Click Submit
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID For Member
+    # unset channel
+    # LOGIN PCMS
+    # SET NOT ALLOW COD    ${inv_id}
+    [Return]    ${order_id}
+
+Guest Buy Multiple-item Success with CS
+    [Arguments]    ${Text_Email}    ${inventory_id}=random
+    ${Text_Name}    Set Variable    Robot_Name
+    ${Text_Phone}    Set Variable    0900000000
+    ${Text_Address}    Set Variable    Robot_Address
+    ${inv_id}=    Run Keyword If    'random' == '${inventory_id}'    Get One Inventory ID
+    ...    ELSE    Set Variable    ${inventory_id}
+    Increase Stock After Check Remaining Stock Number    ${inv_id}    2
+    ${product_pkey}=    Get Product Pkey    ${inv_id}
+    LOGIN PCMS
+    SET ALLOW CS CHANNEL    ${inv_id}
+    Open Browser    ${ITM_URL}/products/item-${product_pkey}.html    chrome
+    Maximize Browser Window
+    Level D Select Product Variance in Level D
+    Level D Add Quantity
+    Level D Click Add To Cart success case
+    sleep    5
+    Keywords_CartLightBox.Next to Checkout 1
+    Guest Fill Data and Submit Checkout1    ${Text_Email}
+    Checkout2 - Input Name    ${Text_Name}
+    Checkout2 - Input Phone    ${Text_Phone}
+    Checkout2 - Select Province
+    Checkout2 - Select District
+    Checkout2 - Select SubDistrict
+    Checkout2 - Select ZipCode
+    Checkout2 - Input Address    ${Text_Address}
+    Checkout2 - Click Next
+    Checkout3 - Select payment channal    ${Payment_Channal_CounterService}
+    Sleep    2
+    Checkout3 - Click Submit
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID For Member
+    Set Payment Success For CS    ${order_id}
+    # unset channel
+    # LOGIN PCMS
+    # SET NOT ALLOW CS CHANNEL    ${inv_id}
+    [Return]    ${order_id}
+
+Member Buy Multiple-item Success with COD
+    [Arguments]    ${Text_Email}    ${Text_Password}    ${inventory_id}=random
+    ${Text_Name}    Set Variable    Robot_Name
+    ${Text_Phone}    Set Variable    0900000000
+    ${Text_Address}    Set Variable    Robot_Address
+    ${inv_id}=    Run Keyword If    'random' == '${inventory_id}'    Get One Inventory ID
+    ...    ELSE    Set Variable    ${inventory_id}
+    Increase Stock After Check Remaining Stock Number    ${inv_id}    2
+    ${product_pkey}=    Get Product Pkey    ${inv_id}
+    LOGIN PCMS
+    SET ALLOW COD    ${inv_id}
+    Open Browser    ${ITM_URL}/products/item-${product_pkey}.html    chrome
+    Maximize Browser Window
+    Level D Select Product Variance in Level D
+    Level D Add Quantity
+    Level D Click Add To Cart success case
+    sleep    5
+    Keywords_CartLightBox.Next to Checkout 1
+    Checkout1 - Click Have Member Radio Button
+    Checkout1 - Input Email    ${Text_Email}
+    Checkout1 - Input Password    ${Text_Password}
+    Checkout1 - Click Next
+    Checkout2 - Click Next Member
+    Checkout3 - Select payment channal    ${Payment_Channal_COD}
+    Sleep    2
+    Checkout3 - Click Submit
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID For Member
+    # unset channel
+    # LOGIN PCMS
+    # SET NOT ALLOW COD    ${inv_id}
+    [Return]    ${order_id}
+
+Member Buy Multiple-item Success with CCW
+    [Arguments]    ${Text_Email}    ${Text_Password}    ${inventory_id}=random
+    ${Text_Name}    Set Variable    Robot_Name
+    ${Text_Phone}    Set Variable    0900000000
+    ${Text_Address}    Set Variable    Robot_Address
+    ${Text_CWName}    Set Variable    test
+    ${Text_CWCardNo}    Set Variable    5555555555554444
+    ${Text_CWCCV}    Set Variable    123
+    ${inv_id}=    Run Keyword If    'random' == '${inventory_id}'    Get One Inventory ID
+    ...    ELSE    Set Variable    ${inventory_id}
+    Increase Stock After Check Remaining Stock Number    ${inv_id}    2
+    ${product_pkey}=    Get Product Pkey    ${inv_id}
+    Open Browser    ${ITM_URL}/products/item-${product_pkey}.html    chrome
+    Maximize Browser Window
+    Level D Select Product Variance in Level D
+    Level D Add Quantity
+    Level D Click Add To Cart success case
+    sleep    5
+    Keywords_CartLightBox.Next to Checkout 1
+    Checkout1 - Click Have Member Radio Button
+    Checkout1 - Input Email    ${Text_Email}
+    Checkout1 - Input Password    ${Text_Password}
+    Checkout1 - Click Next
+    Checkout2 - Click Next Member
+    #    Checkout3 - Select payment channal    ${Payment_Channal_CC}
+    Checkout3 - Apply CCW    ${Text_CWName}    ${Text_CWCardNo}    ${Text_CWCCV}
+    Checkout3 - Click Submit
+    Checkout3 - Confirm CCW
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID For Member
+    [Return]    ${order_id}
+
+Member Buy Multiple-item Success with CS
+    [Arguments]    ${Text_Email}    ${Text_Password}    ${inventory_id}=random
+    ${Text_Name}    Set Variable    Robot_Name
+    ${Text_Phone}    Set Variable    0900000000
+    ${Text_Address}    Set Variable    Robot_Address
+    ${inv_id}=    Run Keyword If    'random' == '${inventory_id}'    Get One Inventory ID
+    ...    ELSE    Set Variable    ${inventory_id}
+    Increase Stock After Check Remaining Stock Number    ${inv_id}    2
+    ${product_pkey}=    Get Product Pkey    ${inv_id}
+    LOGIN PCMS
+    SET ALLOW CS CHANNEL    ${inv_id}
+    Open Browser    ${ITM_URL}/products/item-${product_pkey}.html    chrome
+    Maximize Browser Window
+    Level D Select Product Variance in Level D
+    Level D Add Quantity
+    Level D Click Add To Cart success case
+    sleep    5
+    Keywords_CartLightBox.Next to Checkout 1
+    Checkout1 - Click Have Member Radio Button
+    Checkout1 - Input Email    ${Text_Email}
+    Checkout1 - Input Password    ${Text_Password}
+    Checkout1 - Click Next
+    Checkout2 - Click Next Member
+    Checkout3 - Select payment channal    ${Payment_Channal_CounterService}
+    Sleep    2
+    Checkout3 - Click Submit
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID For Member
+    Set Payment Success For CS    ${order_id}
+    # unset channel
+    # LOGIN PCMS
+    # SET NOT ALLOW CS CHANNEL    ${inv_id}
+    [Return]    ${order_id}
+
+Create Order - Guest buy single product success with CCW
+    [Arguments]    ${inventory_id}=${default_inventoryID_retail}    ${email}=${email}
+    # Prepare cart by api & Checkout by UI
+    ${Existing_User_Email}    Set Variable    ${email}
+    ${Customer_Type}    Set Variable    non-user
+    ${qty}    Set Variable    1
+    ${Text_Name}    Set Variable    Robot_Name
+    ${Text_Phone}    Set Variable    0900000000
+    ${Text_Address}    Set Variable    Robot_Address
+    Open Browser    ${ITM_URL}/checkout/step1    ${BROWSER}
+    ${Customer_ref_id}=    Get User ID
+    Stock - Increase Stock By Inventory Id    ${inventory_id}
+    Create Order API Add Single product to Cart    ${PCMS_APP_KEY}    ${Customer_Type}    ${Customer_ref_id}    ${inventory_id}    ${qty}
+    Go To    ${ITM_URL}/checkout/step1
+    Guest Fill Data and Submit Checkout1    ${email}
+    Checkout2 - Input Name    ${Text_Name}
+    Checkout2 - Input Phone    ${Text_Phone}
+    Checkout2 - Select Province
+    Checkout2 - Select District
+    Checkout2 - Select SubDistrict
+    Checkout2 - Select ZipCode
+    Checkout2 - Input Address    ${Text_Address}
+    Checkout2 - Click Next
+    Sleep    5
+    Checkout 3 - User Enter Valid Data Master Card As Member
+    Wait Until Ajax Loading Is Not Visible
+    Display Thankyou Page
+    ThankYou - Close Popup If Exist
+    Display Payment Status On Thankyou Page As Success
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID For Member
+    [Teardown]    close browser
+    [Return]    ${order_id}
+
+Create Order - Guest buy multi product success with CCW
+    [Arguments]    ${inventory_id_1}=${default_inventoryID_retail}    ${inventory_id_2}=${default_inventoryID_retail}    ${email}=${email}
+    # Prepare cart by api & Checkout by UI
+    ${Existing_User_Email}    Set Variable    ${email}
+    ${Customer_Type}    Set Variable    non-user
+    ${qty}    Set Variable    1
+    ${Text_Name}    Set Variable    Robot_Name
+    ${Text_Phone}    Set Variable    0900000000
+    ${Text_Address}    Set Variable    Robot_Address
+    Open Browser    ${ITM_URL}/checkout/step1    ${BROWSER}
+    ${Customer_ref_id}=    Get User ID
+    Stock - Increase Stock By Inventory Id    ${inventory_id_1}
+    Create Order API Add Single product to Cart    ${PCMS_APP_KEY}    ${Customer_Type}    ${Customer_ref_id}    ${inventory_id_1}    ${qty}
+    Stock - Increase Stock By Inventory Id    ${inventory_id_2}
+    Create Order API Add Single product to Cart    ${PCMS_APP_KEY}    ${Customer_Type}    ${Customer_ref_id}    ${inventory_id_2}    ${qty}
+    Go To    ${ITM_URL}/checkout/step1
+    Guest Fill Data and Submit Checkout1    ${email}
+    Checkout2 - Input Name    ${Text_Name}
+    Checkout2 - Input Phone    ${Text_Phone}
+    Checkout2 - Select Province
+    Checkout2 - Select District
+    Checkout2 - Select SubDistrict
+    Checkout2 - Select ZipCode
+    Checkout2 - Input Address    ${Text_Address}
+    Checkout2 - Click Next
+    Sleep    5
+    Checkout 3 - User Enter Valid Data Master Card As Member
+    Wait Until Ajax Loading Is Not Visible
+    Display Thankyou Page
+    ThankYou - Close Popup If Exist
+    Display Payment Status On Thankyou Page As Success
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID For Member
+    [Teardown]    close browser
+    [Return]    ${order_id}
+
+Create Order - Guest buy multi product success with Installment Kbank
+    [Arguments]    ${inventory_id_1}=${default_inventoryID_retail}    ${inventory_id_2}=${default_inventoryID_retail}    ${email}=${email}
+    # Prepare cart by api & Checkout by UI
+    ${Existing_User_Email}    Set Variable    ${email}
+    ${Customer_Type}    Set Variable    non-user
+    ${qty}    Set Variable    1
+    ${Text_Name}    Set Variable    Robot_Name
+    ${Text_Phone}    Set Variable    0900000000
+    ${Text_Address}    Set Variable    Robot_Address
+    Open Browser    ${ITM_URL}/checkout/step1    ${BROWSER}
+    ${Customer_ref_id}=    Get User ID
+    Stock - Increase Stock By Inventory Id    ${inventory_id_1}
+    Create Order API Add Single product to Cart    ${PCMS_APP_KEY}    ${Customer_Type}    ${Customer_ref_id}    ${inventory_id_1}    ${qty}
+    Stock - Increase Stock By Inventory Id    ${inventory_id_2}
+    Create Order API Add Single product to Cart    ${PCMS_APP_KEY}    ${Customer_Type}    ${Customer_ref_id}    ${inventory_id_2}    ${qty}
+    Go To    ${ITM_URL}/checkout/step1
+    Guest Fill Data and Submit Checkout1    ${email}
+    Checkout2 - Input Name    ${Text_Name}
+    Checkout2 - Input Phone    ${Text_Phone}
+    Checkout2 - Select Province
+    Checkout2 - Select District
+    Checkout2 - Select SubDistrict
+    Checkout2 - Select ZipCode
+    Checkout2 - Input Address    ${Text_Address}
+    Checkout2 - Click Next
+    Sleep    5
+    User Pay By Installment Payment Kbank
+    Fill in KBank CC payment gateway and submit    MasterCard    5555555555554444    111    08    2036    Test
+    Sleep    15s
+    ThankYou - Close Popup If Exist
+    Sleep    3s
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID
+    Log To Console    order=${order_id}
+    [Teardown]    close browser
+    [Return]    ${order_id}
+
+Create Order - Guest buy single product success with Installment Kbank
+    [Arguments]    ${inventory_id_1}=${default_inventoryID_retail}    ${email}=${email}
+    # Prepare cart by api & Checkout by UI
+    ${Existing_User_Email}    Set Variable    ${email}
+    ${Customer_Type}    Set Variable    non-user
+    ${qty}    Set Variable    1
+    ${Text_Name}    Set Variable    Robot_Name
+    ${Text_Phone}    Set Variable    0900000000
+    ${Text_Address}    Set Variable    Robot_Address
+    Open Browser    ${ITM_URL}/checkout/step1    ${BROWSER}
+    ${Customer_ref_id}=    Get User ID
+    Stock - Increase Stock By Inventory Id    ${inventory_id_1}
+    Create Order API Add Single product to Cart    ${PCMS_APP_KEY}    ${Customer_Type}    ${Customer_ref_id}    ${inventory_id_1}    ${qty}
+    Go To    ${ITM_URL}/checkout/step1
+    Guest Fill Data and Submit Checkout1    ${email}
+    Checkout2 - Input Name    ${Text_Name}
+    Checkout2 - Input Phone    ${Text_Phone}
+    Checkout2 - Select Province
+    Checkout2 - Select District
+    Checkout2 - Select SubDistrict
+    Checkout2 - Select ZipCode
+    Checkout2 - Input Address    ${Text_Address}
+    Checkout2 - Click Next
+    Sleep    5
+    User Pay By Installment Payment Kbank
+    Fill in KBank CC payment gateway and submit    MasterCard    5555555555554444    111    08    2036    Test
+    Sleep    15s
+    ThankYou - Close Popup If Exist
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID
+    #[Teardown]    close browser
+    [Return]    ${order_id}
+
+Create Order - Member buy single product success with CCW
+    [Arguments]    ${inventory_id}=${default_inventoryID_retail}    ${email}=${itm_email}    ${password}=${itm_password}
+    # Prepare cart by api & Checkout by UI
+    ${Existing_User_Email}    Set Variable    ${email}
+    ${Customer_Type}    Set Variable    user
+    ${qty}    Set Variable    1
+    ${Customer_ref_id}    Create Order API Get Customer ref id from DB - Existing User    ${Existing_User_Email}
+    Clear Cart    ${Customer_ref_id}
+    Stock - Increase Stock By Inventory Id    ${inventory_id}
+    Create Order API Add Single product to Cart    ${PCMS_APP_KEY}    ${Customer_Type}    ${Customer_ref_id}    ${inventory_id}    ${qty}
+    User Login From login page    ${itm_email}    ${itm_password}
+    Go To    ${ITM_URL}/checkout/step2
+    User Enter Valid Data As Member On Checkout2
+    Sleep    4
+    Checkout 3 - User Enter Valid Data Master Card As Member
+    Wait Until Ajax Loading Is Not Visible
+    Display Thankyou Page
+    ThankYou - Close Popup If Exist
+    Display Payment Status On Thankyou Page As Success
+    ThankYou - Close Popup If Exist
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID For Member
+    [Teardown]    close browser
+    [Return]    ${order_id}
+
+Create Order - Member buy multi product success with CCW
+    [Arguments]    ${inventory_id_1}=${default_inventoryID_retail}    ${inventory_id_2}=${default_inventoryID_retail}    ${email}=${itm_email}    ${password}=${itm_password}
+    # Prepare cart by api & Checkout by UI
+    ${Existing_User_Email}    Set Variable    ${email}
+    ${Customer_Type}    Set Variable    user
+    ${qty}    Set Variable    1
+    ${Customer_ref_id}    Create Order API Get Customer ref id from DB - Existing User    ${Existing_User_Email}
+    Clear Cart    ${Customer_ref_id}
+    Stock - Increase Stock By Inventory Id    ${inventory_id_1}
+    Create Order API Add Single product to Cart    ${PCMS_APP_KEY}    ${Customer_Type}    ${Customer_ref_id}    ${inventory_id_1}    ${qty}
+    Stock - Increase Stock By Inventory Id    ${inventory_id_2}
+    Create Order API Add Single product to Cart    ${PCMS_APP_KEY}    ${Customer_Type}    ${Customer_ref_id}    ${inventory_id_2}    ${qty}
+    User Login From login page    ${itm_email}    ${itm_password}
+    Go To    ${ITM_URL}/checkout/step2
+    User Enter Valid Data As Member On Checkout2
+    Sleep    4
+    Checkout 3 - User Enter Valid Data Master Card As Member
+    Wait Until Ajax Loading Is Not Visible
+    Display Thankyou Page
+    ThankYou - Close Popup If Exist
+    Display Payment Status On Thankyou Page As Success
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID For Member
+    [Teardown]    close browser
+    [Return]    ${order_id}
+
+Create Order - Member buy multi product success with Installment Kbank
+    [Arguments]    ${inventory_id_1}=${default_inventoryID_retail}    ${inventory_id_2}=${default_inventoryID_retail}    ${email}=${itm_email}    ${password}=${itm_password}
+    # Prepare cart by api & Checkout by UI
+    ${Existing_User_Email}    Set Variable    ${email}
+    ${Customer_Type}    Set Variable    user
+    ${qty}    Set Variable    1
+    ${Customer_ref_id}    Create Order API Get Customer ref id from DB - Existing User    ${Existing_User_Email}
+    Clear Cart    ${Customer_ref_id}
+    Stock - Increase Stock By Inventory Id    ${inventory_id_1}
+    Create Order API Add Single product to Cart    ${PCMS_APP_KEY}    ${Customer_Type}    ${Customer_ref_id}    ${inventory_id_1}    ${qty}
+    Stock - Increase Stock By Inventory Id    ${inventory_id_2}
+    Create Order API Add Single product to Cart    ${PCMS_APP_KEY}    ${Customer_Type}    ${Customer_ref_id}    ${inventory_id_2}    ${qty}
+    User Login From login page    ${itm_email}    ${itm_password}
+    Go To    ${ITM_URL}/checkout/step2
+    User Enter Valid Data As Member On Checkout2
+    Sleep    5
+    User Pay By Installment Payment Kbank
+    Fill in KBank CC payment gateway and submit    MasterCard    5555555555554444    111    08    2036    Test
+    Sleep    15s
+    ThankYou - Close Popup If Exist
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID
+    [Teardown]    close browser
+    [Return]    ${order_id}
+
+Set Payment Success For CS
+    [Arguments]    ${order_id}
+    LOGIN PCMS
+    Go To    ${PCMS_URL}/test/testmailfromorder
+    Wait Until Page Contains    input order_id change payment to success and send email
+    Input Text    name=orderid    ${order_id}
+    Click Element    ${submit_update_paymentCS}
+
+Guest buy Product with COD payment
+    [Arguments]    ${Lvl_D_Url}    ${variance}    ${Text_Email}    ${Text_Name}    ${Text_Phone}    ${Text_Address}
+    Go to    ${Lvl_D_Url}
+    Maximize Browser Window
+    Run Keyword If    '${variance}' != '${EMPTY}'    Level D Select Product Variance in Level D    ${variance}
+    Level D Click Add To Cart success case
+    Next to Checkout 1
+    Guest Fill Data and Submit Checkout1    ${Text_Email}
+    Guest Fill Data and Submit Checkout2    ${Text_Name}    ${Text_Phone}    ${Text_Address}
+    Checkout3 - COD payment same address and Submit
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID
+    [Return]    ${order_id}
+
+Guest buy Product with Installment payment
+    [Arguments]    ${Lvl_D_Url}    ${variance}    ${Text_Email}    ${Text_Name}    ${Text_Phone}    ${Text_Address}
+    ...    ${installment_provider}    ${installment_plan}    ${CC_Type}    ${CC_Number}    ${CC_Code}    ${CC_Month}
+    ...    ${CC_Year}    ${CC_Name}
+    Go to    ${Lvl_D_Url}
+    Maximize Browser Window
+    Run Keyword If    '${variance}' != '${EMPTY}'    Level D Select Product Variance in Level D    ${variance}
+    Level D Click Add To Cart success case
+    Keywords_CartLightBox.Next to Checkout 1
+    Guest Fill Data and Submit Checkout1    ${Text_Email}
+    Guest Fill Data and Submit Checkout2    ${Text_Name}    ${Text_Phone}    ${Text_Address}
+    Checkout3 - Installment payment and Submit    ${installment_provider}    ${installment_plan}
+    Fill in KBank CC payment gateway and submit    ${CC_Type}    ${CC_Number}    ${CC_Code}    ${CC_Month}    ${CC_Year}    ${CC_Name}
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID
+    [Return]    ${order_id}
+
+Guest buy Product with CC payment
+    [Arguments]    ${Lvl_D_Url}    ${variance}    ${Text_Email}    ${Text_Name}    ${Text_Phone}    ${Text_Address}
+    ...    ${Text_CWName}    ${Text_CWCardNo}    ${Text_CWCCV}    ${Text_Code}
+    Go to    ${Lvl_D_Url}
+    Maximize Browser Window
+    Run Keyword If    '${variance}' != '${EMPTY}'    Level D Select Product Variance in Level D    ${variance}
+    Level D Click Add To Cart success case
+    Keywords_CartLightBox.Next to Checkout 1
+    Guest Fill Data and Submit Checkout1    ${Text_Email}
+    Guest Fill Data and Submit Checkout2    ${Text_Name}    ${Text_Phone}    ${Text_Address}
+    CC Payment Fill Data and Submit Checkout3    ${Text_CWName}    ${Text_CWCardNo}    ${Text_CWCCV}    ${Text_Code}
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID
+    [Return]    ${order_id}
+
+Guest Buy Product Success with Installment payment
+    [Arguments]    ${Text_Email}    ${installment_provider}    ${installment_plan}    ${inventory_id}=random
+    ${Text_Name}    Set Variable    Robot_Name
+    ${Text_Phone}    Set Variable    0900000000
+    ${Text_Address}    Set Variable    Robot_Address
+    ${Text_CWName}    Set Variable    test
+    ${Text_CWCardNo}    Set Variable    5555555555554444
+    ${Text_CWCCV}    Set Variable    123
+    ${inv_id}=    Run Keyword If    'random' == '${inventory_id}'    Get One Inventory ID
+    ...    ELSE    Set Variable    ${inventory_id}
+    Adjust Stock By inventory_id    ${inv_id}
+    LOGIN PCMS
+    Go To Edit Payment Channel Page    ${inv_id}
+    Set Kbank Installment Payment
+    ${product_pkey}=    Get Product Pkey    ${inv_id}
+    Open Browser    ${ITM_URL}/products/item-${product_pkey}.html    chrome
+    Maximize Browser Window
+    Level D Select Product Variance in Level D
+    Level D Click Add To Cart success case
+    sleep    5
+    Keywords_CartLightBox.Next to Checkout 1
+    Guest Fill Data and Submit Checkout1    ${Text_Email}
+    Checkout2 - Input Name    ${Text_Name}
+    Checkout2 - Input Phone    ${Text_Phone}
+    Checkout2 - Select Province
+    Checkout2 - Select District
+    Checkout2 - Select SubDistrict
+    Checkout2 - Select ZipCode
+    Checkout2 - Input Address    ${Text_Address}
+    Checkout2 - Click Next
+    Checkout3 - Installment payment and Submit    ${installment_provider}    ${installment_plan}
+    Fill in KBank CC payment gateway and submit    MasterCard    5555555555554444    111    08    2036    Test
+    Sleep    15s
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID
+    [Return]    ${order_id}
+
+Guest Buy Multiple-item Three Quantity Success with COD
+    [Arguments]    ${Text_Email}    ${inventory_id}=random
+    ${Text_Name}    Set Variable    Robot_Name
+    ${Text_Phone}    Set Variable    0900000000
+    ${Text_Address}    Set Variable    Robot_Address
+    ${inv_id}=    Run Keyword If    'random' == '${inventory_id}'    Get One Inventory ID
+    ...    ELSE    Set Variable    ${inventory_id}
+    Increase Stock After Check Remaining Stock Number    ${inv_id}    3
+    ${product_pkey}=    Get Product Pkey    ${inv_id}
+    LOGIN PCMS
+    SET ALLOW COD    ${inv_id}
+    Open Browser    ${ITM_URL}/products/item-${product_pkey}.html    chrome
+    Maximize Browser Window
+    Level D Select Product Variance in Level D
+    Level D Add Quantity
+    Level D Add Quantity
+    Level D Click Add To Cart success case
+    sleep    5
+    Keywords_CartLightBox.Next to Checkout 1
+    Guest Fill Data and Submit Checkout1    ${Text_Email}
+    Checkout2 - Input Name    ${Text_Name}
+    Checkout2 - Input Phone    ${Text_Phone}
+    Checkout2 - Select Province
+    Checkout2 - Select District
+    Checkout2 - Select SubDistrict
+    Checkout2 - Select ZipCode
+    Checkout2 - Input Address    ${Text_Address}
+    Checkout2 - Click Next
+    Checkout3 - Select payment channal    ${Payment_Channal_COD}
+    Sleep    2
+    Checkout3 - Click Submit
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID For Member
+    # unset channel
+    # LOGIN PCMS
+    # SET NOT ALLOW COD    ${inv_id}
+    [Return]    ${order_id}
+
+Guest Buy Product Success with CCW by Inventory Id List
+    [Arguments]    ${Text_Email}    ${inv_id_list}
+    ${Text_Name}    Set Variable    Robot_Name
+    ${Text_Phone}    Set Variable    0900000000
+    ${Text_Address}    Set Variable    Robot_Address
+    ${Text_CWName}    Set Variable    test
+    ${Text_CWCardNo}    Set Variable    5555555555554444
+    ${Text_CWCCV}    Set Variable    123
+    Open Browser    ${ITM_URL}    chrome
+    : FOR    ${inv_id}    IN    @{inv_id_list}
+    \    Adjust Stock By inventory_id    ${inv_id}
+    \    ${product_pkey}=    Get Product Pkey    ${inv_id}
+    \    Go to    ${ITM_URL}/products/item-${product_pkey}.html
+    \    Maximize Browser Window
+    \    Level D Select Product Variance in Level D
+    \    Level D Click Add To Cart success case
+    \    sleep    2
+    Next to Checkout 1
+    Guest Fill Data and Submit Checkout1    ${Text_Email}
+    Checkout2 - Input Name    ${Text_Name}
+    Checkout2 - Input Phone    ${Text_Phone}
+    Checkout2 - Select Province
+    Checkout2 - Select District
+    Checkout2 - Select SubDistrict
+    Checkout2 - Select ZipCode
+    Checkout2 - Input Address    ${Text_Address}
+    Checkout2 - Click Next
+    #    Checkout3 - Select payment channal    ${Payment_Channal_CC}
+    Checkout3 - Apply CCW    ${Text_CWName}    ${Text_CWCardNo}    ${Text_CWCCV}
+    Checkout3 - Click Submit
+    Checkout3 - Confirm CCW
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID
+    [Return]    ${order_id}
+
+Guest Buy Product Success with COD by Inventory Id List
+    [Arguments]    ${Text_Email}    ${inv_id_list}
+    ${Text_Name}    Set Variable    Robot_Name
+    ${Text_Phone}    Set Variable    0900000000
+    ${Text_Address}    Set Variable    Robot_Address
+    ${Text_CWName}    Set Variable    test
+    ${Text_CWCardNo}    Set Variable    5555555555554444
+    ${Text_CWCCV}    Set Variable    123
+    LOGIN PCMS
+    : FOR    ${inv_id}    IN    @{inv_id_list}
+    \    SET ALLOW COD    ${inv_id}
+    Close All Browsers
+    Open Browser    ${ITM_URL}    chrome
+    : FOR    ${inv_id}    IN    @{inv_id_list}
+    \    Adjust Stock By inventory_id    ${inv_id}
+    \    ${product_pkey}=    Get Product Pkey    ${inv_id}
+    \    Go to    ${ITM_URL}/products/item-${product_pkey}.html
+    \    Maximize Browser Window
+    \    Level D Select Product Variance in Level D
+    \    Level D Click Add To Cart success case
+    \    sleep    2
+    Next to Checkout 1
+    Guest Fill Data and Submit Checkout1    ${Text_Email}
+    Checkout2 - Input Name    ${Text_Name}
+    Checkout2 - Input Phone    ${Text_Phone}
+    Checkout2 - Select Province
+    Checkout2 - Select District
+    Checkout2 - Select SubDistrict
+    Checkout2 - Select ZipCode
+    Checkout2 - Input Address    ${Text_Address}
+    Checkout2 - Click Next
+    Checkout3 - Select payment channal    ${Payment_Channal_COD}
+    Sleep    2
+    Checkout3 - Click Submit
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID For Member
+    Close All Browsers
+    # unset channel
+    # LOGIN PCMS
+    # : FOR    ${inv_id}    IN    @{inv_id_list}
+    # \    SET NOT ALLOW COD    ${inv_id}
+    # Close All Browsers
+    [Return]    ${order_id}
+
+Guest Buy Product Success with CS by Inventory Id List
+    [Arguments]    ${Text_Email}    ${inv_id_list}
+    ${Text_Name}    Set Variable    Robot_Name
+    ${Text_Phone}    Set Variable    0900000000
+    ${Text_Address}    Set Variable    Robot_Address
+    ${Text_CWName}    Set Variable    test
+    ${Text_CWCardNo}    Set Variable    5555555555554444
+    ${Text_CWCCV}    Set Variable    123
+    LOGIN PCMS
+    : FOR    ${inv_id}    IN    @{inv_id_list}
+    \    SET ALLOW CS CHANNEL    ${inv_id}
+    Close All Browsers
+    Open Browser    ${ITM_URL}    chrome
+    : FOR    ${inv_id}    IN    @{inv_id_list}
+    \    Adjust Stock By inventory_id    ${inv_id}
+    \    ${product_pkey}=    Get Product Pkey    ${inv_id}
+    \    Go to    ${ITM_URL}/products/item-${product_pkey}.html
+    \    Maximize Browser Window
+    \    Level D Select Product Variance in Level D
+    \    Level D Click Add To Cart success case
+    \    sleep    2
+    Next to Checkout 1
+    Guest Fill Data and Submit Checkout1    ${Text_Email}
+    Checkout2 - Input Name    ${Text_Name}
+    Checkout2 - Input Phone    ${Text_Phone}
+    Checkout2 - Select Province
+    Checkout2 - Select District
+    Checkout2 - Select SubDistrict
+    Checkout2 - Select ZipCode
+    Checkout2 - Input Address    ${Text_Address}
+    Checkout2 - Click Next
+    Checkout3 - Select payment channal    ${Payment_Channal_CounterService}
+    Sleep    2
+    Checkout3 - Click Submit
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID For Member
+    Set Payment Success For CS    ${order_id}
+    # unset channel
+    # LOGIN PCMS
+    # : FOR    ${inv_id}    IN    @{inv_id_list}
+    # \    SET NOT ALLOW CS    ${inv_id}
+    # Close All Browsers
+    [Return]    ${order_id}
+
+Add Products to Cart
+    [Arguments]    @{product_keys}
+    : FOR    ${item}    IN    @{product_keys}
+    \    keywords_leveld.Add Product to Cart    ${item}
+
+Member Buy Product(s) on iTruemart with CCW payment
+    [Arguments]    ${username}    ${password}    ${code}    @{products}
+    Open Browser    ${ITM_URL}    ${BROWSER}
+    Maximize Browser Window
+    User Login From login page    ${username}    ${password}
+    # Login User to iTrueMart    ${username}    ${password}
+    #User Remove All Item in Full Cart
+    ${Customer_ref_id}    Create Order API Get Customer ref id from DB - Existing User    ${username}
+    Clear Cart    ${Customer_ref_id}
+    Add Products to Cart    @{products}
+    User Click Next Process On Full Cart
+    User Click First Member Address
+    User First Member Address Is Not Visible
+    Set to Dictionary    ${DATA_CHECKOUT}    valid_credit_card_number=5555555555554444
+    Run Keyword Unless    '${code}'=='none'    Checkout3 - Apply Coupon    ${code}
+    User Enter Valid Data As Member On Checkout3
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID For Member
+    Close Browser
+    Return From Keyword    ${order_id}
+    [Return]    ${order_id}
+
+Guest Buy Product WOW Success with CCW
+    [Arguments]    ${Text_Email}
+    ${Text_Name}    Set Variable    Robot_Name
+    ${Text_Phone}    Set Variable    0900000000
+    ${Text_Address}    Set Variable    Robot_Address
+    ${Text_CWName}    Set Variable    test
+    ${Text_CWCardNo}    Set Variable    5555555555554444
+    ${Text_CWCCV}    Set Variable    123
+    ${product_pkey}=    get_wow_product_pkey
+    ${inv_id}=    get_inventory_by_pkey    ${product_pkey}
+    Adjust Stock By inventory_id    ${inv_id}
+    Open Browser    ${ITM_URL}/products/item-${product_pkey}.html    chrome
+    Maximize Browser Window
+    Level D Choose Product Color
+    Level D Click Add To Cart success case
+    sleep    5
+    Keywords_CartLightBox.Next to Checkout 1
+    Guest Fill Data and Submit Checkout1    ${Text_Email}
+    Checkout2 - Input Name    ${Text_Name}
+    Checkout2 - Input Phone    ${Text_Phone}
+    Checkout2 - Select Province
+    Checkout2 - Select District
+    Checkout2 - Select SubDistrict
+    Checkout2 - Select ZipCode
+    Checkout2 - Input Address    ${Text_Address}
+    Checkout2 - Click Next
+    #    Checkout3 - Select payment channal    ${Payment_Channal_CC}
+    Checkout3 - Apply CCW    ${Text_CWName}    ${Text_CWCardNo}    ${Text_CWCCV}
+    Checkout3 - Click Submit
+    Checkout3 - Confirm CCW
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID
+    [Return]    ${order_id}
+
+Guest Buy Product WOW & Product Normal Success with CCW
+    [Arguments]    ${Text_Email}    ${inventory_id}=random
+    ${Text_Name}    Set Variable    Robot_Name
+    ${Text_Phone}    Set Variable    0900000000
+    ${Text_Address}    Set Variable    Robot_Address
+    ${Text_CWName}    Set Variable    test
+    ${Text_CWCardNo}    Set Variable    5555555555554444
+    ${Text_CWCCV}    Set Variable    123
+    ${inv_id}=    Run Keyword If    'random' == '${inventory_id}'    Get One Inventory ID
+    ...    ELSE    Set Variable    ${inventory_id}
+    Adjust Stock By inventory_id    ${inv_id}
+    ${product_pkey}=    Get Product Pkey    ${inv_id}
+    Open Browser    ${ITM_URL}/products/item-${product_pkey}.html    chrome
+    Maximize Browser Window
+    Level D Select All Option Of Product Variant in Level D If Exist
+    Level D Click Add To Cart success case
+    sleep    5
+    ${product_pkey}=    get_wow_product_pkey
+    ${inv_id}=    get_inventory_by_pkey    ${product_pkey}
+    Adjust Stock By inventory_id    ${inv_id}
+    Go To    ${ITM_URL}/products/item-${product_pkey}.html
+    Maximize Browser Window
+    Level D Select All Option Of Product Variant in Level D If Exist
+    Level D Click Add To Cart success case
+    sleep    5
+    Keywords_CartLightBox.Next to Checkout 1
+    Guest Fill Data and Submit Checkout1    ${Text_Email}
+    Checkout2 - Input Name    ${Text_Name}
+    Checkout2 - Input Phone    ${Text_Phone}
+    Checkout2 - Select Province
+    Checkout2 - Select District
+    Checkout2 - Select SubDistrict
+    Checkout2 - Select ZipCode
+    Checkout2 - Input Address    ${Text_Address}
+    Checkout2 - Click Next
+    #    Checkout3 - Select payment channal    ${Payment_Channal_CC}
+    Checkout3 - Apply CCW    ${Text_CWName}    ${Text_CWCardNo}    ${Text_CWCCV}
+    Checkout3 - Click Submit
+    Checkout3 - Confirm CCW
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID
+    [Return]    ${order_id}
+
+Buy Retail Product
+    [Arguments]    ${sku_id1}
+    ${product_pkey1} =    product.Get Product Pkey    ${sku_id1}
+    ${ProductURL1}=    Set Variable    ${ITM_URL}/products/item-${product_pkey1}.html
+    Open Browser    ${ProductURL1}    chrome
+    Maximize Browser Window
+    Sleep    2s
+    Level D - User Click Add To Cart Button
+    Display Full Cart
+    User Click Next Process On Full Cart
+    Display Checkout Step1 Page
+    Checkout1 - Input Email    ${Text_Email}
+    Checkout1 - Click Next
+    Checkout1 - Wait Loading
+    Display Checkout Step2 Page
+    Checkout2 - Input Name    ${Text_Name}
+    Checkout2 - Input Phone    ${Text_Phone}
+    Checkout2 - Select Province
+    Checkout2 - Select District
+    Checkout2 - Select SubDistrict
+    Checkout2 - Select ZipCode
+    Checkout2 - Input Address    ${Text_Address}
+    Checkout2 - Click Next
+    Checkout3 - Display Checkout Step3 Page
+    User Click Payment Channel CCW Tab
+    Checkout 3 - User Enter Valid Data Master Card As Member
+    ${get_order_id}=    Thankyou - Get order id
+    ${order_shipment_data}=    get order shipment item data    ${get_order_id}
+    ${body}=    Create Request Api update item status Pick&Pack with serial number for Multi-item    ${get_order_id}    ${order_shipment_data}    1
+    Send Api update status    ${body}
+    ${body}=    Create Request Api update item status Shipped with serial number for Multi-item    ${get_order_id}    ${order_shipment_data}    LYRA_serial_number    1
+    Send Api update status    ${body}
+    Log To Console    Retail Order ID = ${get_order_id}
+    Close Browser
+    Return From Keyword    ${get_order_id}
+    [Return]    ${get_order_id}
+
+Buy Market Place Product
+    [Arguments]    ${Product_MarketPlace}
+    ${product_pkey2} =    product.Get Product Pkey    ${Product_MarketPlace}
+    ${ProductURL2}=    Set Variable    ${ITM_URL}/products/item-${product_pkey2}.html
+    Open Browser    ${ProductURL2}    chrome
+    Maximize Browser Window
+    Sleep    2s
+    Level D - User Click Add To Cart Button
+    Display Full Cart
+    User Click Next Process On Full Cart
+    Display Checkout Step1 Page
+    Checkout1 - Input Email    ${Text_Email}
+    Checkout1 - Click Next
+    Checkout1 - Wait Loading
+    Display Checkout Step2 Page
+    Checkout2 - Input Name    ${Text_Name}
+    Checkout2 - Input Phone    ${Text_Phone}
+    Checkout2 - Select Province
+    Checkout2 - Select District
+    Checkout2 - Select SubDistrict
+    Checkout2 - Select ZipCode
+    Checkout2 - Input Address    ${Text_Address}
+    Checkout2 - Click Next
+    Checkout3 - Display Checkout Step3 Page
+    User Click Payment Channel CCW Tab
+    Checkout 3 - User Enter Valid Data Master Card As Member
+    ${get_order_id}=    Thankyou - Get order id
+    ${order_shipment_data}=    get order shipment item data    ${get_order_id}
+    ${body}=    Create Request Api update item status Pick&Pack with serial number for Multi-item    ${get_order_id}    ${order_shipment_data}    1
+    Send Api update status    ${body}
+    ${body}=    Create Request Api update item status Shipped with serial number for Multi-item    ${get_order_id}    ${order_shipment_data}    LYRA_serial_number    1
+    Send Api update status    ${body}
+    Log To Console    Market Place Order ID = ${get_order_id}
+    Close Browser
+    Return From Keyword    ${get_order_id}
+    [Return]    ${get_order_id}
+
+Buy Retail&Market Place Product
+    [Arguments]    ${sku_id1}    ${Product_MarketPlace}
+    ${product_pkey1} =    product.Get Product Pkey    ${sku_id1}
+    ${product_pkey2} =    product.Get Product Pkey    ${Product_MarketPlace}
+    ${ProductURL1}=    Set Variable    ${ITM_URL}/products/item-${product_pkey1}.html
+    ${ProductURL2}=    Set Variable    ${ITM_URL}/products/item-${product_pkey2}.html
+    Open Browser    ${ProductURL1}    chrome
+    Maximize Browser Window
+    Sleep    2s
+    Level D - User Click Add To Cart Button
+    Display Full Cart
+    Go To    ${ProductURL2}
+    Maximize Browser Window
+    Sleep    2s
+    Level D - User Click Add To Cart Button
+    Display Full Cart
+    User Click Next Process On Full Cart
+    Display Checkout Step1 Page
+    Checkout1 - Input Email    ${Text_Email}
+    Checkout1 - Click Next
+    Checkout1 - Wait Loading
+    Display Checkout Step2 Page
+    Checkout2 - Input Name    ${Text_Name}
+    Checkout2 - Input Phone    ${Text_Phone}
+    Checkout2 - Select Province
+    Checkout2 - Select District
+    Checkout2 - Select SubDistrict
+    Checkout2 - Select ZipCode
+    Checkout2 - Input Address    ${Text_Address}
+    Checkout2 - Click Next
+    Checkout3 - Display Checkout Step3 Page
+    User Click Payment Channel CCW Tab
+    Checkout 3 - User Enter Valid Data Master Card As Member
+    ${get_order_id}=    Thankyou - Get order id
+    ${order_shipment_data}=    get order shipment item data    ${get_order_id}
+    ${body}=    Create Request Api update item status Pick&Pack with serial number for Multi-item    ${get_order_id}    ${order_shipment_data}    2
+    Send Api update status    ${body}
+    ${body}=    Create Request Api update item status Shipped with serial number for Multi-item    ${get_order_id}    ${order_shipment_data}    LYRA_serial_number    2
+    Send Api update status    ${body}
+    Log To Console    Retail&Market Place Order ID = ${get_order_id}
+    Close Browser
+    Return From Keyword    ${get_order_id}
+    [Return]    ${get_order_id}
+
+Guest - Buy Product Until Checkout3
+    [Arguments]    ${Text_Email}    ${inventory_id}=random
+    ${Text_Name}    Set Variable    Robot_Name
+    ${Text_Phone}    Set Variable    0900000000
+    ${Text_Address}    Set Variable    Robot_Address
+    ${Text_CWName}    Set Variable    test
+    ${Text_CWCardNo}    Set Variable    5555555555554444
+    ${Text_CWCCV}    Set Variable    123
+    ${inv_id}=    Run Keyword If    'random' == '${inventory_id}'    Get One Inventory ID
+    ...    ELSE    Set Variable    ${inventory_id}
+    Adjust Stock By inventory_id    ${inv_id}
+    ${product_pkey}=    Get Product Pkey    ${inv_id}
+    Open Browser    ${ITM_URL}/products/item-${product_pkey}.html    chrome
+    Maximize Browser Window
+    Level D Choose Product Color
+    Level D Click Add To Cart success case
+    sleep    5
+    Keywords_CartLightBox.Next to Checkout 1
+    Guest Fill Data and Submit Checkout1    ${Text_Email}
+    Checkout2 - Input Name    ${Text_Name}
+    Checkout2 - Input Phone    ${Text_Phone}
+    Checkout2 - Select Province
+    Checkout2 - Select District
+    Checkout2 - Select SubDistrict
+    Checkout2 - Select ZipCode
+    Checkout2 - Input Address    ${Text_Address}
+    Checkout2 - Click Next
+    Wait Until Checkout3 Page Ready
+    Sleep    5
+
+Wait Until Checkout3 Page Ready
+    Wait Until Element Is Visible    id=payment-channel-selection    15
+    #Get Price on Mini Cart - Checkout3
+
+Get Price on Mini Cart - Checkout3
+    Sleep    3s
+    ${total-price}=    Get Text    xpath=//div[contains(@class, "sum_total_price")]
+    ${total-price}=    Replace String    ${total-price}    ,    ${EMPTY}
+    Return From Keyword    ${total-price}
+
+Get Sub Total Price on Mini Cart - Checkout3
+    ${sub_total_price}    Set Variable    xpath=//div[contains(@class, "sum clr-3")]
+    Wait Until Element Is Visible    ${sub_total_price}    10
+    Element Should Be Visible    ${sub_total_price}
+    ${sub_total}=    Get Text    ${sub_total_price}
+    ${sub_total}=    Replace String    ${sub_total}    ,    ${EMPTY}
+    ${sub_total}=    Replace String    ${sub_total}    <br><br>    ${EMPTY}
+    ${sub_total}=    Replace String    ${sub_total}    (รวมภาษีมูลค่าเพิ่ม)    ${EMPTY}
+    Return From Keyword    ${sub_total}
+
+Get Discount on Mini Cart - Checkout3
+    ${total_discount}    Set Variable    xpath=//*[@id="minicart-container"]/div[8]/div[1]
+    Wait Until Element Is Visible    ${total_discount}    10
+    Element Should Be Visible    ${total_discount}
+    ${total_discount}=    Get Text    ${total_discount}
+    ${total_discount}=    Replace String    ${total_discount}    ,    ${EMPTY}
+    ${total_discount}=    Replace String    ${total_discount}    <br><br>    ${EMPTY}
+    ${total_discount}=    Replace String    ${total_discount}    รวมส่วนลดเพิ่มเติมทั้งหมด    ${EMPTY}
+    Return From Keyword    ${total_discount}
+
+Verify Point Redeem Tab is Shown
+    Wait Until Element Is Visible    id=point_tab    10
+
+Verify Shipping Fee in DB - Together Order DB
+    [Arguments]    ${order_id}    ${shipping_fee_param}
+    ${together_shipping_fee_db}=    Get Together Order Shipping fee    ${order id}
+    should be equal As Numbers    ${together_shipping_fee_db}    ${shipping_fee_param}
+
+Click on Redeem Point Tab
+    Click Element    id=point_tab
+
+Choose Trueyou Channel
+    Wait Until Element Is Visible    name=partnerRadioOptions
+    Select Radio Button    partnerRadioOptions    trueyou
+
+Input Trueyou Account
+    [Arguments]    ${trueyou_user}    ${trueyou_pass}
+    Input Text    id=username    ${trueyou_user}
+    Input Text    id=password    ${trueyou_pass}
+    Click Element    id=cartlightbox-go-next
+    Sleep    10
+
+Choose Discount and Click Next
+    Wait Until Element Is Visible    id=cartlightbox-go-next    15
+    Click Element    id=cartlightbox-go-next
+    Sleep    5
+
+Submit Payment via CCW
+    #    Checkout3 - Select payment channal    ${Payment_Channal_CC}
+    Checkout3 - Apply CCW    TEST    5555555555554444    111
+    Checkout3 - Click Submit
+    Checkout3 - Confirm CCW
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID
+    [Return]    ${order_id}
+
+Checkout3 - Submit Payment via CCW
+    #    Checkout3 - Select payment channal    ${Payment_Channal_CC}
+    Checkout3 - Apply CCW    TEST    5555555555554444    111
+    Checkout3 - Click Submit
+    Checkout3 - Confirm CCW
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID
+    [Return]    ${order_id}
+
+Checkout3 - Submit Payment via CS
+    Checkout3 - Select payment channal    ${Payment_Channal_CounterService}
+    Sleep    2
+    Checkout3 - Click Submit
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID For Member
+    Create_order.Set Payment Success For CS    ${order_id}
+    [Return]    ${order_id}
+
+Checkout3 - Submit Payment via COD
+    Checkout3 - Select payment channal    ${Payment_Channal_COD}
+    Sleep    2
+    Checkout3 - Click Submit
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID For Member
+    [Return]    ${order_id}
+
+Checkout3 - Submit Payment via Installment
+    [Arguments]    ${installment_provider}    ${installment_plan}
+    Checkout3 - Installment payment and Submit    ${installment_provider}    ${installment_plan}
+    Fill in KBank CC payment gateway and submit    MasterCard    5555555555554444    111    08    2036    Test
+    Sleep    15s
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID    # Checkout3 - Submit Payment via eWallet    #    [Arguments]    ${installment_provider}    ${installment_plan}
+    ...    #    Checkout3 - Installment payment and Submit    ${installment_provider}    ${installment_plan}    #    Fill in KBank CC payment gateway and submit
+    ...    # MasterCard    5555555555554444    111    08    2036    # Test
+    #    Sleep    15s
+    #    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID
+    #    [Return]    ${order_id}
+    [Return]    ${order_id}
+
+Checkout 3 - Create Order CCW
+    ${Text_CWName}    Set Variable    test
+    ${Text_CWCardNo}    Set Variable    5555555555554444
+    ${Text_CWCCV}    Set Variable    123
+    Keywords_Checkout3.Checkout3 - Apply CCW    ${Text_CWName}    ${Text_CWCardNo}    ${Text_CWCCV}
+    Keywords_Checkout3.Checkout3 - Click Submit
+    Keywords_Checkout3.Checkout3 - Confirm CCW
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID
+    [Return]    ${order_id}
+
+Checkout 3 - Create Order CS
+    Checkout3 - Select payment channal    ${Payment_Channal_CounterService}
+    Sleep    2
+    Checkout3 - Click Submit
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID For Member
+    Create_order.Set Payment Success For CS    ${order_id}
+    [Return]    ${order_id}
+
+Checkout 3 - Create Order COD
+    Checkout3 - COD payment same address and Submit
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID
+    [Return]    ${order_id}
+
+Checkout 3 - Create Order For Mobile CCW
+    ${Text_CWName}    Set Variable    test
+    ${Text_CWCardNo}    Set Variable    5555555555554444
+    ${Text_CWCCV}    Set Variable    123
+    Select Radio Button    payment_channel    credit-card
+    Mobile - Wait Until Ajax Loading Is Not Visible
+    Checkout3 Mobile - Apply CCW For Mobile    ${Text_CWName}    ${Text_CWCardNo}    ${Text_CWCCV}
+    Checkout3 Mobile - Click Submit For Mobile
+    Checkout3 Mobile - Confirm CCW For Mobile
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID For Mobile    # Checkout3 - Submit Payment via eWallet    #    [Arguments]    ${installment_provider}    ${installment_plan}
+    ...    #    Checkout3 - Installment payment and Submit    ${installment_provider}    ${installment_plan}    #    Fill in KBank CC payment gateway and submit
+    ...    # MasterCard    5555555555554444    111    08    2036    # Test
+    #    Sleep    15s
+    #    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID
+    #    [Return]    ${order_id}
+    [Return]    ${order_id}
+
+Create Order - Apply point and Verify discount - Guest - CCW
+    [Arguments]    ${email}    ${inventoryID}    ${trueyou_user}    ${trueyou_pass}    ${point}    ${expected_point_discount}
+    ${order_id}=    Guest - Buy Product Until Checkout3    ${email}    ${inventoryID}
+    ${sub_total_price_before}=    Checkout3 - mini cart - Get Sub Total Price
+    ${discount_before}=    Checkout3 - mini cart - Get All Discount Price
+    ${total_price_before}=    Checkout3 - mini cart - Get Total Price
+    Point - Verify Point Redeem Tab is Shown
+    Point - Click on Redeem Point Tab
+    Point - Choose Trueyou channel
+    Point - Input Trueyou Account    ${trueyou_user}    ${trueyou_pass}
+    Point - Choose Discount and Click Next
+    Point - Verify Point and Discount are displayed    ${point}    ${expected_point_discount}
+    ${point_discount}=    Point - Get Discount from Point
+    ${sub_total_price_after}=    Checkout3 - mini cart - Get Sub Total Price
+    ${discount_after}=    Checkout3 - mini cart - Get All Discount Price
+    ${total_price_after}=    Checkout3 - mini cart - Get Total Price
+    ${Shipping_fee}=    Checkout3 - mini cart - Get Shipping Price
+    Point - Verify Sub Total Price After Apply Point    ${sub_total_price_before}    ${sub_total_price_after}
+    Point - Verify Discount After Apply Point    ${discount_before}    ${discount_after}    ${point_discount}
+    Point - Verify Total Price After Apply Point    ${sub_total_price_before}    ${Shipping_fee}    ${total_price_after}    ${point_discount}
+    Checkout3 - Submit Payment via CCW
+
+Create Order - Apply point and Verify discount - Guest - Installment
+    [Arguments]    ${email}    ${inventoryID}    ${trueyou_user}    ${trueyou_pass}    ${point}    ${expected_point_discount}
+    ${order_id}=    Guest - Buy Product Until Checkout3    ${email}    ${inventoryID}
+    ${sub_total_price_before}=    Checkout3 - mini cart - Get Sub Total Price
+    ${discount_before}=    Checkout3 - mini cart - Get All Discount Price
+    ${total_price_before}=    Checkout3 - mini cart - Get Total Price
+    Point - Verify Point Redeem Tab is Shown
+    Point - Click on Redeem Point Tab
+    Point - Choose Trueyou channel
+    Point - Input Trueyou Account    ${trueyou_user}    ${trueyou_pass}
+    Point - Choose Discount and Click Next
+    Point - Verify Point and Discount are displayed    ${point}    ${expected_point_discount}
+    ${point_discount}=    Point - Get Discount from Point
+    ${sub_total_price_after}=    Checkout3 - mini cart - Get Sub Total Price
+    ${discount_after}=    Checkout3 - mini cart - Get All Discount Price
+    ${total_price_after}=    Checkout3 - mini cart - Get Total Price
+    ${Shipping_fee}=    Checkout3 - mini cart - Get Shipping Price
+    Point - Verify Sub Total Price After Apply Point    ${sub_total_price_before}    ${sub_total_price_after}
+    Point - Verify Discount After Apply Point    ${discount_before}    ${discount_after}    ${point_discount}
+    Point - Verify Total Price After Apply Point    ${sub_total_price_before}    ${Shipping_fee}    ${total_price_after}    ${point_discount}
+    Checkout3 - Submit Payment via Installment    กสิกรไทย    2    # Create Order - Apply point and Verify discount - Guest - CS    #    [Arguments]    ${email}
+    ...    # ${inventoryID}    ${trueyou_user}    ${trueyou_pass}    ${point}    # ${expected_point_discount}    #
+    ...    # ${order_id}=    Guest - Buy Product Until Checkout3    ${email}    ${inventoryID}    #    ${sub_total_price_before}=
+    ...    # Checkout3 - mini cart - Get Sub Total Price    #    ${discount_before}=    Checkout3 - mini cart - Get All Discount Price    #    ${total_price_before}=
+    ...    # Checkout3 - mini cart - Get Total Price    #    Point - Verify Point Redeem Tab is Shown    #    Point - Click on Redeem Point Tab    #
+    ...    # Point - Choose Trueyou channel    #    Point - Input Trueyou Account    ${trueyou_user}    ${trueyou_pass}    #
+    ...    # Point - Choose Discount and Click Next    #    Point - Verify Point and Discount are displayed    ${point}    ${expected_point_discount}    #
+    ...    # ${point_discount}=    Point - Get Discount from Point    #    ${sub_total_price_after}=    Checkout3 - mini cart - Get Sub Total Price    #
+    ...    # ${discount_after}=    Checkout3 - mini cart - Get All Discount Price    #    ${total_price_after}=    Checkout3 - mini cart - Get Total Price    #
+    ...    # ${Shipping_fee}=    Checkout3 - mini cart - Get Shipping Price    #    Point - Verify Sub Total Price After Apply Point    ${sub_total_price_before}    ${sub_total_price_after}
+    ...    #    Point - Verify Discount After Apply Point    ${discount_before}    ${discount_after}    ${point_discount}    #
+    ...    # Point - Verify Total Price After Apply Point    ${total_price_before}    ${total_price_after}    ${point_discount}    #    Checkout3 - Submit Payment via CS
+    ...    # Create Order - Apply point and Verify discount - Guest - COD    #    [Arguments]    ${email}    ${inventoryID}    ${trueyou_user}
+    ...    # ${trueyou_pass}    ${point}    # ${expected_point_discount}    #    ${order_id}=    Guest - Buy Product Until Checkout3
+    ...    # ${email}    ${inventoryID}    #    ${sub_total_price_before}=    Checkout3 - mini cart - Get Sub Total Price    #
+    ...    # ${discount_before}=    Checkout3 - mini cart - Get All Discount Price    #    ${total_price_before}=    Checkout3 - mini cart - Get Total Price    #
+    ...    # Point - Verify Point Redeem Tab is Shown    #    Point - Click on Redeem Point Tab    #    Point - Choose Trueyou channel    #
+    ...    # Point - Input Trueyou Account    ${trueyou_user}    ${trueyou_pass}    #    Point - Choose Discount and Click Next    #
+    ...    # Point - Verify Point and Discount are displayed    ${point}    ${expected_point_discount}    #    ${point_discount}=    Point - Get Discount from Point
+    ...    #    ${sub_total_price_after}=    Checkout3 - mini cart - Get Sub Total Price    #    ${discount_after}=    Checkout3 - mini cart - Get All Discount Price
+    ...    #    ${total_price_after}=    Checkout3 - mini cart - Get Total Price    #    ${Shipping_fee}=    Checkout3 - mini cart - Get Shipping Price
+    ...    #    Point - Verify Sub Total Price After Apply Point    ${sub_total_price_before}    ${sub_total_price_after}    #    Point - Verify Discount After Apply Point
+    ...    # ${discount_before}    ${discount_after}    ${point_discount}    #    Point - Verify Total Price After Apply Point    ${total_price_before}
+    ...    # ${total_price_after}    ${point_discount}    #    Checkout3 - Submit Payment via COD    # Create Order - Apply point and Verify discount - Guest - eWallet    #
+    ...    # [Arguments]    ${email}    ${inventoryID}    ${trueyou_user}    ${trueyou_pass}    ${point}
+    ...    # ${expected_point_discount}
+    # ${order_id}=    Guest - Buy Product Until Checkout3    ${email}    ${inventoryID}
+    #    ${sub_total_price_before}=    Checkout3 - mini cart - Get Sub Total Price
+    #    ${discount_before}=    Checkout3 - mini cart - Get All Discount Price
+    #    ${total_price_before}=    Checkout3 - mini cart - Get Total Price
+    #    Point - Verify Point Redeem Tab is Shown
+    #    Point - Click on Redeem Point Tab
+    #    Point - Choose Trueyou channel
+    #    Point - Input Trueyou Account    ${trueyou_user}    ${trueyou_pass}
+    #    Point - Choose Discount and Click Next
+    #    Point - Verify Point and Discount are displayed    ${point}    ${expected_point_discount}
+    #    ${point_discount}=    Point - Get Discount from Point
+    #    ${sub_total_price_after}=    Checkout3 - mini cart - Get Sub Total Price
+    #    ${discount_after}=    Checkout3 - mini cart - Get All Discount Price
+    #    ${total_price_after}=    Checkout3 - mini cart - Get Total Price
+    #    ${Shipping_fee}=    Checkout3 - mini cart - Get Shipping Price
+    #    Point - Verify Sub Total Price After Apply Point    ${sub_total_price_before}    ${sub_total_price_after}
+    #    Point - Verify Discount After Apply Point    ${discount_before}    ${discount_after}    ${point_discount}
+    #    Point - Verify Total Price After Apply Point    ${total_price_before}    ${total_price_after}    ${point_discount}
+    #    # Checkout3 - Submit Payment via eWallet
+
+Add To Cart
+    [Arguments]    ${inventory_id}    ${amount}    ${new_browser}=true
+    Run Keyword IF    'true' == '${new_browser}'    Open Browser    ${ITM_URL}    chrome
+    Maximize Browser Window
+    Adjust stock by inventory_id at least five    ${inventory_id}
+    ${product_pkey}=    Get Product Pkey    ${inventory_id}
+    Go To    ${ITM_URL}/products/item-${product_pkey}.html
+    Level D Choose Product Color
+    : FOR    ${INDEX}    IN RANGE    1    ${amount}
+    \    Level D Add Quantity
+    Level D Click Add To Cart success case
+    Sleep    5s
+
+Add To Cart Multi Inventory
+    [Arguments]    ${inventory_id}
+    Open Browser    ${ITM_URL}    chrome
+    Maximize Browser Window
+    ${index}=    Set Variable    0
+    : FOR    ${inventory_id}    IN    @{inventory_id}
+    \    Adjust stock by inventory_id at least five    ${inventory_id}
+    \    ${product_pkey}=    Get Product Pkey    ${inventory_id}
+    \    Go To    ${ITM_URL}/products/item-${product_pkey}.html
+    \    Level D Choose Product Color
+    \    Level D Click Add To Cart success case
+    \    Sleep    5s
+
+Add To Cart For Mobile
+    [Arguments]    ${inventory_id}    ${amount}    ${new_browser}=true
+    Run Keyword IF    'true' == '${new_browser}'    Open Browser    ${ITM_MOBILE_URL}    chrome
+    Maximize Browser Window
+    Adjust stock by inventory_id at least five    ${inventory_id}
+    ${product_pkey}=    Get Product Pkey    ${inventory_id}
+    Go To    ${ITM_MOBILE_URL}/products/item-${product_pkey}.html
+    Level D Choose Product Color
+    Level D Mobile - Select Product Quantity    ${amount}
+    Level D Click Add To Cart success case for mobile
+    Sleep    5s
+
+Add To Cart Multi Inventory For Mobile
+    [Arguments]    ${inventory_ids}
+    Open Browser    ${ITM_MOBILE_URL}    chrome
+    Maximize Browser Window
+    : FOR    ${inventory_id}    IN    @{inventory_ids}
+    \    Adjust stock by inventory_id at least five    ${inventory_id}
+    \    ${product_pkey}=    Get Product Pkey    ${inventory_id}
+    \    Go To    ${ITM_MOBILE_URL}/products/item-${product_pkey}.html
+    \    Level D Choose Product Color
+    \    Level D Click Add To Cart success case for mobile
+    \    Sleep    5s
+
+
+Submit order With Installment Payment Failed
+    [Arguments]     ${installment_provider}    ${installment_plan}
+    Keywords_Checkout3.Checkout3 - Installment payment and Submit    ${installment_provider}    ${installment_plan}
+    Page Should Contain Image    ${installment_bbl_payment_failed}
+    Click Image    ${installment_bbl_payment_failed}
+    Sleep    15s
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID
+    [Return]    ${order_id}
+
+Submit order With Installment Payment Pending KTC
+    [Arguments]     ${installment_plan}
+    Keywords_Checkout3.Checkout3 - Installment payment and Submit    เคทีซี    ${installment_plan}
+    Page Should Contain Image    ${installment_ktc_payment_submit}
+    Click Image    ${installment_ktc_payment_submit}
+    Page Should Contain Image    ${installment_ktc_payment_cancel}
+    Click Image    ${installment_ktc_payment_cancel}
+    Sleep    15s
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID
+    [Return]    ${order_id}
+
+Submit order With TMN Wallet Payment Failed
+    ${CancelLink}=    Set Variable    jQuery=[onClick='formSubmitCancel()']
+    Keywords_Checkout3.Checkout3 - Select payment channal    //*[@class="tmn_wallet"]
+    Checkout3 - Click Submit
+    Wait Until Element is ready and click    //*[@id="confirm-payment-tmn_wallet-submit"]    60s
+    Wait Until Element is ready and click    ${CancelLink}    60s
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID
+    [Return]    ${order_id}
+
+Submit order With TMN Wallet Payment Pending
+    ${CancelLink}=    Set Variable    jQuery=[onClick='formSubmitCancel()']
+    Keywords_Checkout3.Checkout3 - Select payment channal    //*[@class="tmn_wallet"]
+    Checkout3 - Click Submit
+    Wait Until Element is ready and click    //*[@id="confirm-payment-tmn_wallet-submit"]    60s
+    Wait Until Element Is Visible    ${CancelLink}    60s
+    close all browsers
+
+Submit order With CCW Payment Failed
+    ${Text_CWName}    Set Variable    test
+    ${Text_CWCardNo}    Set Variable    5555555555551111
+    ${Text_CWCCV}    Set Variable    111
+    Keywords_Checkout3.Checkout3 - Apply CCW    ${Text_CWName}    ${Text_CWCardNo}    ${Text_CWCCV}
+    Keywords_Checkout3.Checkout3 - Click Submit
+    Keywords_Checkout3.Checkout3 - Confirm CCW
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID
+    [Return]    ${order_id}

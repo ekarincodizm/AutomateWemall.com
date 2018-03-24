@@ -1,0 +1,57 @@
+{
+  "version": "draft",
+  "type": "banner",
+  "data": [
+    {
+      "name": {
+        "image": "//cdn.wemall.com/th/banner_web/81fb3cd8-da0c-4a09-a399-4c04ad597c46_images/03_slide.jpg?v=c6b121eb?2016-05-23%2009:45:43",
+        "link": "http://www.wemall-dev.com/itruemart",
+        "alt": "Zyxel"
+      },
+      "name_translation": {
+        "image": "//cdn.wemall.com/th/banner_web/8031b69c-a375-46f4-94f3-6971da7b6a82_images/Plantronics-banner.jpg?v=17908b65?2016-05-23%2016:47:22",
+        "link": "http://www.wemall-dev.com/en/itruemart",
+        "alt": "Plantronics"
+      },
+      "title": "New Nike Shoe",
+      "order": 1,
+      "status": "active",
+      "start_date": "2015-06-10T15:52:01+0700",
+      "end_date": "2019-06-10T15:52:01+0700"
+    },
+    {
+      "name": {
+        "image": "//sandbox-cdn.wemall-dev.com/th/Banner/MTH10000_images/Final_Sale.jpg",
+        "link": "http://www.wemall-dev.com/itruemart",
+        "alt": "ซี่ซั่น เซลล์"
+      },
+      "name_translation": {
+        "image": "//sandbox-cdn.wemall-dev.com/th/Banner/MTH10000_images/Flash_Sale.png",
+        "link": "http://www.wemall-dev.com/en/itruemart",
+        "alt": "Season Sale"
+      },
+      "title": "Seasonal Sale",
+      "order": 2,
+      "status": "inactive",
+      "start_date": "2015-06-10T15:52:01+0700",
+      "end_date": "2019-06-10T15:52:01+0700"
+    },
+    {
+      "name": {
+        "image": "//sandbox-cdn.wemall-dev.com/th/Banner/MTH10000_images/Final_Sale.jpg",
+        "link": "http://www.itruemart.com/",
+        "alt": "ซี่ซั่น เซลล์"
+      },
+      "name_translation": {
+        "image": "//sandbox-cdn.wemall-dev.com/th/Banner/MTH10000_images/Flash_Sale.png",
+        "link": "http://www.itruemart.com/",
+        "alt": "Season Sale"
+      },
+      "title": "Seasonal Sale Inactive",
+      "order": 3,
+      "status": "inactive",
+      "start_date": "2015-06-10T15:52:01+0700",
+      "end_date": "2019-06-10T15:52:01+0700"
+    }
+  ]
+}

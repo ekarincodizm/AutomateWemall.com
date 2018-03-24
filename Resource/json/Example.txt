@@ -1,0 +1,61 @@
+*** Settings ***
+Suite Setup       Init TestSuite
+Library           ../../Python_Library/GetWebdriverInstance.py
+Library           ../../Python_Library/common.py
+Resource          ../../Resources/app_config.txt
+Resource          ../../Required_Files/TestUtil.txt
+Resource          ../../Keywords/camps_keywords_library.txt
+Resource          ../../Keywords/camps_api_keywords.txt
+Resource          ../../Resources/camps_id_library.txt
+Resource          ../../Resources/test_data_variables.txt
+Resource          ../../Resources/message_library.txt
+
+*** Variables ***
+
+*** Test Cases ***
+TC_PRC_00001 Create wow
+    [Tags]    TC_PRC_00001    Create Wow
+    ${current_date}=    Get Current Date    increment=1 day
+    ${tomorrow_date}=    Get Current Date    increment=2 day
+    ${status}    ${body}=    Create Flash Sale Wow Banner via API   ${TEST_NAME}    ${TEST_NAME}
+    ...    eiei    a    1    cod    ${current_date}
+    ...    ${tomorrow_date}    enable    member
+    Response Status Code Should Equal    201
+    log    ${body}
+    ${promotion_id}=    Get Json Value and Convert to List    ${body}    /data/id
+    Delete Flash Sale WOW Banner via API    ${promotion_id}
+
+TC_PRC_00002 Create wow with null data
+    [Tags]    TC_PRC_00001    Create Wow
+    ${current_date}=    Get Current Date    increment=1 day
+    ${tomorrow_date}=    Get Current Date    increment=2 day
+    ${status}    ${body}=    Create Flash Sale Wow Banner via API   ${EMPTY}    ${EMPTY}
+    ...    ${EMPTY}    ${EMPTY}    1    cod    ${current_date}
+    ...    ${tomorrow_date}    enable    false
+    Response Status Code Should Equal    400
+    Response Body Should Contain  flashSale name may not be empty
+    log    ${body}
+
+TC_PRC_00003 Create with invalid type
+    [Tags]    TC_PRC_00001    Create Wow
+	  ${current_date}=    Get Current Date    increment=1 day
+    ${tomorrow_date}=    Get Current Date    increment=2 day
+    ${status}    ${body}=    Create Flash Sale Wow Banner via API   ${TEST_NAME}    ${TEST_NAME}
+    ...    eiei    a    1    cod    ${current_date}
+    ...    ${tomorrow_date}    enable    member    invalid
+    Response Status Code Should Equal    400
+    Response Body Should Contain  flashSale type is invalid !!!
+    log    ${body}
+
+TC_PRC_00004 Create WOW and log promotion id
+    [Tags]    TC_PRC_00001    Create Wow
+	  ${current_date}=    Get Current Date    increment=2 day
+    ${tomorrow_date}=    Get Current Date    increment=3 day
+    ${status}    ${body}=    Create Flash Sale Wow Banner via API   ${TEST_NAME}    ${TEST_NAME}
+    ...    eiei    a    1    cod    ${current_date}
+    ...    ${tomorrow_date}    enable    member
+    Response Status Code Should Equal    201
+    log    ${body}
+
+    ${promotion_id}=    Get Json Value and Convert to List    ${body}    /data/id
+    Delete Flash Sale WOW Banner via API    ${promotion_id}

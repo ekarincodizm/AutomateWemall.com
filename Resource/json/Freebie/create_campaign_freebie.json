@@ -1,0 +1,9 @@
+{
+  "name": "^^campaign_name^^",
+  "name_translation": "Campaign Name Robot Test Translation",
+  "detail": "Campaign Detail Robot Test",
+  "detail_translation": "Campaign Detail Robot Test Translation",
+  "start_period": ^^start_period^^,
+  "end_period": ^^end_period^^,
+  "enable": ^^enable^^
+}

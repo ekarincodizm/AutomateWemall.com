@@ -1,0 +1,123 @@
+*** Variables ***
+
+${product-instock-url}			${HOST}/products/nivea-pure-effect-clean-deeper-daily-wash-scrub-150-ml-2204788126188.html
+${product-instock-has-variant-url}		${HOST}/products/automate-in-stock-has-variant-samsung-galaxy-a5-2217858717891.html
+${product-wow-url}				${HOST}/products/automate-full-test-case-level-d-etude-house-precious-mineral-bb-cream-perfectfit-spf30-pa-w24-honey-2879783049743.html
+
+${wow-url}			${HOST}/everyday-wow
+
+${product-instock-no-caption-url}		${HOST}/products/automate-no-caption-apple-12w-usb-power-adapter-md836zaa-2285248092875.html
+${product-out-of-stock-url}		${HOST}/products/12x-iphone-5-2629212966959.html
+${product-out-of-stock-has-color-url}		${HOST}/products/imymee-iphone-5c-case-2903541223418.html
+${product-out-of-stock-has-color-size-url}		${HOST}/products/iphone-6--2634908634297.html
+${PRODUCT-Asus Zenfone5.}    products/asus-zenfone-5-2807712739892.html
+
+${lv-d-full-cart}			xpath=//*[@id="cart-popup"]
+${lv-d-add-to-cart}			xpath=//*[contains(@class, "product-addtocart")]
+${full-cart-goto-checkout}		xpath=//*[@id="cartlightbox-go-next"]
+${lv-d-breadcrumb}			xpath=//ul[contains(@class, "breadcrumb__link")]
+${lv-d-highlight-banner-wow}		xpath=//*[@class="campaign_banner"]/a/img
+${lv-d-product-name}		xpath=//div[@class="product__name"]/h1
+${lv-d-countdown}			xpath=//div[contains(@class, "countdown")]
+${lv-d-product-thumbnail}		xpath=//div[@id="product_image"]/img
+${lv-d-product-carousel-next}		xpath=//a[@class="productCarousel__navigate_next"]
+${lv-d-show-thumb-small}			xpath=//*[@class="productCarousel__wrapper"]
+${lv-d-product-carousel-prev}		xpath=//a[@class="productCarousel__navigate_prev"]
+${lv-d-percent-discount}		xpath=//*[contains(@class, "price_no")]
+${lv-d-caption}					xpath=//*[@class="prd_type"]
+${lv-d-normal-price}			xpath=//*[contains(@class, "normal_price")]
+${lv-d-special-price}			xpath=//*[contains(@class, "special_price")]
+
+${lv-d-free-delivery}			xpath=//*[@class="product__policy"]/ul/li[1]/a
+${lv-d-free-delivery-content}	xpath=//*[@id="freedelivery"]
+${lv-d-free-delivery-text}		นโยบายจัดส่งภายใน 4-7 วันทำการ
+${lv-d-money-back}				xpath=//*[@class="product__policy"]/ul/li[2]/a
+${lv-d-money-back-content}		xpath=//*[@id="moneyback"]
+${lv-d-money-back-text}			นโยบายคืนเงิน
+${lv-d-return}					xpath=//*[@class="product__policy"]/ul/li[3]/a
+${lv-d-return-content}			xpath=//*[@id="return"]
+${lv-d-return-text}				นโยบายรับเปลี่ยนสินค้า
+
+${lv-d-relate-name}				xpath=//*[@class="product__relate_name"]
+${lv-d-relate-name-text}		สินค้าที่เกี่ยวข้อง
+${lv-d-relate-list}				xpath=//*[@class="product__relate_list"]/li
+
+${lv-d-img-has-stock}		xpath=//*[contains(@class, "box-status-has-stock")]/img[contains(@src, "active")]
+${lv-d-img-no-stock}		xpath=//*[contains(@class, "box-status-no-stock")]/img[contains(@src, "in-active")]
+
+${product-not-enough-to-add}		${HOST}/products/etude-house-precious-mineral-bb-cream-perfectfit-spf30-pa-w24-honey-2879783049743.html
+
+${lv-d-icon-installment}		xpath=//*[@class="productPayment_list"]/li/img[contains(@src, "installment")]
+${lv-d-installment-description}		xpath=//*[@class="productPayment_list"]/li/img[contains(@src, "installment")]/following-sibling::div[@class="productPayment_description"]
+
+${lv-d-icon-ccw}		xpath=//*[@class="productPayment_list"]/li/img[contains(@src, "visa")]
+${lv-d-ccw-description}		xpath=//*[@class="productPayment_list"]/li/img[contains(@src, "visa")]/following-sibling::div[@class="productPayment_description"]
+
+${lv-d-icon-atm}		xpath=//*[@class="productPayment_list"]/li/img[contains(@src, "atm")]
+${lv-d-atm-description}		xpath=//*[@class="productPayment_list"]/li/img[contains(@src, "atm")]/following-sibling::div[@class="productPayment_description"]
+
+${lv-d-icon-ibanking}		xpath=//*[@class="productPayment_list"]/li/img[contains(@src, "ibanking")]
+${lv-d-ibanking-description} 		xpath=//*[@class="productPayment_list"]/li/img[contains(@src, "ibanking")/following-sibling::div[@class="productPayment_description"]
+
+${lv-d-icon-bank-counter}		xpath=//*[@class="productPayment_list"]/li/img[contains(@src, "counterbank")]
+${lv-d-bank-counter-description}		xpath=//*[@class="productPayment_list"]/li/img[contains(@src, "counterbank")]/following-sibling::div[@class="productPayment_description"]
+
+${lv-d-icon-counter-service}	xpath=//*[@class="productPayment_list"]/li/img[contains(@src, "counterservice")]
+${lv-d-counter-service-description}		xpath=//*[@class="productPayment_list"]/li/img[contains(@src, "counterservice")]/following-sibling::div[@class="productPayment_description"]
+
+${lv-d-icon-cod}		xpath=//*[@class="productPayment_list"]/li/img[contains(@src, "cod")]
+${lv-d-cod-description}			xpath=//*[@class="productPayment_list"]/li/img[contains(@src, "cod")]/following-sibling::div[@class="productPayment_description"]
+
+${lv-d-social-fb}		xpath=//*[@class="productSocial_list"]/li/img[contains(@src, "social_fb")]
+${lv-d-social-tw}		xpath=//*[@class="productSocial_list"]/li/img[contains(@src, "social_tweet")]
+${lv-d-social-gplus}	xpath=//*[@class="productSocial_list"]/li/img[contains(@src, "social_g")]
+
+${lv-d-no-stock}		xpath=//div[@class="box-status-no-stock"]/img[contains(@class, "in-active")]
+${lv-d-instock}			xpath=//div[@class="box-status-has-stock"]/img[contains(@class, "active")]
+
+${lv-d-qty-up}			xpath=//*[contains(@class, "stepper-arrow up")]
+${lv-d-qty-down}		xpath=//*[contains(@class, "stepper-arrow down")]
+${lv-d-add-to-cart}		xpath=//button[contains(@class, "product-addtocart")]
+${lv-d-disabled-add-to-cart-button}		xpath=//button[contains(@class, "product-addtocart disabled")]
+${lv-d-img-color-default}		xpath=//div[@id="product_image"]/img[contains(@src, "pcms/uploads/14-10-30/73f1daf122492feddc3d7a25c56ed148_xl.jpg")]
+
+${lv-d-img-color1}		xpath=//div[@id="product_image"]/img[contains(@src, "pcms/uploads/14-10-29/e54e62050a876b85d10b9ac5a7dbf3f5_xl.jpg")]
+
+${lv-d-img-color2}		xpath=//div[@id="product_image"]/img[contains(@src, "pcms/uploads/14-10-29/ef1d6bebf8a0edb86ff974f6ba3eaa43_xl.jpg")]
+${trueyou-black-card-email}		believemyheart@gmail.com
+${trueyou-black-card-password}		12345
+${popup-ok-not-enough}		xpath=//*[@id="cart-alert"]
+${button-ok-not-enough}		xpath=//*[contains(@class, "popup_ok")]
+${lv-d-product-promotion-name}		xpath=//*[@class="product__promotion_name"]
+${lv-d-product-promotion-name-text}		โปรโมชั่นที่ร่วมรายการ
+${lv-d-installment-6-month}		xpath=//div[@rel="6"]
+${lv-d-installment-3-month}		xpath=//div[@rel="3"]
+${lv-d-installment-10-month}	xpath=//div[@rel="10"]
+${lv-d-installment-6-month-bay}			xpath=//div[@rel="6"]/div[@class="product__promotion_item"]/div[@class="product__promotion_bank_col-6"][2]/ul/li[1]/img[contains(@src, "inst_bay")]
+${lv-d-installment-6-month-bay-pay-per-month}		xpath=//div[@rel="6"]/div[@class="product__promotion_item"]/div[@class="product__promotion_bank_col-6"][2]/ul/li[3]/span[@class="pay_per_month"]
+${lv-d-installment-note}		xpath=//div[@class="product__promotion"]/div[2]
+${lv-d-status-no-color}		xpath=//*[contains(@class, "style-option-status")]/span[@class="no-color"]
+${lv-d-status-no-color-size}		xpath=//*[contains(@class, "style-option-status")]/span[@class="no-color-size"]
+${product-installment2-url}		${HOST}/products/aquapix-waterproof-camera-2905924272120.html
+${lv-d-product-property}		xpath=//*[@class="product__description"]/h2[@class="product__description_name"]
+${lv-d-product-description}		xpath=//*[@class="product__description_bottom"]/h2[@class="product__description_name"]
+${wow-button-buy}		xpath=//div[@class="box-action"]/a[@class="btn-order"]
+${wow-today-img}		xpath=//div[@class="today"]/div/a[1]/img
+${wow-today-anchor}		xpath=//div[@class="today"]/div/a[1]
+
+#Mobile
+${m-product-instock-url}			${MOBILE-HOME}/products/nivea-pure-effect-clean-deeper-daily-wash-scrub-150-ml-2204788126188.html
+${m-product-instock-has-variant-url}		${MOBILE-HOME}/products/automate-in-stock-has-variant-samsung-galaxy-a5-2217858717891.html
+${m-product-out-of-stock-url}		${MOBILE-HOME}/products/12x-iphone-5-2629212966959.html
+${m-product-out-of-stock-has-color-url}		${MOBILE-HOME}/products/imymee-iphone-5c-case-2903541223418.html
+${m-product-out-of-stock-has-color-size-url}		${MOBILE-HOME}/products/iphone-6--2634908634297.html
+${m-lv-a-cart-url}		${MOBILE-HOME}/cart
+
+${m-lv-d-add-to-cart-button}		xpath=//div[@class="row button-buy add-to-cart"]
+${m-lv-d-disabled-add-to-cart-button}		xpath=//div[@class="row button-buy add-to-cart disabled"]
+
+${LevelD-Web-URL}    http://pcms.itruemart-dev.com
+${LevelD-Mobile-URL}    http://pcms.itruemart-dev.com
+${PromoitonInstruction-Link}    xpath=//*[@data-id="promotion-popup-button"]
+${promotion-popup}    xpath=//*[@id="howToUseCouponPopup"]
+${promotion-popup-close-button}    //*[@class="close itruemart-coupon-close-button"]

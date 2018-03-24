@@ -1,0 +1,38 @@
+{
+  "en_US": [
+    {
+      "id": 0,
+      "link_target": "_self",
+      "link_url": "http://www.itruemart.com/en",
+      "sort_index": 0,
+      "src_web": "//alpha-cdn.wemall-dev.com/th/showrooms/showroom_id/puma_b.gif",
+      "title": "Puma"
+    },
+    {
+      "id": 1,
+      "link_target": "_blank",
+      "link_url": "http://www.itruemart.com/en",
+      "sort_index": 1,
+      "src_web": "//alpha-cdn.wemall-dev.com/th/showrooms/showroom_id/NIKE1.jpg",
+      "title": "Nike"
+    }
+  ],
+  "th_TH": [
+    {
+      "id": 0,
+      "link_target": "_self",
+      "link_url": "http://www.itruemart.com",
+      "sort_index": 0,
+      "src_web": "//alpha-cdn.wemall-dev.com/th/showrooms/showroom_id/puma_b.gif",
+      "title": "Puma"
+    },
+    {
+      "id": 1,
+      "link_target": "_blank",
+      "link_url": "http://www.itruemart.com",
+      "sort_index": 1,
+      "src_web": "//alpha-cdn.wemall-dev.com/th/showrooms/showroom_id/NIKE1.jpg",
+      "title": "Nike"
+    }
+  ]
+}

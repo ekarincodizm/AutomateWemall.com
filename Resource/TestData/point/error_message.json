@@ -1,0 +1,12 @@
+{
+  "require" : "field is required",
+  "invalid_input" : "Invalid Input",
+  "token_expired" : "Token Expired",
+  "invalid_api_key" : "Invalid API Key",
+  "server_not_found" : "Service not found or unavailable",
+  "invalid_token" : "Invalid Token",
+  "partner_id_wrong" : "Your partner is not support in this api",
+  "numeric" : "field should be digits",
+  "invalid_api_key_or_api_secret" : "Invalid api_key or api_secret",
+  "cannot_connect_partner" : "Cannot connect partner"
+}

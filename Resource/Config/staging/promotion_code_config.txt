@@ -1,0 +1,501 @@
+*** Variable ***
+${PRODUCT-A-THREE-COLOR}	products/asus-memo-pad-7-me572-2159244918228.html
+${PRODUCT-BRAND-A}	products/asus-fonepad-8-fe380-2903901755876.html
+${PRODUCT-COLL-A}    products/asus-zenfone-5-lte-2482451859659.html
+${PRODUCT-B}	products/kingston-dtse9-2238831129323.html
+${PRODUCT-C}	products/soken-speaker-2.1-st-19bt-2103952052460.html
+${PRODUCT-D}	products/360-total-gym-2741486910979.html
+${PRODUCT-Z}	products/soken-hdd-karaoke-tkr-365ts-2984915592498.html
+${PRODUCT-M-THREE-COLOR}    products/jhi-3-in1-mini-t-47-high-speed-2723759151319.html
+
+${subtotal-A}    6990.00
+${subtotal-brand-A}    6790.00
+${subtotal-coll-A}    5490.00
+${subtotal-B}    115.00
+${subtotal-C}    4090.00
+${subtotal-D}    6990.00
+${subtotal-Z}    6890.00
+${subtotal-M}    39.00
+${subtotal-AC}    8880.00
+${subtotal-AA}    13980.00
+${subtotal-AB}    7105.00
+${subtotal-BB}    230.00
+${subtotal-AM}    7029.00
+${subtotal-AAsus}    13780.00
+${subtotal-bAD}    13780.00
+${subtotal-AcA}    12480.00
+${subtotal-bAA}    13780.00
+
+
+${discount-A-50bath}    50.00
+${discount-A-5per}    349.50
+${discount-AC-500bath}    500.00
+${discount-AA-100bath}    100.00
+${discount-A-50per}    3495.50
+${discount-A-200bath}    200.00
+${discount-AA-15per}    2097.00
+${discount-AA-200bath}    200.00
+${discount-AA-10per}    1398.00
+${discount-AA-150bath}    150.00
+${discount-AA-5per}    699.00
+${discount-AAsus-5per}    689.00
+${discount-AM-5per}    351.45
+${discount-C-5per}    204.5
+${discount-A-210bath}    210.00
+${discount-bA-300bath}    300.00
+${discount-bAD-300bath}    300.00
+${discount-bAA-300bath}    300.00
+${discount-AA-300bath}    300.00
+${discount-A-250bath}    250.00
+
+
+${total-A-50bath}    6940.00
+${total-A-5per}    6640.50
+${total-AC-500bath}    8380.00
+${total-AA-100bath}    13880.00
+${total-A-50per}    3495.50
+${total-A-100bath}    6890.00
+${total-A-200bath}    6790.00
+${total-AA-15per}    11833.00
+${total-AA-200bath}    13780.00
+${total-AA-10per}    12582.00
+${total-AA-150bath}    13830.00
+${total-AA-5per}    13281.00
+${total-AAsus-5per}    13091.00
+${total-AM-5per}    6677.55
+${total-C-5per}    3885.5
+${total-A-210bath}    6780.00
+${total-bA-300bath}    6490.00
+${total-bAD-300bath}    13480.00
+${total-bAA-300bath}    13480.00
+${total-AA-300bath}    13680.00
+${total-A-250bath}    13730.00
+
+
+${SINGLE-CODE-VALID}    ASD6X6
+${Unique-CODE-USED}    ABCDHCSK
+${SINGLE-CODE-EXPIRE}    ABC2H
+${SINGLE-CODE-OUT-OF-QUOTA}    ABCZ
+${SINGLE-CODE-WRONG}    !@CR@#
+
+#TC 21
+#${unique-code-for-buy}    DSG7P2
+# ${unique-code-for-buy}    DSGT6H
+# ${unique-code-for-buy}    DSGR7C
+# ${unique-code-for-buy}    DSGB75
+${single-cart-baht}    S50BCZ
+
+#TC 22
+${unique-code-for-buy-percent}		ABCTSUT
+# ${unique-code-for-buy-percent}		ABC3JXV
+# ${unique-code-for-buy-percent}		ABCAEX9
+#TC 23-24-25
+${unique-code-buy-items-collection} 	ADSRM7
+# ${unique-code-buy-items-collection} 	ADS62T
+# ${unique-code-buy-items-collection} 	ADS53D
+# ${unique-code-buy-items-collection} 	ADS4FA
+# ${unique-code-buy-items-collection} 	ADSPE9
+# ${unique-code-buy-items-collection} 	ADSZ2S
+# ${unique-code-buy-items-collection} 	ADSX9K
+#TC 26-27
+${uniqe-percent-variant-A1}		KYG6GN
+# ${uniqe-percent-variant-A1}		KYGENU
+# ${uniqe-percent-variant-A1}		KYGKEK
+# ${uniqe-percent-variant-A1}		KYG95E
+# ${uniqe-percent-variant-A1}		KYGZXC
+# ${uniqe-percent-variant-A1}		KYGAE4
+#TC28-30
+${single-100bath-variant-exclude-A3}	ASGDEX
+#TC31-33
+${single-50per-brand-asus-exlude-A}		GASS
+#TC34
+${trueyou-red-5per-variant-A1}
+#TC35,38,89
+${trueyou-red-200bath-product-A}
+#TC36
+${trueyou-black-500bath-product-A}
+#TC37
+${trueyou-black-10per-variant-A}
+#TC 40-41
+${unique-15per-min2000}    DSF2HJ
+# ${unique-15per-min2000}    DSFZHY
+# ${unique-15per-min2000}    DSF6C4
+# ${unique-15per-min2000}    DSF6HG
+# ${unique-15per-min2000}    DSFBJ9
+#TC42-45
+${unique-200bath-min8000-variant-A1A2}    WDFSGZF
+# ${unique-200bath-min8000-variant-A1A2}    WDFS6DJ
+# ${unique-200bath-min8000-variant-A1A2}    WDFS53V
+# ${unique-200bath-min8000-variant-A1A2}    WDFSA47
+# ${unique-200bath-min8000-variant-A1A2}    WDFSMRN
+# ${unique-200bath-min8000-variant-A1A2}    WDFSJBY
+#TC46-49
+${unique-10per-min8000-product-excludeA3}    CXSZKK
+# ${unique-10per-min8000-product-excludeA3}    CXSTRV
+# ${unique-10per-min8000-product-excludeA3}    CXSMTG
+# ${unique-10per-min8000-product-excludeA3}    CXSPRZ
+# ${unique-10per-min8000-product-excludeA3}    CXSEFB
+# ${unique-10per-min8000-product-excludeA3}    CXSSTX
+#TC50-53
+${single-150bath-min8000-brand-ASUS}    DFGF
+#TC54-57
+${single-5per-min8000-collection-phone}    TYRM
+#TC58-59
+${single-5per-max689}    ERWB
+#TC60-63
+${single-5per-max210-variantA1C}    SFG9
+#TC64-67
+${single-5per-max300-collection-excludeAcA}    ETRD
+#TC68-70
+${unique-15per-max300-brand-excludeA}    TRUCYP
+# ${unique-15per-max300-brand-excludeA}    TRU23T
+# ${unique-15per-max300-brand-excludeA}    TRUEBP
+# ${unique-15per-max300-brand-excludeA}    TRUY3Z
+# ${unique-15per-max300-brand-excludeA}    TRU2VS
+# ${unique-15per-max300-brand-excludeA}    TRUVRJ
+#TC71-73
+${unique-10per-max300-product-excludeA1}    RHTERJAY
+# ${unique-10per-max300-product-excludeA1}    RHTER9N2
+# ${unique-10per-max300-product-excludeA1}    RHTERP9A
+# ${unique-10per-max300-product-excludeA1}    RHTERF9B
+# ${unique-10per-max300-product-excludeA1}    RHTERX9U
+# ${unique-10per-max300-product-excludeA1}    RHTER4YY
+# ${unique-10per-max300-product-excludeA1}    RHTERHHT
+#TC74-75
+${single-5per-min2500-max250}    FATF
+#TC76-79
+${single-5per-min6990-max250-productAbA-exA3}    DFSD
+#TC80-82
+${single-10per-min6990-max1000-variantA1A2}    WER4
+#TC83-86
+${unique-5per-min6990-max200-collection-excludebA}    ASDB4U
+# ${unique-5per-min6990-max200-collection-excludebA}    ASDR6E
+# ${unique-5per-min6990-max200-collection-excludebA}    ASDS5T
+# ${unique-5per-min6990-max200-collection-excludebA}    ASDE7C
+# ${unique-5per-min6990-max200-collection-excludebA}    ASDU4V
+# ${unique-5per-min6990-max200-collection-excludebA}    ASDEF9
+# ${unique-5per-min6990-max200-collection-excludebA}    ASDST9
+#87-90
+${unique-10per-min6790-max300-brand-excludeA}    TYUPB4
+# ${unique-10per-min6790-max300-brand-excludeA}    TYU5H2
+# ${unique-10per-min6790-max300-brand-excludeA}    TYUUR3
+# ${unique-10per-min6790-max300-brand-excludeA}    TYUVF4
+# ${unique-10per-min6790-max300-brand-excludeA}    TYUJRJ
+# ${unique-10per-min6790-max300-brand-excludeA}    TYUYM6
+# ${unique-10per-min6790-max300-brand-excludeA}    TYU45N
+
+#Login Page
+${textbox-login-username}    id=login_username
+${textbox-login-password}    id=login_password
+${button-submit-login}    id=btn_login
+${input-username}    emailtestautomate1@gmail.com
+${input-password}    Iam12345#
+
+#Level D
+${status-has-stock}    //*[contains(@class, "status-has-stock")]
+${button-buy}    //*[contains(@class, "product-addtocart")]
+${product-price-list}    //*[@class="prd_price_list"]
+${variant-color}    //*[contains(@data-style-name, 'color')]
+${shopping-cart}    //*[@class='icn_cart']
+
+#checkout1
+${form-login-checkout1}    id=form-checkout
+${radio-button-checkout1-member}    id=user1
+${radio-button-checkout1-guest}    id=guest
+${textbox-checkout1-username}    id=step1-username
+${textbox-checkout1-password}    id=password
+${button-goto-checkout2}    id=btnNext
+${passwrd-member}    Iam12345#
+
+#checkout2
+${FORM-DELIVERY-INFOMATION}		id=add-address-frm
+${checkout2-input-name}    id=name
+${checkout2-input-telephone}    id=telephone
+${checkout2-input-email}    id=email
+${checkout2-select-province-bangkok}    //*[@id='province-control']/option[3]
+${checkout2-select-district-klongteay}    //*[@id='district-control']/option[4]
+${checkout2-select-subdistrict-klongteay}    //*[@id='sub-district-control']/option[3]
+${checkout2-select-zip-code}    //*[@id='zip-code-control']/option[2]
+${checkout2-input-address}    //*[@id='address']
+${checkout2-go-to-checkout3}    //*[@id='btnSave']
+${button-checkout2-select-address}    //*[@id='address_list_container']/div[1]/div/p[4]/input
+${button-checkout2-select-address-mobile}       jquery=div.address-list  input[id="address-list-0"]
+${button-checkout2-to-checkout3-mobile}       //*[contains(@id, "proceed_with_indicated_address")]
+
+${discount-minicart}    //*[@id='minicart-container']/div[7]/div[1]
+#${icon-cart}    //*[contains(@class, "back-to-shopping")]
+
+#checkout3
+${TAB-PAYMENT-INSTALMENT}	//*[@id='payment-channel-selection']/li/h2/a[contains(@href, "instalment")]
+${TAB-PAYMENT-CCW}   //*[@id='payment-channel-selection']/li/h2/a[contains(@href, "ccw")]
+${TAB-PAYMENT-ATM}   //*[@id='payment-channel-selection']/li/h2/a[contains(@href, "atm")]
+${TAB-PAYMENT-IBANKING}    //*[@id='payment-channel-selection']/li/h2/a[contains(@href, "ibanking")]
+${TAB-PAYMENT-COUNTER}    //*[@id='payment-channel-selection']/li/h2/a[contains(@href, "paymentcounter")]
+${TAB-PAYMENT-CSERVICE}    //*[@id='payment-channel-selection']/li/h2/a[contains(@href, "counterservice")]
+${TAB-PAYMENT-COD}    //*[@id='payment-channel-selection']/li/h2/a[contains(@href, "cod")]
+${all-ccw-information}    id=channel-ccw
+${all-ccw-information-mobile}    jquery=div.payment-channel input[id="credit-card"]
+
+${textbox-name-ccw}    id=ccw-info-name
+${textbox-number-card-ccw}    id=ccw-info-no
+${month-expire-ccw}     //*[@id='month']/option[13]
+${year-expire-ccw}    //*[@id='year']/option[12]
+${textbox-code-of-card-ccw}     //*[@id='channel-ccw']/div[4]/div[4]/div/input
+${submit-checkout3}    id=step3-submit
+${submit-checkout3-mobile}     jquery=div.col-xs-12 a[id="payment-submit-btn"]
+${confirm-payment-submit}    id=confirm-payment-submit
+${checkout3-discount-minicart}    //*[@id='minicart-container']/div[11]/div[1]
+
+#minicart
+${edit-order}    id=btn-edit-cart
+${name-product-minicart}    //*[@id='minicart-container']/div[4]/ul/li[1]/div[1]/p
+${promotion-name-discount-minicart}    //*[@id='coupon-container']/div[1]/p/span[1]
+${discount-minicart}    //*[@id='minicart-container']/div[7]/div[1]
+${discount-coupon-minicart}    //*[@id='coupon-container']/div[1]/div
+${subtotal-minicart}    //*[@id='minicart-container']/div[5]/div[1]
+${shipping-fee-minicart}    //*[@id='minicart-container']/div[6]/div[1]
+${total-discount-minicart}    //*[@id='minicart-container']/div[11]/div[1]
+${total-minicart}    //*[@id='minicart-container']/div[12]/div[1]
+${trueyou-discount-minicart}    //*[@id='minicart-container']/div[8]/div/p/span
+${TEXTBOX-PROMOTION-CODE}    id=coupon-text
+${button-use-coupon}    id=coupon_button
+${alert-input-coupon-code}    id=coupon_code_error
+${minicart-form}    id=minicart-container
+${cart-icon-levelD}    //*[@class="icn_cart"]
+
+
+#fullcart
+${information-fullcart}    id=cart-box-info
+${subtotal-fullcart}    //*[@id='cartlightbox-sumary-bottom']/div[1]/div[1]
+${shipping-fee-fullcart}    //*[@id='cartlightbox-sumary-bottom']/div[2]/div[1]
+${total-discount-fullcart}    //*[@id='cartlightbox-sumary-bottom']/div[3]/div[1]
+#${promotion-name-discount-fullcart}    //*[@id="cartlightbox-sumary-bottom"]/div[3]/div[2]/text()
+${promotion-name-discount-fullcart}    //*[@id='cartlightbox-sumary-bottom']/div[3]/div[2]
+${total-fullcart}    //*[@id='cartlightbox-sumary-bottom']/div[4]/div[1]
+${button-go-to-checkout-step}    //*[contains(@class, "goto-checkstep")]
+${back-to-shopping}    //*[contains(@class, "back-to-shopping")]
+${close-full-cart}    //*[@id='cart-popup']/div/div/div[1]/div[2]/div[2]
+
+
+#trueyou
+${redeem}    id=auth-trueyou
+${form-login-trueyou}    name=idcart_number
+${submit-form-trueyou}    id=btn-auth-trueyou
+${discount-trueyou}
+${box-alert-trueyou}    //*[@id='apply-trueyou-form']/div[2]/div
+${path-text-alert}    //*[@id='apply-trueyou-form']/div[2]/div/text()
+
+#emailtesting
+${email-type-promotion}    //*[@id=':2y']
+${top-email}     	//*[@class='UI']/div/div[1]/div[2]/div/table/tbody/tr[1]/td[6]
+#${top-email}      	//*[@class='UI']/div/div[3]/div[2]/div/table/tbody/tr[7]/td[6]/div/div/div/span[1]
+${thankyou-text}    //*[@id=':rs']/text()
+${box-input-email}    //*[@id='Email']
+${button-next}    //*[@id='next']
+${box-input-password}    //*[@id='Passwd']
+${button-signin}    //*[@id='signIn']
+${input-email-for-check}    emailtestautomate1@gmail.com
+${input-password-email-for-check}    Iam12345#
+#${subtotal-email}    //*[@id=':2']/div/div[2]/div/table/tr/td[1]/div[2]/div[2]/div/div[3]/div/div/div/div/div/div/div[2]/div[6]/div/div/table/tbody/tr[1]/td/table/tbody/tr[1]/td/table[2]/tbody/tr[5]/td/table/tbody/tr[1]/td[2]
+
+${subtotal-email}    //div/table/tbody/tr[1]/td/table/tbody/tr/td/table[2]/tbody/tr[5]/td/table/tbody/tr[1]/td[2]
+
+#${discount-email}    //*[@id=':2']/div/div[2]/div/table/tr/td[1]/div[2]/div[2]/div/div[3]/div/div/div/div/div/div/div[2]/div[6]/div/div/table/tbody/tr[1]/td/table/tbody/tr[1]/td/table[2]/tbody/tr[5]/td/table/tbody/tr[3]/td[2]
+
+${discount-email}    //div/table/tbody/tr[1]/td/table/tbody/tr/td/table[2]/tbody/tr[5]/td/table/tbody/tr[3]/td[2]
+
+#${total-email}    //*[@id=':2']/div/div[2]/div/table/tr/td[1]/div[2]/div[2]/div/div[3]/div/div/div/div/div/div/div[2]/div[6]/div/div/table/tbody/tr[1]/td/table/tbody/tr[1]/td/table[2]/tbody/tr[5]/td/table/tbody/tr[4]/td[2]/div[1]
+${total-email}    //div/table/tbody/tr[1]/td/table/tbody/tr/td/table[2]/tbody/tr[5]/td/table/tbody/tr[4]/td[2]/div[1]
+
+${box-thankyou-email}    //*[@id=':2']/div/div[2]/div/table/tr/td[1]/div[2]/div[2]/div/div[3]/div/div/div/div/div/div/div[2]/div[6]/div/div/table/tbody/tr[1]/td/div[1]/h1
+${text-thankyou-email-offline}		รายการสั่งซื้อรอการชำระเงิน
+${text-thankyou-email-ccw}			รายการสั่งซื้อของคุณชำระเงินเรียบร้อยแล้ว
+
+
+#thankyou
+${subtotal-thankyou-offline}	//*[@id='contener']/div/div[1]/div[1]/div[3]/div[1]/div[4]/div[3]/div[2]/div[1]/div[2]
+${shipping-fee-thankyou-offline}	//*[@id='contener']/div/div[1]/div[1]/div[3]/div[1]/div[4]/div[3]/div[2]/div[3]/div[2]/text()
+${total-discount-thankyou-offline}	//*[@id='contener']/div/div[1]/div[1]/div[3]/div[1]/div[4]/div[3]/div[2]/div[5]/div[2]
+${total-thankyou-offline}	//*[@id='thank_total_pay']
+
+# ${subtotal-thankyou-ccw}	 xpath=//*[@class='p-order']/div[3]/div[contains(@class, "p-sum-footer")]/div[1]/div[2][contains(@class, "p-title-n-s p-non-bor p-text-r")]
+# ${shipping-fee-thankyou-ccw}	 xpath=//*[@class='p-order']/div[3]/div[contains(@class, "p-sum-footer")]/div[3]/div[2][contains(@class, "p-title-n-s p-non-bor p-text-r")]
+# ${total-discount-thankyou-ccw}	 xpath=//*[@class='p-order']/div[3]/div[contains(@class, "p-sum-footer")]/div[5]/div[2][contains(@class, "p-title-n-s p-non-bor p-text-r")]
+# ${total-thankyou-ccw}	id=thank_total_pay
+
+${subtotal-thankyou-ccw}	//*[@id='contener']/div/div[1]/div[1]/div[3]/div[1]/div[4]/div[3]/div[2]/div[1]/div[2]
+${shipping-fee-thankyou-ccw}	//*[@id='contener']/div/div[1]/div[1]/div[3]/div[1]/div[4]/div[3]/div[2]/div[3]/div[2]/text()
+${total-discount-thankyou-ccw}	//*[@id='contener']/div/div[1]/div[1]/div[3]/div[1]/div[4]/div[3]/div[2]/div[5]/div[2]
+${total-thankyou-ccw}	//*[@id='thank_total_pay']
+
+
+
+#alert error
+${alert-coupon-code-used}    รหัสคูปองพิเศษนี้ถูกใช้ไปแล้ว
+${alert-coupon-code-expire}    คูปองพิเศษหมดอายุแล้ว
+${alert-coupon-code-out-of-quota}    รหัสคูปองพิเศษถูกใช้หมดแล้ว
+${alert-coupon-code-incorrect}    รหัสคูปองพิเศษไม่ถูกต้อง
+${alert-coupon-code-not-fill}    กรุณาพิมพ์รหัสคูปองพิเศษ
+${alert-fail-code}    คูปองพิเศษไม่สามารถใช้ร่วมกับสินค้าที่คุณสั่งซื้อ
+${alert-buy-lesser-min-price}    คุณไม่สามารถใช้รหัสคูปองได้ เนื่องจากยอดรวมทั้งตะกร้าหรือมูลค่าสินค้าขั้นต่ำ ไม่ตรงตามเงื่อนไขการใช้คูปอง
+${alert-coupon-code-invalid-some-product}    สินค้าบางชิ้นในตะกร้าไม่สามารถใช้รหัสคูปองได้
+${alert-coupon-code-used-EN}    Voucher is already used
+${alert-coupon-code-expire-EN}    Voucher is expired
+${alert-coupon-code-out-of-quota-EN}    Vouchers are out of stock
+${alert-coupon-code-incorrect-EN}    voucher is incorrect
+${alert-coupon-code-not-fill-EN}    Please enter voucher
+${alert-fail-code-EN}    Voucher cannot be used with your order
+${alert-buy-lesser-min-price-EN}    Cannot use voucher because these coupon is not accepted under the conditions
+${alert-trueyou-less13}    หมายเลขบัตรประชาชนต้องมี 13 หลัก
+${alert-trueyou-not-number}    หมายเลขบัตรประชาชนต้องเป็นตัวเลขเท่านั้น
+${alert-coupon-code-invalid-some-product}
+#text thankyou
+${text-thankyou-offline}    รายการสั่งซื้อรอการชำระเงิน
+${text-thankyou-ccw}    รายการสั่งซื้อของคุณชำระเงินเรียบร้อยแล้ว
+
+#members' e-mail
+${email1}    emailtestautomate1@gmail.com
+${emailpromo21}    automatetc21@gmail.com
+${emailmembertc16}   checkout3member1@hotmail.com
+
+
+#guests' e-mail
+${emailpromoguest}    automatepromoguest@gmail.com
+${emailtc28}    automatetc28@gmail.com
+
+${tc1-promotion-name}     Promotion Testing Data TC1
+${tc2-promotion-name}     Promotion Testing Data TC2
+${tc3-promotion-name}     Promotion Testing Data TC3
+${tc4-promotion-name}     Promotion Testing Data TC4
+${tc5-promotion-name}     Promotion Testing Data TC5
+${tc6-promotion-name}     Promotion Testing Data TC6
+${tc7-promotion-name}     Promotion Testing Data TC7
+${tc8-promotion-name}     Promotion Testing Data TC8
+${tc9-promotion-name}     Promotion Testing Data TC9
+
+${tc10-promotion-name}     Promotion Testing Data TC10
+${tc11-promotion-name}     Promotion Testing Data TC11
+${tc12-promotion-name}     Promotion Testing Data TC12
+${tc13-promotion-name}     Promotion Testing Data TC13
+${tc14-promotion-name}     Promotion Testing Data TC14
+${tc15-promotion-name}     Promotion Testing Data TC15
+${tc16-promotion-name}     Promotion Testing Data TC16
+${tc17-promotion-name}     Promotion Testing Data TC17
+${tc18-promotion-name}     Promotion Testing Data TC18
+${tc19-promotion-name}     Promotion Testing Data TC19
+
+${tc20-promotion-name}     Promotion Testing Data TC20
+${tc21-promotion-name}     Promotion Testing Data TC21
+${tc22-promotion-name}     Promotion Testing Data TC22
+${tc23-promotion-name}     Promotion Testing Data TC23
+${tc24-promotion-name}     Promotion Testing Data TC24
+${tc25-promotion-name}     Promotion Testing Data TC25
+${tc26-promotion-name}     Promotion Testing Data TC26
+${tc27-promotion-name}     Promotion Testing Data TC27
+${tc28-promotion-name}     Promotion Testing Data TC28
+${tc29-promotion-name}     Promotion Testing Data TC29
+
+${tc30-promotion-name}     Promotion Testing Data TC30
+${tc31-promotion-name}     Promotion Testing Data TC31
+${tc32-promotion-name}     Promotion Testing Data TC32
+${tc33-promotion-name}     Promotion Testing Data TC33
+${tc34-promotion-name}     Promotion Testing Data TC34
+${tc35-promotion-name}     Promotion Testing Data TC35
+${tc36-promotion-name}     Promotion Testing Data TC36
+${tc37-promotion-name}     Promotion Testing Data TC37
+${tc38-promotion-name}     Promotion Testing Data TC38
+${tc39-promotion-name}     Promotion Testing Data TC39
+
+${tc40-promotion-name}     Promotion Testing Data TC40
+${tc41-promotion-name}     Promotion Testing Data TC41
+${tc42-promotion-name}     Promotion Testing Data TC42
+${tc43-promotion-name}     Promotion Testing Data TC43
+${tc44-promotion-name}     Promotion Testing Data TC44
+${tc45-promotion-name}     Promotion Testing Data TC45
+${tc46-promotion-name}     Promotion Testing Data TC46
+${tc47-promotion-name}     Promotion Testing Data TC47
+${tc48-promotion-name}     Promotion Testing Data TC48
+${tc49-promotion-name}     Promotion Testing Data TC49
+
+${tc50-promotion-name}     Promotion Testing Data TC50
+${tc51-promotion-name}     Promotion Testing Data TC51
+${tc52-promotion-name}     Promotion Testing Data TC52
+${tc53-promotion-name}     Promotion Testing Data TC53
+${tc54-promotion-name}     Promotion Testing Data TC54
+${tc55-promotion-name}     Promotion Testing Data TC55
+${tc56-promotion-name}     Promotion Testing Data TC56
+${tc57-promotion-name}     Promotion Testing Data TC57
+${tc58-promotion-name}     Promotion Testing Data TC58
+${tc59-promotion-name}     Promotion Testing Data TC59
+
+${tc60-promotion-name}     Promotion Testing Data TC60
+${tc61-promotion-name}     Promotion Testing Data TC61
+${tc62-promotion-name}     Promotion Testing Data TC62
+${tc63-promotion-name}     Promotion Testing Data TC63
+${tc64-promotion-name}     Promotion Testing Data TC64
+${tc65-promotion-name}     Promotion Testing Data TC65
+${tc66-promotion-name}     Promotion Testing Data TC66
+${tc67-promotion-name}     Promotion Testing Data TC67
+${tc68-promotion-name}     Promotion Testing Data TC68
+${tc69-promotion-name}     Promotion Testing Data TC69
+
+${tc70-promotion-name}     Promotion Testing Data TC70
+${tc71-promotion-name}     Promotion Testing Data TC71
+${tc72-promotion-name}     Promotion Testing Data TC72
+${tc73-promotion-name}     Promotion Testing Data TC73
+${tc74-promotion-name}     Promotion Testing Data TC74
+${tc75-promotion-name}     Promotion Testing Data TC75
+${tc76-promotion-name}     Promotion Testing Data TC76
+${tc77-promotion-name}     Promotion Testing Data TC77
+${tc78-promotion-name}     Promotion Testing Data TC78
+${tc79-promotion-name}     Promotion Testing Data TC79
+
+${tc80-promotion-name}     Promotion Testing Data TC80
+${tc81-promotion-name}     Promotion Testing Data TC81
+${tc82-promotion-name}     Promotion Testing Data TC82
+${tc83-promotion-name}     Promotion Testing Data TC83
+${tc84-promotion-name}     Promotion Testing Data TC84
+${tc85-promotion-name}     Promotion Testing Data TC85
+${tc86-promotion-name}     Promotion Testing Data TC86
+${tc87-promotion-name}     Promotion Testing Data TC87
+${tc88-promotion-name}     Promotion Testing Data TC88
+${tc89-promotion-name}     Promotion Testing Data TC89
+
+${tc90-promotion-name}     Promotion Testing Data TC90
+${tc91-promotion-name}     Promotion Testing Data TC91
+${tc92-promotion-name}     Promotion Testing Data TC92
+${tc93-promotion-name}     Promotion Testing Data TC93
+${tc94-promotion-name}     Promotion Testing Data TC94
+${tc95-promotion-name}     Promotion Testing Data TC95
+${tc96-promotion-name}     Promotion Testing Data TC96
+${tc97-promotion-name}     Promotion Testing Data TC97
+${tc98-promotion-name}     Promotion Testing Data TC98
+${tc99-promotion-name}     Promotion Testing Data TC99
+
+${tc100-promotion-name}     Promotion Testing Data TC100
+${tc101-promotion-name}     Promotion Testing Data TC101
+${tc102-promotion-name}     Promotion Testing Data TC102
+${tc103-promotion-name}     Promotion Testing Data TC103
+${tc104-promotion-name}     Promotion Testing Data TC104
+${tc105-promotion-name}     Promotion Testing Data TC105
+${tc105-promotion-name-expired}     Promotion Testing Data TC105 Expired
+${tc105-promotion-name2}   Promotion Testing Data TC105 -2
+${tc106-promotion-name}     Promotion Testing Data TC106
+${tc107-promotion-name}     Promotion Testing Data TC107
+${tc108-promotion-name}     Promotion Testing Data TC108
+${tc109-promotion-name}     Promotion Testing Data TC109
+${tc110-promotion-name}     Promotion Testing Data TC110
+${tc111-promotion-name}     Promotion Testing Data TC111
+${tc112-promotion-name}     Promotion Testing Data TC112
+${tc113-promotion-name}     Promotion Testing Data TC113
+${tc114-promotion-name}     Promotion Testing Data TC114
+${tc115-promotion-name}     Promotion Testing Data TC115
+${tc116-promotion-name}     Promotion Testing Data TC116
+${tc117-promotion-name}     Promotion Testing Data TC117
+${tc118-promotion-name}     Promotion Testing Data TC118
+${tc119-promotion-name}     Promotion Testing Data TC119
+${tc120-promotion-name}     Promotion Testing Data TC120
+
+#wallet
+${mobile-button-go-to-checkout-step}    jquery=div.button[id="proceed_to_checkout_button"]
+

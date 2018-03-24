@@ -1,0 +1,23 @@
+*** Variables ***
+${username_locator}    //*[@id="login-username"]
+${password_locator}    //*[@id="login-password"]
+${login_locator}    //*[@id="btn-login"]
+${inventory_locator}    //*[@id="MERCHANT_CENTER_MENU_1"]
+${displayname_locator}    //*[@id="navbarHeader"]/div[2]/form/div/li/a
+${product_locator}    //*[@id="MERCHANT_CENTER_MENU_2"]
+${pricing_locator}    //*[@id="MERCHANT_CENTER_MENU_3"]
+${order_locator}    //*[@id="MERCHANT_CENTER_MENU_4"]
+${promotion_locator}    //*[@id="MERCHANT_CENTER_MENU_5"]
+${report_locator}    //*[@id="MERCHANT_CENTER_MENU_6"]
+${test1_locator}    //*[@id="MERCHANT_CENTER_MENU_910"]
+${test2_locator}    //*[@id="MERCHANT_CENTER_MENU_920"]
+${test11_submenu_locator}    //*[@id="MERCHANT_CENTER_SUB_MENU_911"]
+${currentShopname_locator}    //*[@id="navbarContent"]/div/div/div/div[1]
+${switchShop_locator}    xpath=//*[@id="navbarContent"]/div/div/div/i
+${logout_icon_locator}    //*[@id="navbarHeader"]/div[2]/form/div/li/a/img[2]
+${logout_locator}    //*[@id="MERCHANT_CENTER_SIGNOUT"]
+${administration_locator}    //*[@id="MERCHANT_CENTER_MENU_8"]
+${shop_ST2_locator}    jquery=[data-value="PUEKSHOP"]
+${product_locator}    //*[@id="MERCHANT_CENTER_MENU_2"]
+${ReportMainBtn_locator}    //*[@id="MERCHANT_CENTER_MENU_6"]
+${MCHReport_submenu_locator}    //*[@id="MERCHANT_CENTER_SUB_MENU_7"]

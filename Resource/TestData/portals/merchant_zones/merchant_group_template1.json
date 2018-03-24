@@ -1,0 +1,336 @@
+{
+    "en_US": {
+      "brands": [
+        {
+          "brand_id": 0,
+          "link_url": "1",
+          "sort_index": 1,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/40.png?v=93272668",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/40.png?v=93272668",
+          "title": "1"
+        },
+        {
+          "brand_id": 1,
+          "link_url": "2",
+          "sort_index": 2,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/39.png?v=e8bc1ad2",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/39.png?v=e8bc1ad2",
+          "title": "2"
+        },
+        {
+          "brand_id": 2,
+          "link_url": "3",
+          "sort_index": 3,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/38.png?v=a51ef9c2",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/38.png?v=a51ef9c2",
+          "title": "3"
+        },
+        {
+          "brand_id": 3,
+          "link_url": "4",
+          "sort_index": 4,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/37.png?v=7689a581",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/37.png?v=7689a581",
+          "title": "4"
+        },
+        {
+          "brand_id": 4,
+          "link_url": "5",
+          "sort_index": 5,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/36.png?v=7798b85f",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/36.png?v=7798b85f",
+          "title": "5"
+        },
+        {
+          "brand_id": 5,
+          "link_url": "6",
+          "sort_index": 6,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/35.png?v=6a8deed4",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/35.png?v=6a8deed4",
+          "title": "6"
+        },
+        {
+          "brand_id": 6,
+          "link_url": "7",
+          "sort_index": 7,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/34.png?v=4fedbe0c",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/34.png?v=4fedbe0c",
+          "title": "7"
+        },
+        {
+          "brand_id": 7,
+          "link_url": "8",
+          "sort_index": 8,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/33.png?v=341eca14",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/33.png?v=341eca14",
+          "title": "8"
+        },
+        {
+          "brand_id": 8,
+          "link_url": "9",
+          "sort_index": 9,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/32.png?v=dcf7ce66",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/32.png?v=dcf7ce66",
+          "title": "9"
+        },
+        {
+          "brand_id": 9,
+          "link_url": "10",
+          "sort_index": 10,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/31.png?v=deef487f",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/31.png?v=deef487f",
+          "title": "10"
+        },
+        {
+          "brand_id": 10,
+          "link_url": "11",
+          "sort_index": 11,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/30.png?v=26e15791",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/30.png?v=26e15791",
+          "title": "11"
+        },
+        {
+          "brand_id": 11,
+          "link_url": "12",
+          "sort_index": 12,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/29.png?v=50828454",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/29.png?v=50828454",
+          "title": "12"
+        },
+        {
+          "brand_id": 12,
+          "link_url": "13",
+          "sort_index": 13,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/28.png?v=cec13749",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/28.png?v=cec13749",
+          "title": "13"
+        },
+        {
+          "brand_id": 13,
+          "link_url": "14",
+          "sort_index": 14,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/27.png?v=66a6cfda",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/27.png?v=66a6cfda",
+          "title": "14"
+        },
+        {
+          "brand_id": 14,
+          "link_url": "15",
+          "sort_index": 15,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/26.png?v=02a0d246",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/26.png?v=02a0d246",
+          "title": "15"
+        },
+        {
+          "brand_id": 15,
+          "link_url": "16",
+          "sort_index": 16,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/25.png?v=0e9d4b73",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/25.png?v=0e9d4b73",
+          "title": "16"
+        },
+        {
+          "brand_id": 16,
+          "link_url": "17",
+          "sort_index": 17,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/24.png?v=a3e995b6",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/24.png?v=a3e995b6",
+          "title": "17"
+        },
+        {
+          "brand_id": 17,
+          "link_url": "18",
+          "sort_index": 18,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/23.png?v=f41971a8",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/23.png?v=f41971a8",
+          "title": "18"
+        },
+        {
+          "brand_id": 18,
+          "link_url": "19",
+          "sort_index": 19,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/22.png?v=7a3672df",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/22.png?v=7a3672df",
+          "title": "19"
+        },
+        {
+          "brand_id": 19,
+          "link_url": "20",
+          "sort_index": 20,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/21.png?v=0701e89c",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/21.png?v=0701e89c",
+          "title": "20"
+        }
+      ],
+      "merchant_zone_group_id": "55f14fd879879",
+      "sort_index": 4,
+      "title": "Electronics"
+    },
+    "th_TH": {
+      "brands": [
+        {
+          "brand_id": 0,
+          "link_url": "1",
+          "sort_index": 1,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/40.png?v=93272668",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/40.png?v=93272668",
+          "title": "1"
+        },
+        {
+          "brand_id": 1,
+          "link_url": "2",
+          "sort_index": 2,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/39.png?v=e8bc1ad2",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/39.png?v=e8bc1ad2",
+          "title": "2"
+        },
+        {
+          "brand_id": 2,
+          "link_url": "3",
+          "sort_index": 3,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/38.png?v=a51ef9c2",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/38.png?v=a51ef9c2",
+          "title": "3"
+        },
+        {
+          "brand_id": 3,
+          "link_url": "4",
+          "sort_index": 4,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/37.png?v=7689a581",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/37.png?v=7689a581",
+          "title": "4"
+        },
+        {
+          "brand_id": 4,
+          "link_url": "5",
+          "sort_index": 5,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/36.png?v=7798b85f",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/36.png?v=7798b85f",
+          "title": "5"
+        },
+        {
+          "brand_id": 5,
+          "link_url": "6",
+          "sort_index": 6,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/35.png?v=6a8deed4",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/35.png?v=6a8deed4",
+          "title": "6"
+        },
+        {
+          "brand_id": 6,
+          "link_url": "7",
+          "sort_index": 7,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/34.png?v=4fedbe0c",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/34.png?v=4fedbe0c",
+          "title": "7"
+        },
+        {
+          "brand_id": 7,
+          "link_url": "8",
+          "sort_index": 8,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/33.png?v=341eca14",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/33.png?v=341eca14",
+          "title": "8"
+        },
+        {
+          "brand_id": 8,
+          "link_url": "9",
+          "sort_index": 9,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/32.png?v=dcf7ce66",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/32.png?v=dcf7ce66",
+          "title": "9"
+        },
+        {
+          "brand_id": 9,
+          "link_url": "10",
+          "sort_index": 10,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/31.png?v=deef487f",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/31.png?v=deef487f",
+          "title": "10"
+        },
+        {
+          "brand_id": 10,
+          "link_url": "11",
+          "sort_index": 11,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/30.png?v=26e15791",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/30.png?v=26e15791",
+          "title": "11"
+        },
+        {
+          "brand_id": 11,
+          "link_url": "12",
+          "sort_index": 12,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/29.png?v=50828454",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/29.png?v=50828454",
+          "title": "12"
+        },
+        {
+          "brand_id": 12,
+          "link_url": "13",
+          "sort_index": 13,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/28.png?v=cec13749",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/28.png?v=cec13749",
+          "title": "13"
+        },
+        {
+          "brand_id": 13,
+          "link_url": "14",
+          "sort_index": 14,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/27.png?v=66a6cfda",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/27.png?v=66a6cfda",
+          "title": "14"
+        },
+        {
+          "brand_id": 14,
+          "link_url": "15",
+          "sort_index": 15,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/26.png?v=02a0d246",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/26.png?v=02a0d246",
+          "title": "15"
+        },
+        {
+          "brand_id": 15,
+          "link_url": "16",
+          "sort_index": 16,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/25.png?v=0e9d4b73",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/25.png?v=0e9d4b73",
+          "title": "16"
+        },
+        {
+          "brand_id": 16,
+          "link_url": "17",
+          "sort_index": 17,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/24.png?v=a3e995b6",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/24.png?v=a3e995b6",
+          "title": "17"
+        },
+        {
+          "brand_id": 17,
+          "link_url": "18",
+          "sort_index": 18,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/23.png?v=f41971a8",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/23.png?v=f41971a8",
+          "title": "18"
+        },
+        {
+          "brand_id": 18,
+          "link_url": "19",
+          "sort_index": 19,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/22.png?v=7a3672df",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/22.png?v=7a3672df",
+          "title": "19"
+        },
+        {
+          "brand_id": 19,
+          "link_url": "20",
+          "sort_index": 20,
+          "src_mobile": "//cdn.wemall-dev.com/th/merchant-zone/portal/21.png?v=0701e89c",
+          "src_web": "//cdn.wemall-dev.com/th/merchant-zone/portal/21.png?v=0701e89c",
+          "title": "20"
+        }
+      ],
+      "merchant_zone_group_id": "55f14fd879879",
+      "sort_index": 4,
+      "title": "อิเล็กทรอนิกส์"
+    }
+  }

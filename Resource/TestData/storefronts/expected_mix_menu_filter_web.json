@@ -1,0 +1,72 @@
+{
+  "menus": [
+    {
+      "order": 1,
+      "name": {
+        "name": "แม็ค",
+        "link": "http://www.itruemart.com"
+      },
+      "target": "_blank",
+      "children": [
+        {
+          "order": 1,
+          "name": {
+            "name": "แม็คบุ๊ค",
+            "link": "http://www.itruemart.com"
+          },
+          "target": "_blank"
+        },
+        {
+          "order": 2,
+          "name": {
+            "name": "ไอแม็ค",
+            "link": "http://www.itruemart.com"
+          },
+          "target": "_blank"
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "name": {
+        "name": "ไอแพด",
+        "link": "http://www.itruemart.com"
+      },
+      "target": "_blank"
+    },
+    {
+      "order": 3,
+      "name": {
+        "name": "ไอโฟน",
+        "link": "http://www.itruemart.com"
+      },
+      "target": "_blank"
+    },
+    {
+      "order": 4,
+      "name": {
+        "name": "นาฬิกา",
+        "link": "http://www.itruemart.com"
+      },
+      "target": "_blank"
+    },
+    {
+      "order": 5,
+      "name": {
+        "name": "ทีวี",
+        "link": "http://www.itruemart.com"
+      },
+      "target": "_blank"
+    },
+    {
+      "order": 6,
+      "name": {
+        "name": "บริการช่วยเหลือ",
+        "link": "http://www.itruemart.com"
+      },
+      "target": "_blank"
+    }
+  ],
+  "logo": null,
+  "status": "active"
+}

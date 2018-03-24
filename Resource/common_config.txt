@@ -1,0 +1,14 @@
+*** Settings ***
+Resource          site_config.txt
+
+*** Variables ***
+# General
+${REMOTE_AGENT}    ${MOCKUP_BIN_PATH}\\RemoteCmdAgent.bat    # RemoteCmdAgent.bat
+# Mockup
+${MOCKUP_DATA_PATH}    ${MOCKUP_HOME}\\mock    # Location to store mock data file on the mock server
+${MOCKUP_BIN_PATH}    ${MOCKUP_HOME}\\bin    # Location to store executable file on the mock server
+${EXEC_ACTION}    ${MOCKUP_BIN_PATH}\\ExecActionX.exe    # ExecActionX.exe
+${FIDDLER_TOOL}    ${MOCKUP_BIN_PATH}\\FiddlerTool.exe    # ExecActionX.exe
+${PRELOADED_MOCKUP_DATA}    FALSE    # TRUE = mock data files are ready on mock server, not need to transfer
+${BROWSER}        ff
+${FF_PROFILE_DIR}    ff_profile_dir=../execution/config/ff_profile

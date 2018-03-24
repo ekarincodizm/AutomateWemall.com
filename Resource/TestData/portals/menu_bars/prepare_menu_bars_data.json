@@ -1,0 +1,46 @@
+{
+  "en_US": [
+    {
+      "link_target": "_blank",
+      "link_url": "http://www.itruemart-dev.com/en/search2?q=Installment",
+      "title": "0% Installment"
+    },
+    {
+      "link_target": "_blank",
+      "link_url": "http://www.itruemart-dev.com/en/everyday-wow",
+      "title": "Everyday Wow"
+    },
+    {
+      "link_target": "_blank",
+      "link_url": "http://www.itruemart-dev.com/en/category/all-mobile-tablet-3193015175820.html",
+      "title": "All Mobile and Tablet"
+    },
+    {
+      "link_target": "_blank",
+      "link_url": "http://www.itruemart-dev.com/en/truemove-h/mnp",
+      "title": "MNP"
+    }
+  ],
+  "th_TH": [
+    {
+      "link_target": "_blank",
+      "link_url": "http://www.itruemart-dev.com/search2?q=%E0%B8%9C%E0%B9%88%E0%B8%AD%E0%B8%99%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B0",
+      "title": "ผ่อน 0%"
+    },
+    {
+      "link_target": "_blank",
+      "link_url": "http://www.itruemart-dev.com/everyday-wow",
+      "title": "Everyday Wow"
+    },
+    {
+      "link_target": "_blank",
+      "link_url": "http://www.itruemart-dev.com/category/all-mobile-tablet-3193015175820.html",
+      "title": "มือถือ และ แท็บเล็ต"
+    },
+    {
+      "link_target": "_blank",
+      "link_url": "http://www.itruemart-dev.com/truemove-h/mnp",
+      "title": "ย้ายค่ายเบอร์เดิม"
+    }
+  ]
+}

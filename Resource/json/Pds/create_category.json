@@ -1,0 +1,19 @@
+{
+"pkey": ^^pkey^^,
+"category_name":^^category_name^^,
+"category_code":^^category_code^^,
+"category_name_translate":^^category_name_translate^^,
+"slug":^^slug^^,
+"status":^^status^^, 
+"display":^^display^^,
+"owner":^^owner^^, 
+"owner_type":^^owner_type^^,
+"seo_id":^^seo_id^^,
+"image_url_desktop":^^image_url_desktop^^,
+"image_url_desktop_link":^^image_url_desktop_link^^,
+"alt_text_desktop":^^alt_text_desktop^^,
+"image_url_mobile":^^image_url_mobile^^,
+"image_url_mobile_link":^^image_url_mobile_link^^,
+"alt_text_mobile":^^alt_text_mobile^^,
+"children_order":[^^children_order_list^^]
+}

@@ -1,0 +1,174 @@
+{
+  "showroom": {
+    "th": {
+      "child": {
+        "1": {
+          "name": "Group 1",
+          "status": "active",
+          "banners": {
+            "1": {
+              "title": "คาโรเซลตำแหน่ง 1",
+              "src_web": "//cdn.wemall-dev.com/th/wemall_test/th_banner/01-01.png",
+              "src_mobile": "//cdn.wemall-dev.com/th/wemall_test/th_banner/01-01.png",
+              "link_target": "_self",
+              "link_url": "link_url_1_1"
+            },
+            "2": {
+              "title": "คาโรเซลตำแหน่ง 2",
+              "src_web": "//cdn.wemall-dev.com/th/wemall_test/th_banner/01-02.png",
+              "src_mobile": "//cdn.wemall-dev.com/th/wemall_test/th_banner/01-02.png",
+              "link_target": "_self",
+              "link_url": "link_url_1_2"
+            },
+            "3": {
+              "title": "คาโรเซลตำแหน่ง 3",
+              "src_web": "//cdn.wemall-dev.com/th/wemall_test/th_banner/01-03.png",
+              "src_mobile": "//cdn.wemall-dev.com/th/wemall_test/th_banner/01-03.png",
+              "link_target": "_self",
+              "link_url": "link_url_1_3"
+            }
+          }
+        },
+        "2": {
+          "name": "Group 2",
+          "status": "active",
+          "banners": {
+            "1": {
+              "title": "คาโรเซลตำแหน่ง 1",
+              "src_web": "//cdn.wemall-dev.com/th/wemall_test/th_banner/02-01.png",
+              "src_mobile": "//cdn.wemall-dev.com/th/wemall_test/th_banner/02-01.png",
+              "link_target": "_self",
+              "link_url": "link_url_2_1"
+            },
+            "2": {
+              "title": "คาโรเซลตำแหน่ง 2",
+              "src_web": "//cdn.wemall-dev.com/th/wemall_test/th_banner/02-02.png",
+              "src_mobile": "//cdn.wemall-dev.com/th/wemall_test/th_banner/02-02.png",
+              "link_target": "_self",
+              "link_url": "link_url_2_2"
+            },
+            "3": {
+              "title": "คาโรเซลตำแหน่ง 3",
+              "src_web": "//cdn.wemall-dev.com/th/wemall_test/th_banner/02-03.png",
+              "src_mobile": "//cdn.wemall-dev.com/th/wemall_test/th_banner/02-03.png",
+              "link_target": "_self",
+              "link_url": "link_url_2_3"
+            }
+          }
+        },
+        "3": {
+          "name": "Group 3",
+          "status": "active",
+          "banners": {
+            "1": {
+              "title": "คาโรเซลตำแหน่ง 1",
+              "src_web": "//cdn.wemall-dev.com/th/wemall_test/th_banner/03-01.png",
+              "src_mobile": "//cdn.wemall-dev.com/th/wemall_test/th_banner/03-01.png",
+              "link_target": "_self",
+              "link_url": "link_url_3_1"
+            },
+            "2": {
+              "title": "คาโรเซลตำแหน่ง 2",
+              "src_web": "//cdn.wemall-dev.com/th/wemall_test/th_banner/03-02.png",
+              "src_mobile": "//cdn.wemall-dev.com/th/wemall_test/th_banner/03-02.png",
+              "link_target": "_self",
+              "link_url": "link_url_3_2"
+            },
+            "3": {
+              "title": "คาโรเซลตำแหน่ง 3",
+              "src_web": "//cdn.wemall-dev.com/th/wemall_test/th_banner/03-03.png",
+              "src_mobile": "//cdn.wemall-dev.com/th/wemall_test/th_banner/03-03.png",
+              "link_target": "_self",
+              "link_url": "link_url_3_3"
+            }
+          }
+        }
+      }
+    },
+    "en": {
+      "child": {
+        "1": {
+          "name": "Group 1",
+          "status": "active",
+          "banners": {
+            "1": {
+              "title": "carousel 1",
+              "src_web": "//cdn.wemall-dev.com/th/wemall_test/en_banner/01-01.png",
+              "src_mobile": "//cdn.wemall-dev.com/th/wemall_test/en_banner/01-01.png",
+              "link_target": "_self",
+              "link_url": "link_url_1_1"
+            },
+            "2": {
+              "title": "carousel 2",
+              "src_web": "//cdn.wemall-dev.com/th/wemall_test/en_banner/01-02.png",
+              "src_mobile": "//cdn.wemall-dev.com/th/wemall_test/en_banner/01-02.png",
+              "link_target": "_self",
+              "link_url": "link_url_1_2"
+            },
+            "3": {
+              "title": "carousel 3",
+              "src_web": "//cdn.wemall-dev.com/th/wemall_test/en_banner/01-03.png",
+              "src_mobile": "//cdn.wemall-dev.com/th/wemall_test/en_banner/01-03.png",
+              "link_target": "_self",
+              "link_url": "link_url_1_3"
+            }
+          }
+        },
+        "2": {
+          "name": "Group 1",
+          "status": "active",
+          "banners": {
+            "1": {
+              "title": "carousel 1",
+              "src_web": "//cdn.wemall-dev.com/th/wemall_test/en_banner/02-01.png",
+              "src_mobile": "//cdn.wemall-dev.com/th/wemall_test/en_banner/02-01.png",
+              "link_target": "_self",
+              "link_url": "link_url_2_1"
+            },
+            "2": {
+              "title": "carousel 2",
+              "src_web": "//cdn.wemall-dev.com/th/wemall_test/en_banner/02-02.png",
+              "src_mobile": "//cdn.wemall-dev.com/th/wemall_test/en_banner/02-02.png",
+              "link_target": "_self",
+              "link_url": "link_url_2_2"
+            },
+            "3": {
+              "title": "carousel 3",
+              "src_web": "//cdn.wemall-dev.com/th/wemall_test/en_banner/02-03.png",
+              "src_mobile": "//cdn.wemall-dev.com/th/wemall_test/en_banner/02-03.png",
+              "link_target": "_self",
+              "link_url": "link_url_2_3"
+            }
+          }
+        },
+        "3": {
+          "name": "Group 1",
+          "status": "active",
+          "banners": {
+            "1": {
+              "title": "carousel 1",
+              "src_web": "//cdn.wemall-dev.com/th/wemall_test/en_banner/03-01.png",
+              "src_mobile": "//cdn.wemall-dev.com/th/wemall_test/en_banner/03-01.png",
+              "link_target": "_self",
+              "link_url": "link_url_3_1"
+            },
+            "2": {
+              "title": "carousel 2",
+              "src_web": "//cdn.wemall-dev.com/th/wemall_test/en_banner/03-02.png",
+              "src_mobile": "//cdn.wemall-dev.com/th/wemall_test/en_banner/03-02.png",
+              "link_target": "_self",
+              "link_url": "link_url_3_2"
+            },
+            "3": {
+              "title": "carousel 3",
+              "src_web": "//cdn.wemall-dev.com/th/wemall_test/en_banner/03-03.png",
+              "src_mobile": "//cdn.wemall-dev.com/th/wemall_test/en_banner/03-03.png",
+              "link_target": "_self",
+              "link_url": "link_url_3_3"
+            }
+          }
+        }
+      }
+    }
+  }
+}

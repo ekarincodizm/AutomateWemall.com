@@ -1,0 +1,11 @@
+[
+  {
+    "order_id":"3000545",
+    "order_shipment_item_id":10001920,
+    "item_status":"picked",
+    "sap_material_code":3000042373,
+    "material_id":"TEST3000042373",
+    "serial_number":"",
+    "timestamp_status":"1432527390"
+  }
+]

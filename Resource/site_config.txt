@@ -1,0 +1,177 @@
+*** Variables ***
+# Common
+${SITE_NAME}      alpha    # site running the automation
+${PYTHON_LOG_LEVEL}    DEBUG    # TRACE, DEBUG, INFO, WARNING, ERROR, FATAL
+${SETENV_SCRIPT}    setenv_alpha.sh    # None means no script
+${HTTP_TIMEOUT}    60    # in seconds
+${HTTP_RETRY_LIMIT}    3
+${HTTP_RETRY_INTERVAL}    10    # in seconds
+${PROXY_SERVER}    127.0.0.1:8888    # Blank means direct connect
+${DB_SERVER}      10.224.101.1    # db hostname/ip
+${DB_PORT}        2992    # db port
+${DB_SID}         pstg
+${DB_USERNAME}    xxx
+${DB_PASSWORD}    yyy
+${GLOBAL_MOCKUP_ENABLE}    FALSE    # TRUE/FALSE \ global enable using mockup for supported testcase
+# Mock Up Server Config
+${MOCKUP_SERVER1}    10.224.100.75
+${MOCKUP_SERVER2}    10.224.200.27
+${MOCKUP_AGENT_PORT}    8800    # port to run remote agent for Fiddler
+${MOCKUP_HOME}    c:\\automation    # Automation home directory on the mock server
+${MOCKUP_SERVER_BPAY}    ${MOCKUP_SERVER1}
+${MOCKUP_PORT_BPAY}    8888    # Fiddler port for BPAY
+${MOCKUP_SERVER_TMX}    ${MOCKUP_SERVER1}
+${MOCKUP_PORT_TMX}    8802    # Fiddler port for TMX
+${MOCKUP_SERVER_EMS}    ${MOCKUP_SERVER1}
+${MOCKUP_PORT_EMS}    8802    # Fiddler port for EMS
+# BPAY
+${BPAY_HOST}      10.224.100.36    # BPay server hostname/ip \ 10.224.100.36
+${BPAY_PORT}      9080
+${BPAY_PORT_HTTPS}    443    # HTTPS port
+${BPAY_REPORT_HOST}    10.224.100.35    # BPay report hostname/ip
+${BPAY_REPORT_DR_HOST}    10.224.100.15    # BPay report dr hostname/ip
+${BPAY_REPORT_USER}    QA_BPAY
+${BPAY_REPORT_PW}    123456
+${BPAY_DB_SERVER}    10.224.101.1    # db hostname/ip 10.224.102.10:2992/pdev
+${BPAY_DB_SID}    pstg
+${BPAY_DB_PORT}    2992
+${BPAY_DB_USERNAME}    bpay
+${BPAY_DB_PASSWORD}    bpay#124
+${UTIBA_REPORT_URL}    dev.truemoney.co.th/next/admin/pages/login.jsp
+${UTIBA_REPORT_USER}    junlada
+${UTIBA_REPORT_PW}    01Jun15#
+#PCS
+${PCS_REPORT_HOST}    botapdv1/pcssystem/
+${PCS_REPORT_USER}    EW001
+${PCS_REPORT_PW}    password
+${PCS_DB_SERVER}    172.19.11.81    # db hostname/ip 10.224.102.10:2992/pdev
+${PCS_DB_SID}     PCSDV
+${PCS_DB_PORT}    1542
+${PCS_DB_USERNAME}    pmclto
+${PCS_DB_PASSWORD}    pmclto
+# MCP
+${MCP_HOST}       172.19.195.57    # MCP server hostname/ip
+${MCP_PORT}       10001
+${MOCKUP_MCP_PORT}    8801
+# MCP ICC for TVS
+${MCP_ICC_HOST}    172.22.202.52    # MCP ICC server hostname/ip
+${MCP_ICC_PORT}    80
+${MOCKUP_MCP_ICC_PORT}    8801
+# TMX
+${TMX_BROWSER}    phantomjs    #phantomjs
+${TMX_URL}        https://dealer.truemoney.co.th/tmxonline2_mistine/    #https://tmx.tmn-dev.com/tmxonline2/
+${TMX_CPFM_URL}    https://tmx.tmn-dev.com/tmxonline_cpfm/    #https://tmx.tmn-dev.com/tmxonline_cpfm/
+${TMX_USERNAME}    9010106734
+${TMX_USERNAME_CPFM}    9010103342
+${TMX_USERNAME_IBANK}    9010119333
+${TMX_USERNAME_COM7}    9010118019
+${TMX_PASSWORD}    tmx123
+${TMX_DB_USERNAME}    tmx
+${TMX_DB_PASSWORD}    Tmx3456#
+${TMX_PORT}       2992
+${TMX_SID}        istg
+${TMX_IPADDRESS}    10.224.201.1
+${TMX_IP_PORT}    10.224.201.1:2992/istg
+${TMX_Pass_db_utiba}    milo!2345
+${TMX_USER_DB_UTIBA}    Qa_nichapat
+${TMX_IP_DB_UTIBA}    10.224.101.1:2992/pstg    # 10.224.101.1
+#E-Wallet Core
+${EWC_IP}         10.221.8.82    # E-Wallet Core IP Address \ \ 10.221.8.114 127.0.0.1 172.23.254.47
+${EWC_Port}       16701    # E-Wallet Core Port Number
+${EWC_DB_USER}    umarketadm    # Username for E-Wallet Core Database
+${EWC_DB_PASS}    Uadm!234    # Password for E-Wallet Core Database "utiba99" "password"
+${EWC_DB_CONNINFO}    10.224.101.1:2992/pstg    # Connection Information for E-Wallet Core Database \ \ 10.224.102.10:2992/pdev 127.0.0.1/orcl
+${EWC_Timeout}    90    # Timeout for E-Wallet Core TCP Connection
+${EWC_CPG_DB_USER}    cpgusr    # Username for CPG Database
+${EWC_CPG_DB_PASS}    cpgusr!App3486    # Password for CPG Database
+${EWC_CPG_CONNINFO}    10.224.101.1:2992/pstg    # Connection Information for CPG Database
+${EWC_TRANS_HOST}    10.224.1.30    # Transaction Generator Host
+${EWC_TRANS_PORT}    5555    # Transaction Generator Port
+${EWC_ROBOT_DB_USER}    ROBOT    # user connect db "ROBOT"
+${EWC_ROBOT_DB_PASS}    RRb#00eS    # password connect db "ROBOT"
+${EWC_ROBOT_CONNINFO}    10.224.101.1:2992/pstg    # Database Connection for ROBOT MMCC
+${EWC_WT_BASE_URL}    https://dev.truemoney.co.th
+${EWC_WT_URL}     https://dev.truemoney.co.th/next/admin/pages/login.jsp    # URL for WebTool
+${EWC_WT_USERNAME}    robot    # WebTool Username
+${EWC_WT_PASSWORD}    WebToolOrion2015    # WebTool Password
+${EWC_WT_BROWSER}    ff    # WebTool Browser
+${EWC_TESTER_NAME}    robot    # E-Wallet Core Tester Name (To be append in some test case)
+#E-wallet Provisioning
+${EWPVS_DB_USER}    EWPVS    #Username for E-wallet Provisioning Database
+${EWPVS_DB_PASSWORD}    X4pw2bbq    #Password for E-wallet Provisioning Database
+${EWPVS_DB_CONNINFO}    10.224.102.10:2992/pdev    # Connection Information for E-Wallet Provisioning Database \ \ Env.Staging 10.224.102.10:2992/pdev
+${EWPV_WSDL_URL}    http://10.221.8.117/EWalletProvisioning/services/Core/wsdl/Core.wsdl    #E-wallet Provisioning WSDL url
+${EWC_CORESERVICE_IP}    10.224.1.17
+${EWC_CORESERVICE_PORT}    9080
+${EWC_CORESERVICE_PROTOCOL}    http
+# PMGW
+#${PMGW_HOST}     10.221.8.119
+#${PMGW_PORT}     80
+#${PMGW_PORT_HTTPS}    443
+${PMGW_TEST_HOST}    10.230.0.208
+${PMGW_HOST}      api-payment.tmn-dev.com
+${PMGW_REC_HOST}    rec-payment.tmn-dev.com
+#${PMGW_HOST}     10.224.1.21
+${PMGW_PORT}      80
+${PMGW_PORT_HTTPS}    443
+${PMGW_DB_PORT}    2992    # db port
+${PMGW_DB_SERVER}    pgw-staging.ca89yzb8acjs.ap-southeast-1.rds.amazonaws.com    #AWS
+${PMGW_DB_USERNAME}    PAYMENT    #AWS
+${PMGW_DB_PASSWORD}    payment123#    #AWS
+${PMGW_DB_SID}    pgw
+#${PMGW_DB_SERVER}    10.224.102.10    #ALPHA
+#${PMGW_DB_SID}    pdev
+#${PMGW_DB_USERNAME}    PAYMENT
+#${PMGW_DB_PASSWORD}    PAY#MENT12    #ALPHA
+#${PMGW_HOST}     10.224.100.34
+#${PMGW_PORT}     80
+#${PMGW_PORT_HTTPS}    443
+#${PMGW_DB_SERVER}    10.224.101.1    # db hostname/ip
+#${PMGW_DB_PORT}    2992    # db port
+#${PMGW_DB_SID}    pstg
+#${PMGW_DB_USERNAME}    PAYMENT
+#${PMGW_DB_PASSWORD}    A#pment421    #STAGING
+${PMGW_REPORT_HOST}    payment.tmn-dev.com    #AWS
+#${PMGW_REPORT_HOST}    10.221.8.119
+@{PAYMENT_DB_CNF}    host=${PMGW_DB_SERVER}    port=${PMGW_DB_PORT}    sid=${PMGW_DB_SID}    username=${PMGW_DB_USERNAME}    password=${PMGW_DB_PASSWORD}
+# DCB
+${DCB_HOST}       10.221.8.141
+${DCB_PORT}       9080
+${DCB_PORT_HTTPS}    443
+${DCB_DB_SERVER}    10.224.102.10    # db hostname/ip
+${DCB_DB_PORT}    2992    # db port
+${DCB_DB_SID}     pdev
+${DCB_DB_USERNAME}    CARRIERBILLING
+${DCB_DB_PASSWORD}    Ca#4Bll1
+# ERS
+${ERS_DB_SERVER}    10.224.101.1:2992/pstg    # Alpha/Stg : 10.224.101.1
+${ERS_DB_USERNAME}    ERS
+${ERS_DB_PASSWORD}    T*jp3C5#
+# TOPS
+${TOPS_HOST}      10.224.1.26
+${TOPS_PORT}      9080
+${TOPS_PORT_HTTPS}    443
+${TPP_DB_SERVER}    10.224.201.1
+${TPP_DB_PORT}    2992
+${TPP_DB_SID}     istg
+${TPP_DB_USERNAME}    qa_weerada
+${TPP_DB_PASSWORD}    510532#may4
+${UTIBA_USERNAME}    weerada_pon
+${UTIBA_PASSWORD}    0532may451
+${7-11_HOST}      10.221.8.41
+${7-11_PORT}      80
+${BANK_HOST}      10.224.100.13
+${BANK_PORT}      9080
+#V1
+${V1_URL}         https://wallet.tmn-dev.com/
+${V1_USERNAME}    saowanee.khu@gmail.com
+${V1_PWD}         kitten01
+${V1_BROWSER}     ff
+# WeCard
+${PrepaidCardServiceUrl}    https://10.224.1.23
+${ERS_WEB_URL}    https://insight.tmn-dev.com/ers-rpt-web/
+${ERS_WEB_USER}    pornthip
+${ERS_WEB_PASSWORD}    pornthip
+${ERS_AMQ_URL}    10.224.100.92    # 10.224.100.93#2
+${ERS_AMQ_PORT}    61613
+${ERS_AMQ_NAME}    ers.bpay.queue

@@ -1,0 +1,51 @@
+{
+  "name_local": ${name},
+  "name_en": "",
+  "description_local": "<p>test</p>\n",
+  "description_en": "",
+  "short_description_local": "test",
+  "short_description_en": "",
+  "start_period": 1454259600000,
+  "end_period": 1459357200000,
+  "enable": true,
+  "member": true,
+  "non_member": true,
+  "app_ids": "true",
+  "channel_type": "1",
+  "merchant_ids": "itruemart",
+  "type": "itm-freebie",
+  "img_web": null,
+  "img_web_translation": null,
+  "img_mobile": null,
+  "img_mobile_translation": null,
+  "campaign": {
+    "id": ${camp_id}
+  },
+  "condition_data": {
+    "criteria_type": "variant",
+    "criteria_values": [
+      ${criteria_values}
+    ],
+    "free_variants_selectable": false,
+    "freebie_conditions": [
+      {
+        "variant_id": ${free_variant},
+        "quantity": 1
+      }
+    ],
+    "quantity": 1
+  },
+  "detail_data": {
+    "img_web": "//alpha-cdn.wemall-dev.com/th/cmp/images/320x160_brown.png?v=7298adb3",
+    "img_web_translation": null,
+    "img_mobile": "//alpha-cdn.wemall-dev.com/th/cmp/images/320x160_yellow.png?v=2b0d8258",
+    "img_mobile_translation": null,
+    "thumb_web": "//alpha-cdn.wemall-dev.com/th/cmp/images/160x80_green.png?v=89c474af",
+    "thumb_web_translation": null,
+    "thumb_mobile": "//alpha-cdn.wemall-dev.com/th/cmp/images/220x110_pink.png?v=c050fc20",
+    "thumb_mobile_translation": null,
+    "plain_note": "n/a",
+    "plain_note_translation": ""
+  },
+  "repeat": 0
+}

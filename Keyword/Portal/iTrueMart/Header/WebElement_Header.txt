@@ -1,0 +1,2 @@
+*** Variables ***
+${header_cart}    //*[@id='icn_cart_id']

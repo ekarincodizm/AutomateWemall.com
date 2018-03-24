@@ -1,0 +1,22 @@
+*** Variables ***
+${SS_OrderTracking_Container}             //*[@data-id="order_tracking_container"]
+
+&{SS_OrderTracking}   not_found_order_image=//*[@data-id="ss_not_found_order_img"]
+ ...   not_found_order_txt=//*[@data-id="ss_not_found_order_txt"]
+ ...   order_id=//*[@data-id="ssot_order_id"]
+ ...   order_date=//*[@data-id="ssot_order_date"]
+ ...   sub_total=//*[@data-id="ssot_sub_total"]
+ ...   total_item=//*[@data-id="ssot_total_item"]
+ ...   item_product_name=//*[@data-item-id="REPLACE_ITEM_ID"]//*[@data-id="ssot_product_name"]
+ ...   item_product_image=//*[@data-item-id="REPLACE_ITEM_ID"]//*[@data-id="ssot_product_image" and @src!=""]
+ ...   item_product_price=//*[@data-item-id="REPLACE_ITEM_ID"]//*[@data-id="ssot_product_price"]
+ ...   item_product_quantity=//*[@data-item-id="REPLACE_ITEM_ID"]//*[@data-id="ssot_product_quantity"]
+ ...   item_payment_status_customer=//*[@data-item-id="REPLACE_ITEM_ID"]//*[@data-id="ssot_payment_status_customer"]
+ ...   item_status_customer=//*[@data-item-id="REPLACE_ITEM_ID"]//*[@data-id="ssot_item_status_customer"]
+ ...   item_title_tracking=//*[@data-item-id="REPLACE_ITEM_ID"]//*[@data-id="ssot_title_tracking"]
+ ...   item_txt_tracking_no=//*[@data-item-id="REPLACE_ITEM_ID"]//*[@data-id="ssot_txt_tracking_no"]
+ ...   item_btn_tracking_no=//*[@data-item-id="REPLACE_ITEM_ID"]//*[@data-id="ssot_btn_tracking_no"]
+ ...   item_tracking_estimated_time_shipping=//*[@data-item-id="REPLACE_ITEM_ID"]//*[@data-id="ssot_sendto_title"]
+ ...   item_shipping_date=//*[@data-item-id="REPLACE_ITEM_ID"]//*[@data-id="ssot_sendto_title"]
+ ...   camp_short_description=//*[@data-id="camp_short_description"]
+ ...   delivery_text=//*[@id="delivery_text"]/span

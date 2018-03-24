@@ -1,0 +1,48 @@
+{  
+   "th_TH":[  
+      {  
+         "id":0,
+         "text":"ลิ้ง 1 (ใหม่)",
+         "link_url":"//www.itruemart.com/new",
+         "link_target":"_blank",
+         "sort_index":1
+      },
+      {  
+         "id":1,
+         "text":"ลิ้ง 2",
+         "link_url":"//www.itruemart.com",
+         "link_target":"_self",
+         "sort_index":2
+      },
+      {  
+         "id":2,
+         "text":"ลิ้ง 3",
+         "link_url":"//www.itruemart.com",
+         "link_target":"_self",
+         "sort_index":3
+      }
+   ],
+   "en_US":[  
+      {  
+         "id":0,
+         "text":"link 1 (New)",
+         "link_url":"//www.itruemart.com/en/new",
+         "link_target":"_blank",
+         "sort_index":1
+      },
+      {  
+         "id":1,
+         "text":"link 2",
+         "link_url":"//www.itruemart.com/en",
+         "link_target":"_self",
+         "sort_index":2
+      },
+      {  
+         "id":2,
+         "text":"link 3",
+         "link_url":"//www.itruemart.com/en",
+         "link_target":"_self",
+         "sort_index":3
+      }
+   ]
+}

@@ -1,0 +1,72 @@
+{
+  "menus": [
+    {
+      "order": 1,
+      "target": "_blank",
+      "children": [
+        {
+          "order": 1,
+          "target": "_blank",
+          "name_translation": {
+            "name": "Macbook",
+            "link": "http://www.itruemart.com/en"
+          }
+        },
+        {
+          "order": 2,
+          "target": "_blank",
+          "name_translation": {
+            "name": "iMac",
+            "link": "http://www.itruemart.com/en"
+          }
+        }
+      ],
+      "name_translation": {
+        "name": "Mac",
+        "link": "http://www.itruemart.com/en"
+      }
+    },
+    {
+      "order": 2,
+      "target": "_blank",
+      "name_translation": {
+        "name": "iPad",
+        "link": "http://www.itruemart.com/en"
+      }
+    },
+    {
+      "order": 3,
+      "target": "_blank",
+      "name_translation": {
+        "name": "iPhone",
+        "link": "http://www.itruemart.com/en"
+      }
+    },
+    {
+      "order": 4,
+      "target": "_blank",
+      "name_translation": {
+        "name": "Watch",
+        "link": "http://www.itruemart.com/en"
+      }
+    },
+    {
+      "order": 5,
+      "target": "_blank",
+      "name_translation": {
+        "name": "TV",
+        "link": "http://www.itruemart.com/en"
+      }
+    },
+    {
+      "order": 6,
+      "target": "_blank",
+      "name_translation": {
+        "name": "Support",
+        "link": "http://www.itruemart.com/en"
+      }
+    }
+  ],
+  "logo": null,
+  "status": "active"
+}

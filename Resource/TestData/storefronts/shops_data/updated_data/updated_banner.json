@@ -1,0 +1,57 @@
+{
+  "version": "draft",
+  "type": "banner",
+  "data": [
+    {
+      "name": {
+        "image": "//cdn.wemall.com/th/banner_web/0c411b11-1a9c-4052-9ded-0a32ec5be601_images/yoobao_Slide2.jpg?v=a49c91e4?2016-05-24%2013:11:49",
+        "link": "http://www.wemall-dev.com/itruemart",
+        "alt": "Yoobao"
+      },
+      "name_translation": {
+        "image": "//cdn.wemall.com/th/banner_web/c8078fd1-100a-42b2-87aa-75661bce8bba_images/banner.jpg?v=29b8159a?2016-05-23%2016:20:58",
+        "link": "http://www.wemall-dev.com/en/itruemart",
+        "alt": "Piper Standard"
+      },
+      "title": "New Nike Shoe",
+      "order": 1,
+      "status": "active",
+      "start_date": "2015-06-10T15:52:01+0700",
+      "end_date": "2019-06-10T15:52:01+0700"
+    },
+    {
+      "name": {
+        "image": "//sandbox-cdn.wemall-dev.com/th/Banner/MTH10000_images/Final_Sale.jpg",
+        "link": "http://www.wemall-dev.com/itruemart",
+        "alt": "ซี่ซั่น เซลล์"
+      },
+      "name_translation": {
+        "image": "//sandbox-cdn.wemall-dev.com/th/Banner/MTH10000_images/Flash_Sale.png",
+        "link": "http://www.wemall-dev.com/en/itruemart",
+        "alt": "Season Sale"
+      },
+      "title": "Seasonal Sale",
+      "order": 2,
+      "status": "inactive",
+      "start_date": "2015-06-10T15:52:01+0700",
+      "end_date": "2019-06-10T15:52:01+0700"
+    },
+    {
+      "name": {
+        "image": "//sandbox-cdn.wemall-dev.com/th/Banner/MTH10000_images/Final_Sale.jpg",
+        "link": "http://www.itruemart.com/",
+        "alt": "ซี่ซั่น เซลล์"
+      },
+      "name_translation": {
+        "image": "//sandbox-cdn.wemall-dev.com/th/Banner/MTH10000_images/Flash_Sale.png",
+        "link": "http://www.itruemart.com/",
+        "alt": "Season Sale"
+      },
+      "title": "Seasonal Sale Inactive",
+      "order": 3,
+      "status": "inactive",
+      "start_date": "2015-06-10T15:52:01+0700",
+      "end_date": "2019-06-10T15:52:01+0700"
+    }
+  ]
+}

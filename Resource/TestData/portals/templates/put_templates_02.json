@@ -1,0 +1,61 @@
+{
+  "banner": [
+    {
+      "height": 380,
+      "position": 1,
+      "width": 540
+    },
+    {
+      "height": 100,
+      "position": 2,
+      "top": 380,
+      "width": 270
+    },
+    {
+      "height": 100,
+      "left": 270,
+      "position": 3,
+      "top": 380,
+      "width": 270
+    },
+    {
+      "height": 95,
+      "left": 540,
+      "position": 4,
+      "width": 200
+    },
+    {
+      "height": 95,
+      "left": 540,
+      "position": 5,
+      "top": 95,
+      "width": 200
+    },
+    {
+      "height": 95,
+      "left": 540,
+      "position": 6,
+      "top": 190,
+      "width": 200
+    },
+    {
+      "height": 95,
+      "left": 540,
+      "position": 7,
+      "top": 285,
+      "width": 200
+    },
+    {
+      "height": 100,
+      "left": 540,
+      "position": 8,
+      "top": 380,
+      "width": 200
+    }
+  ],
+  "name": "Template 02 for Mega-Menu",
+  "size": {
+    "height": 480,
+    "width": 740
+  }
+}

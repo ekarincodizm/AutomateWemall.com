@@ -1,0 +1,27 @@
+*** Variables ***
+${checkout-form-login}		xpath=//form[@id="form-checkout"]
+
+${login-email}		xpath=//*[@id="step1-username"]
+${login-password}		xpath=//*[@id="password"]
+${radio-login-guest}		xpath=//input[@id="guest"]
+${radio-login-member}		xpath=//input[@id="user1"]
+
+${label-error-email}		xpath=//input[@id="step1-username"]/following-sibling::div[@class="active-alert-text"]
+${label-error-password}		xpath=//input[@id="password"]/following-sibling::div[@class="active-alert-text"]
+
+${label-guest-user}			xpath=//*[@class="control-desc" and contains(text(), "สั่งซื้อทันที")]
+${label-exist-user} 		xpath=//*[@class="control-desc" and contains(text(), "ฉัน")]
+${button-next}			xpath=//input[@id="btnNext"]
+
+${icon-success}			xpath=//div[contains(@class, "icon-success")]/img[contains(@src, "success")]
+
+${forgot-password-anchor}		xpath=//a[contains(@href, "forgot_password")]
+
+${Email-address}    nooae_four@hotmail.com
+${checkout-name} 	Test Name
+${checkout-mobile}		0909039242
+${checkout-test-counter-service}		Test Counter Service
+
+${product-shipping-minimum-url1}		${WEB-HOME}/products/jhi-9h-iphone-6-2673843321915.html
+${product-shipping-minimum-url2}		${WEB-HOME}/products/okamoto-lite-1--2149951188454.html
+${product-shipping-minimum-url2}		${WEB-HOME}/products/kingston-micro-sd-class-10-8gb-2761637099359.html

@@ -1,0 +1,48 @@
+{
+  "version": "draft",
+  "type": "banner",
+  "data": [
+    {
+      "title": "Inactive Range Date",
+      "order": 12,
+      "status": "inactive",
+      "target": "_blank",
+      "start_date": "2015-06-28T11:00:00+0700",
+      "end_date": "2019-11-05T00:00:00+0700",
+      "name": {
+        "alt": "Inactive Range Date"
+      },
+      "name_translation": {
+        "alt": "Inactive Range Date"
+      }
+    },
+    {
+      "title": "Active Forever 01",
+      "order": 12,
+      "status": "active",
+      "target": "_blank",
+      "start_date": null,
+      "end_date": null,
+      "name": {
+        "alt": "Active Forever 01"
+      },
+      "name_translation": {
+        "alt": "Active Forever 01"
+      }
+    },
+    {
+      "title": "Active Forever 02",
+      "order": 12,
+      "status": "active",
+      "target": "_blank",
+      "start_date": null,
+      "end_date": null,
+      "name": {
+        "alt": "Active Forever 02"
+      },
+      "name_translation": {
+        "alt": "Active Forever 02"
+      }
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "version": "draft",
+  "type": "banner",
+  "data": [
+    {
+      "title": "Inactive Forever",
+      "order": 13,
+      "status": "inactive",
+      "target": "_blank",
+      "start_date": null,
+      "end_date": null,
+      "name": {
+        "alt": "Inactive Forever"
+      },
+      "name_translation": {
+        "alt": "Inactive Forever"
+      }
+    },
+    {
+      "title": "Active Range Date 01",
+      "order": 13,
+      "status": "active",
+      "target": "_blank",
+      "start_date": "2016-06-28T11:00:00+0700",
+      "end_date": "2019-03-11T11:00:00+0700",
+      "name": {
+        "alt": "Active Range Date 01",
+        "image" : "Image 01 TH"
+      },
+      "name_translation": {
+        "alt": "Active Range Date 01",
+        "image" : "Image 01 EN"
+      }
+    },
+    {
+      "title": "Active Range Date 02",
+      "order": 13,
+      "status": "active",
+      "target": "_blank",
+      "start_date": "2019-03-11T11:00:00+0700",
+      "end_date": "2019-06-28T11:00:00+0700",
+      "name": {
+        "alt": "Active Range Date 02"
+      },
+      "name_translation": {
+        "alt": "Active Range Date 02"
+      }
+    },
+    {
+      "title": "Active Range Date 03",
+      "order": 13,
+      "status": "active",
+      "target": "_blank",
+      "start_date": "2019-06-28T12:00:00+0700",
+      "end_date": "2019-08-12T00:00:00+0700",
+      "name": {
+        "alt": "Active Range Date 03"
+      },
+      "name_translation": {
+        "alt": "Active Range Date 03"
+      }
+    },
+    {
+      "title": "Active Range Date 04",
+      "order": 13,
+      "status": "active",
+      "target": "_blank",
+      "start_date": "2019-11-05T11:00:00+0700",
+      "end_date": "2099-11-05T00:00:00+0700",
+      "name": {
+        "alt": "Active Range Date 04"
+      },
+      "name_translation": {
+        "alt": "Active Range Date 04"
+      }
+    },
+    {
+      "title": "Inactive Forever",
+      "order": 14,
+      "status": "inactive",
+      "target": "_blank",
+      "start_date": null,
+      "end_date": null,
+      "name": {
+        "alt": "Inactive Forever"
+      },
+      "name_translation": {
+        "alt": "Inactive Forever"
+      }
+    },
+    {
+      "title": "Inactive Range Date",
+      "order": 14,
+      "status": "inactive",
+      "target": "_blank",
+      "start_date": "2015-11-05T11:00:00+0700",
+      "end_date": "2099-11-05T00:00:00+0700",
+      "name": {
+        "alt": "Inactive Range Date"
+      },
+      "name_translation": {
+        "alt": "Inactive Range Date"
+      }
+    },
+    {
+      "title": "Active Range Date 01",
+      "order": 14,
+      "status": "active",
+      "target": "_blank",
+      "start_date": "2016-06-28T11:00:00+0700",
+      "end_date": "2019-03-11T11:00:00+0700",
+      "name": {
+        "alt": "Active Range Date 01"
+      },
+      "name_translation": {
+        "alt": "Active Range Date 01"
+      }
+    },
+    {
+      "title": "Inactive Forever",
+      "order": 15,
+      "status": "inactive",
+      "target": "_blank",
+      "start_date": null,
+      "end_date": null,
+      "name": {
+        "alt": "Inactive Forever"
+      },
+      "name_translation": {
+        "alt": "Inactive Forever"
+      }
+    },
+    {
+      "title": "Inactive Range Date",
+      "order": 15,
+      "status": "inactive",
+      "target": "_blank",
+      "start_date": "2015-11-05T11:00:00+0700",
+      "end_date": "2099-11-05T00:00:00+0700",
+      "name": {
+        "alt": "Inactive Range Date"
+      },
+      "name_translation": {
+        "alt": "Inactive Range Date"
+      }
+    },
+    {
+      "title": "Active Forever",
+      "order": 15,
+      "status": "active",
+      "target": "_blank",
+      "start_date": null,
+      "end_date": null,
+      "name": {
+        "alt": "Active Forever"
+      },
+      "name_translation": {
+        "alt": "Active Forever"
+      }
+    }
+  ]
+}

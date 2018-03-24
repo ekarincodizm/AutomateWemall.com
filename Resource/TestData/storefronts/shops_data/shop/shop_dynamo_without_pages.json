@@ -1,0 +1,35 @@
+{
+    "updated_at_web": "2016-07-29T17:45:29+07:00",
+    "id": "Test-Shop-ID2",
+    "published_at_web": "2016-07-29T17:45:31+07:00",
+    "slug": "Shop-Slug2",
+    "logo": {
+      "web": "//alpha-cdn.wemall-dev.com/th/logo_web/69bb91e5-f5e4-4f12-b39c-b8c6ee773c17_images/logo-157x85.jpg?v=464943c2?2016-07-13 10:50:12",
+      "mobile": "//alpha-cdn.wemall-dev.com/th/logo_mobile/69bb91e5-f5e4-4f12-b39c-b8c6ee773c17_images/logo-130x130.jpg?v=c2aceaeb?2016-07-13 10:50:12"
+    },
+    "updated_at_mobile": null,
+    "updated_by": null,
+    "created_at": "2016-07-13T10:50:11+07:00",
+    "merchant_id": "Shop-Code2",
+    "shop_name": "TestShop2",
+    "updated_at": "2016-07-29T17:45:31+07:00",
+    "shop_status": "active",
+    "published_at_mobile": null,
+    "pages": {
+      "pageId-1": {
+        "id": "pageId-1",
+        "name": "June Promotion",
+        "slug": "june-promotion",
+        "banner_display": "on",
+        "page_status": "active",
+        "page_created_at": "2016-07-29T17:45:31+07:00",
+        "page_updated_at": "2016-07-29T17:45:31+07:00",
+        "page_updated_by_web": null,
+        "page_updated_by_mobile": null,
+        "published_at_mobile": null,
+        "published_at_web": null,
+        "updated_at_web": null,
+        "updated_at_mobile": null
+      }
+    }
+}

@@ -1,0 +1,83 @@
+{
+  "merchant_id": "",
+  "shop_name":"",
+  "slug": "",
+  "shop_status": "active",
+  "logo":{
+    "web":"//cdn.wemall-dev.com/th/hot-brands/temp_test/disney_store_logo.png?v=e4579626",
+    "mobile":"//cdn.wemall-dev.com/th/hot-brands/temp_test/disney_store_logo_mobile.png?v=a2cf697e"
+  },
+  "pages": {
+  "85e68efb-0f05-4941-9431-624a80fa359a": {
+    "id": "85e68efb-0f05-4941-9431-624a80fa359a",
+    "name": "contact us",
+    "slug": "contact-us",
+    "banner_display": "off",
+    "page_status": "inactive",
+    "page_created_at": "2016-08-08T14:11:10+07:00",
+    "page_updated_at": "2016-08-08T14:11:10+07:00",
+    "updated_at_web": null,
+    "updated_at_mobile": null,
+    "published_at_web": null,
+    "published_at_mobile": null,
+    "page_updated_by": null
+  },
+  "67e68efb-1251-1236-2134-624a80fa359a": {
+    "id": "85e68efb-0f05-4941-9431-624a80fa359a",
+    "name": "Page 01",
+    "slug": "page-01",
+    "banner_display": "on",
+    "page_status": "active",
+    "page_created_at": "2016-08-08T15:15:15+07:00",
+    "page_updated_at": "2016-08-08T15:15:15+07:00",
+    "updated_at_web": "2016-08-08T15:25:15+07:00",
+    "updated_at_mobile": "2016-08-08T15:25:15+07:00",
+    "published_at_web": null,
+    "published_at_mobile": null,
+    "page_updated_by": null
+  },
+  "92e68efb-1251-1236-2134-624a80fa359a": {
+    "id": "85e68efb-0f05-4941-9431-624a80fa359a",
+    "name": "Page 02",
+    "slug": "page-02",
+    "banner_display": "on",
+    "page_status": "active",
+    "page_created_at": "2016-08-08T16:16:16+07:00",
+    "page_updated_at": "2016-08-08T16:16:16+07:00",
+    "updated_at_web": "2016-08-08T16:26:16+07:00",
+    "updated_at_mobile": "2016-08-08T16:26:16+07:00",
+    "published_at_web": "2016-08-08T16:36:16+07:00",
+    "published_at_mobile": "2016-08-08T16:36:16+07:00",
+    "page_updated_by": null
+  },
+  "46e68efb-1251-1236-2134-624a80fa359a": {
+    "id": "85e68efb-0f05-4941-9431-624a80fa359a",
+    "name": "Page 03",
+    "slug": "page-03",
+    "banner_display": "off",
+    "page_status": "inactive",
+    "page_created_at": "2016-08-08T17:17:17+07:00",
+    "page_updated_at": "2016-08-08T17:17:17+07:00",
+    "updated_at_web": "2016-08-08T17:47:16+07:00",
+    "updated_at_mobile": "2016-08-08T17:46:17+07:00",
+    "published_at_web": "2016-08-08T17:36:17+07:00",
+    "published_at_mobile": "2016-08-08T17:36:17+07:00",
+    "page_updated_by": null
+  },
+  "23e68efb-1251-1236-2134-624a80fa359a": {
+    "id": "85e68efb-0f05-4941-9431-624a80fa359a",
+    "name": "Page 04",
+    "slug": "page-04",
+    "banner_display": "on",
+    "page_status": "active",
+    "page_created_at": "2016-08-08T18:18:18+07:00",
+    "page_updated_at": "2016-08-08T18:18:18+07:00",
+    "updated_at_web": "2016-08-08T18:28:16+07:00",
+    "updated_at_mobile": "2016-08-08T18:46:18+07:00",
+    "published_at_web": "2016-08-08T18:36:18+07:00",
+    "published_at_mobile": "2016-08-08T18:36:18+07:00",
+    "page_updated_by": null
+    }
+  },
+  "updated_by":"hulk_robot"
+}

@@ -1,0 +1,2 @@
+*** Variables ***
+${Navigation_bar_User_List}    //*[@id='userListMenu']//span[contains(text(),'User List')]

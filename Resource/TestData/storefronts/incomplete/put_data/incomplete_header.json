@@ -1,0 +1,12 @@
+{
+  "version": "draft",
+  "type": "header",
+  "data": {
+    "name": {
+      "content": "<div class=\"shop-header-test-class\"><img alt=\"\" src=\"//sandbox-cdn.wemall-dev.com/th/Header/MTH10000_images/cover.png\" /></div>\n"
+    },
+    "name_translation": {
+      "content": null
+    }
+  }
+}

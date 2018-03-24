@@ -1,0 +1,30 @@
+*** Variables ***
+${PDS_URL}        http://products-cms.itruemart-dev.com
+${Wemall_URL}     http://www.wemall-dev.com
+${Campaign_URL}    http://52.74.31.162/wm
+${FMS_URL}        http://api-fms-alpha.aden-dev.com
+${Path-ImgFile}    C:\\git\\ITrueMart-Wemall\\Resource\\PIC
+${PDS_API_URL}    http://products-api.wemall-dev.com:8080
+${FMS}            http://fms-products-api.wemall-dev.com
+${Merchant_API_URL}    http://apis-gateway.wemall-dev.com
+${AAD_API}        http://apis-gateway.wemall-dev.com
+${AAD_PORTAL}     http://admin.itruemart-dev.com
+${MC_URL}         http://merchant.itruemart-dev.com
+${Shop_in_Shop_Page}    http://www.wemall-dev.com/shop
+${Storefront_Menu}    http://storefront-cms.wemall-dev.com/#/storefrontManagement/    # /Web or /Mobile
+${AAD_database}    staging-aad-db.wemall-dev.com
+${AAD_database_Authz}    authz-db.wemall-dev.com
+${CAMP_URL}       http://campaign-cms.itruemart-dev.com
+${API_GATEWAY}    http://apis-gateway.wemall-dev.com
+${ITM_URL}        http://storm-www.itruemart-dev.com
+${PCMS_URL}       http://storm-pcms.itruemart-dev.com:81
+${PCMS_URL_SSL}    https://storm-pcms.itruemart-dev.com
+${PCMS_PKEY}      /api/45311375168544
+${PCMS_PORT}      80
+${RETAIL}         retail
+${SLUG}           slug/
+${PCMS_USERNAME}    admin@domain.com
+${PCMS_PASSWORD}    12345
+${AAD-LOGIN-URI}    /authen
+${AAD-USERNAME}    test
+${AAD-PASSWORD}    password

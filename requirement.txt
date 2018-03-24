@@ -1,0 +1,16 @@
+selenium==2.48.0
+configparser>=3.3.0r2
+PyMySQL==0.7.1
+stompest==2.1.6
+DateTime==4.0.1
+MySQL-python==1.2.5
+robotframework==3.0
+robotframework-databaselibrary
+robotframework-selenium2library==1.7.4
+robotframework-httplibrary==0.4.2
+robotframework-sshlibrary==2.1.2
+robotframework-requests
+redis==2.10.*
+requests==2.10.*
+xlrd
+boto3==1.4.*

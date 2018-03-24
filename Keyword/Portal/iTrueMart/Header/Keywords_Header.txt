@@ -1,0 +1,10 @@
+*** Settings ***
+Library           Selenium2Library
+Library           String
+Resource          ../../../../Resource/Env_config.robot
+Resource          ../../../Common/Keywords_Common.robot
+Resource          WebElement_Header.txt
+
+*** Keywords ***
+Header - Click Cart icon
+    Wait Until Element is ready and click    ${header_cart}    10

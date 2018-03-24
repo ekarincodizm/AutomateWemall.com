@@ -1,0 +1,38 @@
+{
+  "data": [
+    {
+      "name": {
+        "image": "//sandbox-cdn.wemall-dev.com/th/Banner/MTH10000_images/Nike_Lebron.jpeg",
+        "link": "http://www.itruemart.com/",
+        "alt": "ไนกี้ แอร์"
+      },
+      "name_translation": {
+        "image": null,
+        "link": null,
+        "alt": "Nike Air"
+      },
+      "title": "New Nike Shoe",
+      "order": 1,
+      "status": "active",
+      "start_date": "2015-06-10T15:52:01+0700",
+      "end_date": "2019-06-10T15:52:01+0700"
+    },
+    {
+      "name": {
+        "image": "sandbox-cdn.wemall-dev.com/th/Banner/MTH10000_images/Final_Sale.jpg",
+        "link": "http://www.itruemart.com/",
+        "alt": "ซี่ซั่น เซลล์"
+      },
+      "name_translation": {
+        "image": null,
+        "link": null,
+        "alt": null
+      },
+      "title": "Seasonal Sale",
+      "order": 2,
+      "status": "active",
+      "start_date": "2015-06-10T15:52:01+0700",
+      "end_date": "2019-06-10T15:52:01+0700"
+    }
+  ]
+}

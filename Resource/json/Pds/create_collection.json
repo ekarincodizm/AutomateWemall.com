@@ -1,0 +1,14 @@
+{
+"pkey": ^^pkey^^,
+"collection_name":^^collection_name^^,
+"collection_code":^^collection_code^^,
+"collection_name_translate":^^collection_name_translate^^,
+"slug":^^slug^^,
+"status":^^status^^, 
+"display":^^display^^,
+"owner":^^owner^^, 
+"owner_type":^^owner_type^^, 
+"image_url":^^data_image_url^^,
+"seo_id":^^seo_id^^,
+"children_order":[^^children_order_list^^]
+}

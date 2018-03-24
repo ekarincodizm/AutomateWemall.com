@@ -1,0 +1,48 @@
+{
+  "version": "draft",
+  "type": "banner",
+  "data": [
+    {
+      "title": "Active Range Date",
+      "order": 13,
+      "status": "active",
+      "target": "_blank",
+      "start_date": "2015-06-28T11:00:00+0700",
+      "end_date": "2019-11-05T12:00:00+0700",
+      "name": {
+        "alt": "Active Range Date"
+      },
+      "name_translation": {
+        "alt": "Active Range Date"
+      }
+    },
+    {
+      "title": "Inactive Forever",
+      "order": 13,
+      "status": "inactive",
+      "target": "_blank",
+      "start_date": null,
+      "end_date": null,
+      "name": {
+        "alt": "Inactive Forever"
+      },
+      "name_translation": {
+        "alt": "Inactive Forever"
+      }
+    },
+    {
+      "title": "Active Range Date Overlap Time",
+      "order": 13,
+      "status": "active",
+      "target": "_blank",
+      "start_date": "2019-11-05T11:59:59+0700",
+      "end_date": "2029-11-05T00:00:00+0700",
+      "name": {
+        "alt": "Active Forever"
+      },
+      "name_translation": {
+        "alt": "Active Forever"
+      }
+    }
+  ]
+}

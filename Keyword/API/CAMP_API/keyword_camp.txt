@@ -1,0 +1,19 @@
+*** Settings ***
+Library           DatabaseLibrary
+Resource          ../../Common/Keywords_Common.robot
+Library           RequestsLibrary
+
+*** Keywords ***
+Delete Campaign by campaign name
+    [Arguments]    ${Text_CampaignName}
+    [Documentation]    It hard code to delete from 40K db only, this should be changed to ENV parameterizes
+    Connect DB ITM
+    Execute Sql String    DELETE FROM promotion_code_logs WHERE promotion_code_logs.promotion_code_id = (SELECT promotion_codes.id FROM campaigns, promotions, promotion_codes WHERE campaigns.name = '${Text_CampaignName}' AND campaigns.id = promotions.campaign_id AND promotions.id = promotion_codes.promotion_id)
+    Execute Sql String    DELETE FROM promotion_codes WHERE promotion_codes.promotion_id IN (SELECT promotions.id FROM campaigns, promotions WHERE campaigns.name = '${Text_CampaignName}' AND campaigns.id = promotions.campaign_id)
+    Execute Sql String    DELETE FROM promotions WHERE promotions.campaign_id IN (SELECT campaigns.id FROM campaigns WHERE campaigns.name = '${Text_CampaignName}')
+    Execute Sql String    DELETE FROM campaigns WHERE campaigns.name = '${Text_CampaignName}'
+
+Delete Promotion by Promotion ID
+    [Arguments]    ${Promotion_ID}
+    Create Session    Http DELETE    http://campaign-api.wemall-dev.com:8080
+    Delete    Http DELETE    /api/v1/itm/promotions/${Promotion_ID}

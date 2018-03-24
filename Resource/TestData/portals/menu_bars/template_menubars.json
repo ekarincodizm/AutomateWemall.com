@@ -1,0 +1,36 @@
+{
+  "en_US": [
+    {
+      "link_url": "link_url 1",
+      "target": "_self",
+      "title": "title1"
+    },
+    {
+      "link_url": "link_url 2",
+      "target": "_self",
+      "title": "title2"
+    },
+    {
+      "link_url": "link_url 3",
+      "target": "_self",
+      "title": "title3"
+    }
+  ],
+  "th_TH": [
+    {
+      "link_url": "link_url 1",
+      "target": "_self",
+      "title": "ไตเติล1"
+    },
+    {
+      "link_url": "link_url 2",
+      "target": "_self",
+      "title": "ไตเติล2"
+    },
+    {
+      "link_url": "link_url 3",
+      "target": "_self",
+      "title": "ไตเติล3"
+    }
+  ]
+}

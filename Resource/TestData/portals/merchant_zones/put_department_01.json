@@ -1,0 +1,56 @@
+{
+  "en_US": {
+    "title": "HOT BRAND",
+    "banners": {
+      "banner-01": {
+        "position": "left",
+        "link_url_en": "http://www.itruemart.com/en",
+        "id": "banner-01",
+        "title": "Banner Left",
+        "src_web": "//sandbox-cdn.wemall-dev.com/th/merchant-zone/portal/v-01.png",
+        "src_en": "//sandbox-cdn.wemall-dev.com/th/merchant-zone/portal/v-01.png",
+        "link_url_th": "http://www.itruemart.com",
+        "src_mobile": "//sandbox-cdn.wemall-dev.com/th/merchant-zone/portal/v-01.png",
+        "src_th": "//sandbox-cdn.wemall-dev.com/th/merchant-zone/portal/v-01.png"
+      },
+      "banner-02": {
+        "position": "right",
+        "link_url_en": "http://www.itruemart.com/en",
+        "id": "banner-03",
+        "title": "Banner Right",
+        "src_web": "//sandbox-cdn.wemall-dev.com/th/merchant-zone/portal/v-02.png",
+        "src_en": "//sandbox-cdn.wemall-dev.com/th/merchant-zone/portal/v-02.png",
+        "link_url_th": "http://www.itruemart.com",
+        "src_mobile": "//sandbox-cdn.wemall-dev.com/th/merchant-zone/portal/v-02.png",
+        "src_th": "//sandbox-cdn.wemall-dev.com/th/merchant-zone/portal/v-02.png"
+      }
+    }
+  },
+  "th_TH": {
+    "title": "ช้อปตามแบรนด์",
+    "banners": {
+      "banner-01": {
+        "position": "left",
+        "link_url_en": "http://www.itruemart.com/en",
+        "id": "banner-01",
+        "title": "Banner Left",
+        "src_web": "//sandbox-cdn.wemall-dev.com/th/merchant-zone/portal/v-01.png",
+        "src_en": "//sandbox-cdn.wemall-dev.com/th/merchant-zone/portal/v-01.png",
+        "link_url_th": "http://www.itruemart.com",
+        "src_mobile": "//alpha-cdn.wemall-dev.com/th/merchant-zone/portal/banner5_sh.jpg",
+        "src_th": "//sandbox-cdn.wemall-dev.com/th/merchant-zone/portal/v-01.png"
+      },
+      "banner-02": {
+        "position": "right",
+        "link_url_en": "http://www.itruemart.com/en",
+        "id": "banner-03",
+        "title": "Banner Right",
+        "src_web": "//sandbox-cdn.wemall-dev.com/th/merchant-zone/portal/v-02.png",
+        "src_en": "//sandbox-cdn.wemall-dev.com/th/merchant-zone/portal/v-02.png",
+        "link_url_th": "http://www.itruemart.com",
+        "src_mobile": "//sandbox-cdn.wemall-dev.com/th/merchant-zone/portal/v-02.png",
+        "src_th": "//sandbox-cdn.wemall-dev.com/th/merchant-zone/portal/v-02.png"
+      }
+    }
+  }
+}

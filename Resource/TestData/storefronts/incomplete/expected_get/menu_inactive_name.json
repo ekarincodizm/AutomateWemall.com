@@ -1,0 +1,40 @@
+{
+  "logo": null,
+  "menus": [
+    {
+      "order": 1,
+      "target": "_blank",
+      "name": {
+        "link": "http://www.itruemart.com",
+        "name": "แม็ค"
+      },
+      "children": [
+        {
+          "order": 1,
+          "target": "_blank",
+          "name": {
+            "link": "http://www.itruemart.com",
+            "name": "แม็คบุ๊ค"
+          }
+        },
+        {
+          "order": 2,
+          "target": "_blank",
+          "name": {
+            "link": "http://www.itruemart.com",
+            "name": "ไอแม็ค"
+          }
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "target": "_blank",
+      "name": {
+        "link": "http://www.itruemart.com",
+        "name": "ไอแพด"
+      }
+    }
+  ],
+  "status": "inactive"
+}

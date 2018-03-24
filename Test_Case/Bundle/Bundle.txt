@@ -1,0 +1,177 @@
+*** Settings ***
+Library           Selenium2Library
+Library           Collections
+Library           RequestsLibrary
+Resource          ../../../../Resource/Config/${env}/env_config.robot
+Resource          ../../Keyword/Common/Keywords_Common.robot
+Resource          ../../Keyword/Features/Freebie_Promotion/Create_Freebie.robot
+Resource          ../../Resource/WebElement/CAMP/Camp_Freebie.robot
+Resource          ../../Keyword/Portal/CAMP/CAMP_common/Keywords_CAMP_Common.robot
+Resource          ../../Keyword/Features/PC1_And_PC3/PCMS.robot
+Resource          ../../Keyword/Features/PC1_And_PC3/ITM.robot
+Resource          ../../Keyword/Portal/iTrueMart/Cart_light_box/Keywords_CartLightBox.robot
+Resource          ../../Keyword/Portal/iTrueMart/Checkout_3/Keywords_Checkout3.robot
+Resource          ../../Keyword/Portal/iTrueMart/Mini Cart/Keywords_MiniCart.robot
+Resource          ../../Keyword/Features/Freebie_Promotion/Create_Freebie.robot
+Resource          ../../Keyword/Portal/iTrueMart/Cart_pop_up/Keywords_CartPopUp.robot
+Resource          ../../Keyword/Database/PCMS/keyword_pcms.robot
+Resource          ../../Keyword/Portal/PCMS/Login/keywords_login.robot
+Resource          ../../Keyword/Features/Create_Bundle/Create_Bundle_on_PCMS.robot
+Resource          ../../Keyword/API/CAMP_API/keyword_camp.txt
+Resource          ../../Keyword/Portal/CAMP/CAMP_Campaign/Keywords_CAMP_Campaign.robot
+Resource          ../../Keyword/Features/Create_Bundle/Create_Bundle_on_CAMP_CMS.robot
+Library           String
+
+*** Test Cases ***
+POC
+    ${epoch}=    Get current epoch time
+    ${Text_CampaignName}    Set Variable    e2e_${epoch}
+    ${Text_CampaignDetail}    Set Variable    test
+    ${Text_CampaignStart}    Set Variable    02/18/2016
+    ${Text_CampaignEnd}    Set Variable    08/18/2016
+    ${Text_FreebieName}    Set Variable    e2e_${epoch}
+    ${Text_FreebieShortDesc}    Set Variable    test
+    ${Text_FreebieDesc}    Set Variable    test
+    ${Text_FreebieStart}    Set Variable    02/18/2016
+    ${Text_FreebieEnd}    Set Variable    08/18/2016
+    ${Text_IDCategory}    Set Variable    test123
+    ${Text_PeriTem}    Set Variable    1
+    ${Text_FreeVariantID}    Set Variable    test1234
+    ${Text_FreeVariantQuantity}    Set Variable    1
+    ${Text_RepeatTime}    Set Variable    5
+    ${Text_Note}    Set Variable    test
+    ${img_160x80}    Set Variable    \\160x80.jpg
+    ${img_220x110}    Set Variable    \\220x110.jpg
+    ${img_320x160}    Set Variable    \\320x160.jpg
+    ${Text_Email}    Set Variable    e2e@gmail.com
+    ${Text_Name}    Set Variable    e2e_test
+    ${Text_Phone}    Set Variable    0911111111
+    ${Text_Address}    Set Variable    test e2e
+    ${Text_Code}    Set Variable    ${EMPTY}
+    ${Text_CWName}    Set Variable    test
+    ${Text_CWCardNo}    Set Variable    4111111111111111
+    ${Text_CWCCV}    Set Variable    123
+    ${Text_Code}    Set Variable    111
+    Go To Camp CMS
+    ${campaign_id}    Create Campaign    ${Text_CampaignName}    ${Text_CampaignDetail}    ${Text_CampaignStart}    ${Text_CampaignEnd}
+    ${element1}=    Create Dictionary    bundleVARIANT=MYAAB1111311    discType=Fixed    discAmount=${EMPTY}
+    ${element2}=    Create Dictionary    bundleVARIANT=TRAAA1119511    discType=Fixed    discAmount=10
+    @{bundle_list}    Create List    ${element1}    ${element2}
+    Create Bundle promotion    ${campaign_id}    TEST name    Test name    VALID-PROMO-DESC    VALID-PROMO-DESC    VALID-SHORT-PROMO-DESC
+    ...    ${EMPTY}    default    0    00    ${EMPTY}    0
+    ...    00    enable    both    VALID-BUNDLE-NOTE    VALID-BUNDLE-NOTE    @{bundle_list}
+    Go to    http://www.itruemart-dev.com/products/smart-watch-mykronoz-zesplash-2624639764719.html
+    Level D Select Product Variance in Level D    1
+    Level D Click Add To Cart
+    Guest Fill Data and Submit Checkout1    ${Text_Email}
+    Guest Fill Data and Submit Checkout2    ${Text_Name}    ${Text_Phone}    ${Text_Address}
+    CC Payment Fill Data and Submit Checkout3    ${Text_CWName}    ${Text_CWCardNo}    ${Text_CWCCV}    ${Text_Code}
+    ${order_id}=    Wait until Purchase Success Appear and retrieve Order ID
+    [Teardown]    close browser
+
+Temp
+    ${epoch}=    Get current epoch time short
+    ${Text_DeviceName}    Set Variable    True Smart 5.0
+    ${Text_GroupPropositionName}    Set Variable    e2eTemp
+    ${Text_SubPropositionName}    Set Variable    e2eTemp
+    ${Text_PricePlanCode}    Set Variable    e2eTemp
+    ${Text_PricePlanName}    Set Variable    e2eTemp
+    ${Text_PricePlanShortDesc}    Set Variable    e2eTemp
+    ${Text_PricePlanlongDesc}    Set Variable    e2eTemp
+    ${Text_Email}    Set Variable    devitm@itruemart.com
+    ${Text_Password}    Set Variable    1234567
+    ${Text_PropositionName}    Set Variable    Gold iTrueMart
+    ${Text_SubPropositionCode}    Set Variable    e2eTemp
+    ${Text_SubPropositionNASCode}    Set Variable    ${epoch}
+    ${Text_SubPropositionMonth}    Set Variable    10
+    ${Text_SubPropositionPenalty}    Set Variable    200
+    ${Text_SubPropositionShortDesc}    Set Variable    e2eTemp
+    ${Text_SubPropositionLongDesc}    Set Variable    e2eTemp
+    ${Text_GroupPropositionDesc}    Set Variable    e2eTemp
+    ${epoch}=    Get current epoch time
+    ${Text_CampaignName}    Set Variable    e2e_${epoch}
+    ${Text_CampaignDetail}    Set Variable    Campaign detail ${epoch}
+    ${Text_CampaignStart}    Get current date by format    %m/%d/%Y    0
+    ${Text_CampaignEnd}    Get current date by format    %m/%d/%Y    1 days
+    ${Text_BundleName}    Set Variable    e2eTemp
+    ${Text_BundleShortDesc}    Set Variable    e2eTemp
+    ${Text_BundleDesc}    Set Variable    e2eTemp
+    ${Text_BundleStart}    Get current date by format    %m/%d/%Y    0
+    ${Text_BundleEnd}    Get current date by format    %m/%d/%Y    1 days
+    ${Text_BundleNote}    Set Variable    e2eTemp
+    ${Text_PrimaryVariant}    Set Variable    TRAAB1111911
+    ${Text_VariantDiscountPercent}    Set Variable    20
+    ${Text_BundleVariant}    Set Variable    TRAAA1119611
+    ${Text_BundleDiscountPercent}    Set Variable    20
+    Login Pcms    ${Text_Email}    ${Text_Password}
+    Create Price Plan    ${Text_PricePlanName}    ${Text_PricePlanCode}    ${Text_PricePlanShortDesc}    ${Text_PricePlanlongDesc}
+    Create Proposition    ${Text_PropositionName}    ${Text_SubPropositionName}    ${Text_SubPropositionCode}    ${Text_SubPropositionNASCode}    ${Text_SubPropositionMonth}    ${Text_SubPropositionPenalty}
+    ...    ${Text_SubPropositionShortDesc}    ${Text_SubPropositionLongDesc}    ${Text_PricePlanName}    ${Text_PricePlanCode}
+    Create Group Proposition    ${Text_GroupPropositionName}    ${Text_GroupPropositionDesc}    ${Text_SubPropositionName}
+    Mapping Product Device and Group Proposition    ${Text_DeviceName}    ${Text_GroupPropositionName}
+    Close Browser
+    Go To Camp CMS
+    Keywords_CAMP_Campaign.Campaign - Create Campaign    ${Text_CampaignName}    ${Text_CampaignDetail}    ${Text_CampaignStart}    ${Text_CampaignEnd}
+    ${campaign_id}    Keywords_CAMP_Campaign.Campaign - Select Campaign for create Promotion    ${Text_CampaignName}
+    Create_Bundle_on_CAMP_CMS.Create Bundle Promotion    ${Text_BundleName}    ${Text_BundleShortDesc}    ${Text_BundleDesc}    ${Text_BundleStart}    ${Text_BundleEnd}    ${Text_BundleNote}
+    ...    ${Text_PrimaryVariant}    ${Text_VariantDiscountPercent}    ${Text_BundleVariant}    ${Text_BundleDiscountPercent}
+    [Teardown]    Run Keywords    close browser
+    ...    AND    Remove Device Proposition Group Map    ${Text_DeviceName}    ${Text_GroupPropositionName}
+    ...    AND    Remove Proposition Group Map    ${Text_GroupPropositionName}    ${Text_SubPropositionName}
+    ...    AND    Remove Proposition Map    ${Text_SubPropositionName}    ${Text_PricePlanCode}
+    ...    AND    Delete Proposition Group    ${Text_GroupPropositionName}
+    ...    AND    Delete Proposition    ${Text_SubPropositionName}
+    ...    AND    Delete Price Plan    ${Text_PricePlanCode}
+    ...    AND    Delete Campaign    ${campaign_id}
+
+Temp2
+    ${epoch}=    Get current epoch time short
+    ${Text_DeviceName}    Set Variable    True Smart 5.0
+    ${Text_GroupPropositionName}    Set Variable    e2eTemp
+    ${Text_SubPropositionName}    Set Variable    e2eTemp
+    ${Text_PricePlanCode}    Set Variable    e2eTemp
+    ${Text_PricePlanName}    Set Variable    e2eTemp
+    ${Text_PricePlanShortDesc}    Set Variable    e2eTemp
+    ${Text_PricePlanlongDesc}    Set Variable    e2eTemp
+    ${Text_Email}    Set Variable    devitm@itruemart.com
+    ${Text_Password}    Set Variable    1234567
+    ${Text_PropositionName}    Set Variable    Gold iTrueMart
+    ${Text_SubPropositionCode}    Set Variable    e2eTemp
+    ${Text_SubPropositionNASCode}    Set Variable    ${epoch}
+    ${Text_SubPropositionMonth}    Set Variable    10
+    ${Text_SubPropositionPenalty}    Set Variable    200
+    ${Text_SubPropositionShortDesc}    Set Variable    e2eTemp
+    ${Text_SubPropositionLongDesc}    Set Variable    e2eTemp
+    ${Text_GroupPropositionDesc}    Set Variable    e2eTemp
+    ${epoch}=    Get current epoch time
+    ${Text_CampaignName}    Set Variable    e2e_${epoch}
+    ${Text_CampaignDetail}    Set Variable    Campaign detail ${epoch}
+    ${Text_CampaignStart}    Get current date by format    %m/%d/%Y    0
+    ${Text_CampaignEnd}    Get current date by format    %m/%d/%Y    1 days
+    ${Text_BundleName}    Set Variable    e2eTemp
+    ${Text_BundleShortDesc}    Set Variable    e2eTemp
+    ${Text_BundleDesc}    Set Variable    e2eTemp
+    ${Text_BundleStart}    Get current date by format    %m/%d/%Y    0
+    ${Text_BundleEnd}    Get current date by format    %m/%d/%Y    1 days
+    ${Text_BundleNote}    Set Variable    e2eTemp
+    ${Text_PrimaryVariant}    Set Variable    TRAAB1111911
+    ${Text_VariantDiscountPercent}    Set Variable    20
+    ${Text_BundleVariant}    Set Variable    TRAAA1119611
+    ${Text_BundleDiscountPercent}    Set Variable    20
+    Login Pcms    ${Text_Email}    ${Text_Password}
+    Create Price Plan    ${Text_PricePlanName}    ${Text_PricePlanCode}    ${Text_PricePlanShortDesc}    ${Text_PricePlanlongDesc}
+    Create Proposition    ${Text_PropositionName}    ${Text_SubPropositionName}    ${Text_SubPropositionCode}    ${Text_SubPropositionNASCode}    ${Text_SubPropositionMonth}    ${Text_SubPropositionPenalty}
+    ...    ${Text_SubPropositionShortDesc}    ${Text_SubPropositionLongDesc}    ${Text_PricePlanName}    ${Text_PricePlanCode}
+    Create Group Proposition    ${Text_GroupPropositionName}    ${Text_GroupPropositionDesc}    ${Text_SubPropositionName}
+    Mapping Product Device and Group Proposition    ${Text_DeviceName}    ${Text_GroupPropositionName}
+    Close Browser
+    Go To Camp CMS
+    Keywords_CAMP_Campaign.Campaign - Create Campaign    ${Text_CampaignName}    ${Text_CampaignDetail}    ${Text_CampaignStart}    ${Text_CampaignEnd}
+    ${campaign_id}    Keywords_CAMP_Campaign.Campaign - Select Campaign for create Promotion    ${Text_CampaignName}
+    Create_Bundle_on_CAMP_CMS.Create Bundle Promotion    ${Text_BundleName}    ${Text_BundleShortDesc}    ${Text_BundleDesc}    ${Text_BundleStart}    ${Text_BundleEnd}    ${Text_BundleNote}
+    ...    ${Text_PrimaryVariant}    ${Text_VariantDiscountPercent}    ${Text_BundleVariant}    ${Text_BundleDiscountPercent}
+    [Teardown]    close browser
+
+111
+    ${ID_Card}    Random ID Card
+    [Teardown]    close browser

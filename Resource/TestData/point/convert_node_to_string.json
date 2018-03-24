@@ -1,0 +1,15 @@
+{
+  "api_token": "api token",
+  "user_id": "user id",
+  "partner_id": "partner id",
+  "username": "username",
+  "password": "password",
+  "mobile": "mobile",
+  "card_no": "card no",
+  "api_key": "api key",
+  "api_secret": "api secret",
+  "request_id": "request id",
+  "total_point": "total point",
+  "keys": "keys"
+
+}

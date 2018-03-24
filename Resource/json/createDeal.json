@@ -1,0 +1,43 @@
+{
+  "name_local": ${dealName},
+  "name_en": "",
+  "description_local": "<p>test</p>\n",
+  "description_en": "",
+  "short_description_local": "test",
+  "short_description_en": "",
+  "start_period": ${start},
+  "end_period": ${end},
+  "enable": ${enabledStatus},
+  "member": true,
+  "non_member": true,
+  "app_ids": "true",
+  "channel_type": "1",
+  "merchant_ids": "itruemart",
+  "type": "wm-super",
+  "img_web": null,
+  "img_web_translation": null,
+  "img_mobile": null,
+  "img_mobile_translation": null,
+  "condition_data": {
+    "criteria_type": "variant",
+    "fixed_price": ${setPomotionPrice},
+    "discount_percent": ${discount_percent},
+    "max_discount_value": null,
+    "variants": [
+      {
+        "variant_id": ${criteria_values},
+        "promotion_price": ${promotionPrice},
+        "recommended": false
+      }
+    ],
+    "limit_account": 0,
+    "limit_item_per_cart": 0,
+    "trueyou_icon": true,
+    "truemoveh_icon": true,
+    "payment_types": [],
+    "policy_web": null,
+    "policy_web_translation": null,
+    "policy_mobile": null,
+    "policy_mobile_translation": null
+  }
+}

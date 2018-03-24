@@ -1,0 +1,8 @@
+{
+  "name": {
+    "content": "<div class=\"shop-header-test-class\"><img id=\"header-storefront-test\" alt=\"\" src=\"//sandbox-cdn.wemall-dev.com/th/Header/MTH10000_images/cover.png\" /></div>\n"
+    },
+  "name_translation": {
+    "content": "<div class=\"shop-header-test-class\"><img id=\"header-storefront-test-en\" alt=\"\" src=\"//sandbox-cdn.wemall-dev.com/th/Header/MTH10000_images/cover.png?lang=en\" /></div>\n"
+  }
+}

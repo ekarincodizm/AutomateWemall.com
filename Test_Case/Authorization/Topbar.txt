@@ -1,0 +1,477 @@
+*** Settings ***
+Library           Selenium2Library
+Library           Collections
+Library           RequestsLibrary
+Resource          ../../Resource/Env_config.robot
+Resource          ../../Keyword/Common/Keywords_Common.robot
+Resource          ../../Keyword/Features/Create_Merchant/Create_Merchant.robot
+Resource          ../../Keyword/Features/Create_Merchant/Merchant_List.robot
+Resource          ../../Keyword/Portal/AAD/AAD_user_list/Keywords_AAD_UserList.robot
+Resource          ../../Keyword/Portal/AAD/AAD_signIn_page/Keywords_AAD_SignInPage.robot
+Resource          ../../Keyword/Portal/AAD/AAD_common_keyword/Keywords_AAD_Common.robot
+Resource          ../../Keyword/Portal/AAD/AAD_user_information/Keywords_AAD_UserInformation.robot
+Resource          ../../Keyword/Portal/AAD/AAD_role/Keywords_AAD_Role.robot
+Resource          ../../Keyword/Features/Merchant_Center/MC_SignIn_Page.robot
+Resource          ../../Keyword/Features/Merchant_Center/MC_Top_Bar.robot
+Resource          ../../Keyword/Features/Create_Merchant/Navigation_Bar.robot
+Resource          ../../Keyword/Portal/AAD/AAD_navigation_bar/Keywords_AAD_NavigationBar.robot
+
+*** Variables ***
+
+*** Test Cases ***
+TC_ITMWME2E_00109 User with role "manage_user" assigned see correct topbar when login Backend portal
+    [Documentation]    User with role "manage_user" assigned see correct topbar when login Backend portal
+    [Tags]    Invalid_Test_Case     TC_ITMWME2E_00109
+    Log    Test case TC_ITMWME2E_00109 User with role "manage_user" assigned see correct topbar when login Backend portal started!
+    ${epoch}    Get current epoch time
+    ${username}    Set Variable    TC_ITMWME2E_00109_${epoch}
+    ${first_name}    Set Variable    This is first nam
+    ${last_name}    Set Variable    This is last name
+    ${password}    Set Variable    Password
+    ${password_confirm}    Set Variable    Password
+    ${email}    Set Variable    oak@test.com
+    ${response}    AAD Create merchant user    ${username}    ${password}    ${password_confirm}    ${first_name}    ${last_name}
+    ...    ${email}
+    ${user_id}    AAD Verify return code and return message    ${response}    ${201}    username '${username}' already exist
+    #Create new shop via MCH portal
+    ${Text-MerchantCompanyName}    Set Variable    test
+    ${Text-MerchantSlug}    Set Variable    ${epoch}
+    ${Text-MerchantShopName}    Set Variable    TC_E2E_1001${epoch}
+    ${Text-MerchantShopNameEN}    Set Variable    Test EN
+    ${Text-MerchantShopURL}    Set Variable    test
+    ${Text-MerchantShopCate}    Set Variable    Mobile
+    ${Text-MerchantContactPerson}    Set Variable    test test    # ENG
+    ${Text-MerchantContactPhone}    Set Variable    1111111    # INT
+    ${Text-MerchantContactEmail}    Set Variable    test@test.com    # xxx@xxx.xx
+    ${Img_M_Logo}    Set Variable    Mlogo.jpg
+    ${Img_D_Logo}    Set Variable    Dlogo.jpg
+    ${roles}    Create List    manage_user
+    ${menus}    Create List    Administration
+    ${report_submenus}    Create List    Sale Summary    Monthly
+    #Create Merchant
+    Open Browser    ${MC_URL}    chrome
+    Login Merchant center    test    password
+    Click topbar menu    Product
+    Navigate to Create merchant
+    Fill Merchant Info    ${Text-MerchantCompanyName}    ${Text-MerchantSlug}    ${Text-MerchantShopName}    ${Text-MerchantShopNameEN}    ${Text-MerchantShopURL}    ${Text-MerchantShopCate}
+    Upload Img Logo    ${Img_M_Logo}    ${Img_D_Logo}
+    Fill Contacts    ${Text-MerchantContactPerson}    ${Text-MerchantContactPhone}    ${Text-MerchantContactEmail}
+    Click Create Merchant
+    Search Merchant    ${Text-MerchantShopName}
+    Click waiting Status    ${Text-MerchantShopName}
+    Change status to Active    ${Text-MerchantShopName}
+    ${UrlMerchantID}=    Select Merchant    ${Text-MerchantShopName}
+    #Map user with shop via AAD portal
+    Click topbar menu    Administration
+    AAD User list - select user to edit by User ID    ${user_id}
+    AAD User Information - Associate to Shop    ${Text-MerchantShopName}    ${roles}
+    Topbar Logout
+    #Login to mechant center and verify dash board
+    Go To    ${MC_URL}
+    Login Merchant center    ${username}    ${password}
+    Assert Merchant center Top bar    ${first_name}    ${last_name}    ${Text-MerchantShopName}    ${menus}
+    [Teardown]    Run Keywords    close browser
+    ...    AND    Delete Merchant from PDS by Merchant ID    ${UrlMerchantID}
+    ...    AND    Delete AAD user from DB by userid    ${user_id}
+
+TC_ITMWME2E_00110 User with role "merchant_read_role" assigned see correct topbar when login Backend portal
+    [Documentation]    User with role "merchant_read_role" assigned see correct topbar when login Backend portal
+    [Tags]    Invalid_Test_Case    TC_ITMWME2E_00110
+    Log    Test case TC_ITMWME2E_00110 User with role "merchant_read_role" assigned see correct topbar when login Backend portal started!
+    ${epoch}    Get current epoch time
+    ${username}    Set Variable    TC_ITMWME2E_00110_${epoch}
+    ${first_name}    Set Variable    This is first nam
+    ${last_name}    Set Variable    This is last name
+    ${password}    Set Variable    Password
+    ${password_confirm}    Set Variable    Password
+    ${email}    Set Variable    oak@test.com
+    ${response}    AAD Create merchant user    ${username}    ${password}    ${password_confirm}    ${first_name}    ${last_name}
+    ...    ${email}
+    ${user_id}    AAD Verify return code and return message    ${response}    ${201}    username '${username}' already exist
+    #Create new shop via MCH portal
+    ${Text-MerchantCompanyName}    Set Variable    test
+    ${Text-MerchantSlug}    Set Variable    ${epoch}
+    ${Text-MerchantShopName}    Set Variable    TC_E2E_1001${epoch}
+    ${Text-MerchantShopNameEN}    Set Variable    Test EN
+    ${Text-MerchantShopURL}    Set Variable    test
+    ${Text-MerchantShopCate}    Set Variable    Mobile
+    ${Text-MerchantContactPerson}    Set Variable    test test    # ENG
+    ${Text-MerchantContactPhone}    Set Variable    1111111    # INT
+    ${Text-MerchantContactEmail}    Set Variable    test@test.com    # xxx@xxx.xx
+    ${Img_M_Logo}    Set Variable    Mlogo.jpg
+    ${Img_D_Logo}    Set Variable    Dlogo.jpg
+    ${roles}    Create List    merchant_read_role
+    ${menus}    Create List    Product
+    ${report_submenus}    Create List    Sale Summary    Monthly
+    #Create Merchant
+    Open Browser    ${PDS_URL}    chrome
+    Login Merchant center    test    password
+    Click topbar menu    Product
+    Navigate to Create merchant
+    Fill Merchant Info    ${Text-MerchantCompanyName}    ${Text-MerchantSlug}    ${Text-MerchantShopName}    ${Text-MerchantShopNameEN}    ${Text-MerchantShopURL}    ${Text-MerchantShopCate}
+    Upload Img Logo    ${Img_M_Logo}    ${Img_D_Logo}
+    Fill Contacts    ${Text-MerchantContactPerson}    ${Text-MerchantContactPhone}    ${Text-MerchantContactEmail}
+    Click Create Merchant
+    Search Merchant    ${Text-MerchantShopName}
+    Click waiting Status    ${Text-MerchantShopName}
+    Change status to Active    ${Text-MerchantShopName}
+    ${UrlMerchantID}=    Select Merchant    ${Text-MerchantShopName}
+    #Map user with shop via AAD portal
+    Click topbar menu    Administration
+    AAD User list - select user to edit by User ID    ${user_id}
+    AAD User Information - Associate to Shop    ${Text-MerchantShopName}    ${roles}
+    Topbar Logout
+    #Login to mechant center and verify dash board
+    Go To    ${MC_URL}
+    Login Merchant center    ${username}    ${password}
+    Assert Merchant center Top bar    ${first_name}    ${last_name}    ${Text-MerchantShopName}    ${menus}
+    [Teardown]    Run Keywords    close browser
+    ...    AND    Delete Merchant from PDS by Merchant ID    ${UrlMerchantID}
+    ...    AND    Delete AAD user from DB by userid    ${user_id}
+
+TC_ITMWME2E_00111 User with role "merchant_write_role" assigned see correct topbar when login Backend portal
+    [Documentation]    User with role "merchant_write_role" assigned see correct topbar when login Backend portal
+    [Tags]    Invalid_Test_Case    TC_ITMWME2E_00111
+    Log    Test case TC_ITMWME2E_00111 User with role "merchant_write_role" assigned see correct topbar when login Backend portal started!
+    ${epoch}    Get current epoch time
+    ${username}    Set Variable    TC_ITMWME2E_00111_${epoch}
+    ${first_name}    Set Variable    This is first nam
+    ${last_name}    Set Variable    This is last name
+    ${password}    Set Variable    Password
+    ${password_confirm}    Set Variable    Password
+    ${email}    Set Variable    oak@test.com
+    ${response}    AAD Create merchant user    ${username}    ${password}    ${password_confirm}    ${first_name}    ${last_name}
+    ...    ${email}
+    ${user_id}    AAD Verify return code and return message    ${response}    ${201}    username '${username}' already exist
+    #Create new shop via MCH portal
+    ${Text-MerchantCompanyName}    Set Variable    test
+    ${Text-MerchantSlug}    Set Variable    ${epoch}
+    ${Text-MerchantShopName}    Set Variable    TC_E2E_1001${epoch}
+    ${Text-MerchantShopNameEN}    Set Variable    Test EN
+    ${Text-MerchantShopURL}    Set Variable    test
+    ${Text-MerchantShopCate}    Set Variable    Mobile
+    ${Text-MerchantContactPerson}    Set Variable    test test    # ENG
+    ${Text-MerchantContactPhone}    Set Variable    1111111    # INT
+    ${Text-MerchantContactEmail}    Set Variable    test@test.com    # xxx@xxx.xx
+    ${Img_M_Logo}    Set Variable    Mlogo.jpg
+    ${Img_D_Logo}    Set Variable    Dlogo.jpg
+    ${roles}    Create List    merchant_write_role
+    ${menus}    Create List    Administration
+    ${report_submenus}    Create List    Sale Summary    Monthly
+    #Create Merchant
+    Open Browser    ${PDS_URL}    chrome
+    Login Merchant center    test    password
+    Click topbar menu    Product
+    Navigate to Create merchant
+    Fill Merchant Info    ${Text-MerchantCompanyName}    ${Text-MerchantSlug}    ${Text-MerchantShopName}    ${Text-MerchantShopNameEN}    ${Text-MerchantShopURL}    ${Text-MerchantShopCate}
+    Upload Img Logo    ${Img_M_Logo}    ${Img_D_Logo}
+    Fill Contacts    ${Text-MerchantContactPerson}    ${Text-MerchantContactPhone}    ${Text-MerchantContactEmail}
+    Click Create Merchant
+    Search Merchant    ${Text-MerchantShopName}
+    Click waiting Status    ${Text-MerchantShopName}
+    Change status to Active    ${Text-MerchantShopName}
+    ${UrlMerchantID}=    Select Merchant    ${Text-MerchantShopName}
+    #Map user with shop via AAD portal
+    Click topbar menu    Administration
+    AAD User list - select user to edit by User ID    ${user_id}
+    AAD User Information - Associate to Shop    ${Text-MerchantShopName}    ${roles}
+    Topbar Logout
+    #Login to mechant center and verify dash board
+    Go To    ${MC_URL}
+    Login Merchant center    ${username}    ${password}
+    Assert Merchant center Top bar    ${first_name}    ${last_name}    ${Text-MerchantShopName}    ${menus}
+    [Teardown]    Run Keywords    close browser
+    ...    AND    Delete Merchant from PDS by Merchant ID    ${UrlMerchantID}
+    ...    AND    Delete AAD user from DB by userid    ${user_id}
+
+TC_ITMWME2E_00112 User with role "pricing_read" assigned see correct topbar when login Backend portal
+    [Documentation]    User with role "pricing_read" assigned see correct topbar when login Backend portal
+    [Tags]    Invalid_Test_Case    TC_ITMWME2E_00112
+    Log    Test case TC_ITMWME2E_00112 User with role "pricing_read" assigned see correct topbar when login Backend portal started!
+    ${epoch}    Get current epoch time
+    ${username}    Set Variable    TC_ITMWME2E_00112_${epoch}
+    ${first_name}    Set Variable    This is first nam
+    ${last_name}    Set Variable    This is last name
+    ${password}    Set Variable    Password
+    ${password_confirm}    Set Variable    Password
+    ${email}    Set Variable    oak@test.com
+    ${response}    AAD Create merchant user    ${username}    ${password}    ${password_confirm}    ${first_name}    ${last_name}
+    ...    ${email}
+    ${user_id}    AAD Verify return code and return message    ${response}    ${201}    username '${username}' already exist
+    #Create new shop via MCH portal
+    ${Text-MerchantCompanyName}    Set Variable    test
+    ${Text-MerchantSlug}    Set Variable    ${epoch}
+    ${Text-MerchantShopName}    Set Variable    TC_E2E_1001${epoch}
+    ${Text-MerchantShopNameEN}    Set Variable    Test EN
+    ${Text-MerchantShopURL}    Set Variable    test
+    ${Text-MerchantShopCate}    Set Variable    Mobile
+    ${Text-MerchantContactPerson}    Set Variable    test test    # ENG
+    ${Text-MerchantContactPhone}    Set Variable    1111111    # INT
+    ${Text-MerchantContactEmail}    Set Variable    test@test.com    # xxx@xxx.xx
+    ${Img_M_Logo}    Set Variable    Mlogo.jpg
+    ${Img_D_Logo}    Set Variable    Dlogo.jpg
+    ${roles}    Create List    pricing_read
+    ${menus}    Create List    Inventory    Order    Promotion    Report
+    ${report_submenus}    Create List    Sale Summary    Monthly
+    #Create Merchant
+    Open Browser    ${PDS_URL}    chrome
+    Login Merchant center    test    password
+    Click topbar menu    Product
+    Navigate to Create merchant
+    Fill Merchant Info    ${Text-MerchantCompanyName}    ${Text-MerchantSlug}    ${Text-MerchantShopName}    ${Text-MerchantShopNameEN}    ${Text-MerchantShopURL}    ${Text-MerchantShopCate}
+    Upload Img Logo    ${Img_M_Logo}    ${Img_D_Logo}
+    Fill Contacts    ${Text-MerchantContactPerson}    ${Text-MerchantContactPhone}    ${Text-MerchantContactEmail}
+    Click Create Merchant
+    Search Merchant    ${Text-MerchantShopName}
+    Click waiting Status    ${Text-MerchantShopName}
+    Change status to Active    ${Text-MerchantShopName}
+    ${UrlMerchantID}=    Select Merchant    ${Text-MerchantShopName}
+    #Map user with shop via AAD portal
+    Click topbar menu    Administration
+    AAD User list - select user to edit by User ID    ${user_id}
+    AAD User Information - Associate to Shop    ${Text-MerchantShopName}    ${roles}
+    Topbar Logout
+    #Login to mechant center and verify dash board
+    Go To    ${MC_URL}
+    Login Merchant center    ${username}    ${password}
+    Assert Merchant center Top bar    ${first_name}    ${last_name}    ${Text-MerchantShopName}    ${menus}
+    [Teardown]    Run Keywords    close browser
+    ...    AND    Delete Merchant from PDS by Merchant ID    ${UrlMerchantID}
+    ...    AND    Delete AAD user from DB by userid    ${user_id}
+
+TC_ITMWME2E_00113 User with role "pricing_read_product_write_role" assigned see correct topbar when login Backend portal
+    [Documentation]    User with role "pricing_read_product_write_role" assigned see correct topbar when login Backend portal
+    [Tags]    Invalid_Test_Case    TC_ITMWME2E_00113
+    Log    Test case TC_ITMWME2E_00113 User with role "pricing_read_product_write_role" assigned see correct topbar when login Backend portal started!
+    ${epoch}    Get current epoch time
+    ${username}    Set Variable    TC_ITMWME2E_00113_${epoch}
+    ${first_name}    Set Variable    This is first nam
+    ${last_name}    Set Variable    This is last name
+    ${password}    Set Variable    Password
+    ${password_confirm}    Set Variable    Password
+    ${email}    Set Variable    oak@test.com
+    ${response}    AAD Create merchant user    ${username}    ${password}    ${password_confirm}    ${first_name}    ${last_name}
+    ...    ${email}
+    ${user_id}    AAD Verify return code and return message    ${response}    ${201}    username '${username}' already exist
+    #Create new shop via MCH portal
+    ${Text-MerchantCompanyName}    Set Variable    test
+    ${Text-MerchantSlug}    Set Variable    ${epoch}
+    ${Text-MerchantShopName}    Set Variable    TC_E2E_1001${epoch}
+    ${Text-MerchantShopNameEN}    Set Variable    Test EN
+    ${Text-MerchantShopURL}    Set Variable    test
+    ${Text-MerchantShopCate}    Set Variable    Mobile
+    ${Text-MerchantContactPerson}    Set Variable    test test    # ENG
+    ${Text-MerchantContactPhone}    Set Variable    1111111    # INT
+    ${Text-MerchantContactEmail}    Set Variable    test@test.com    # xxx@xxx.xx
+    ${Img_M_Logo}    Set Variable    Mlogo.jpg
+    ${Img_D_Logo}    Set Variable    Dlogo.jpg
+    ${roles}    Create List    pricing_read_product_write_role
+    ${menus}    Create List    Inventory    Order    Promotion    Report
+    ${report_submenus}    Create List    Sale Summary    Monthly
+    #Create Merchant
+    Open Browser    ${PDS_URL}    chrome
+    Login Merchant center    test    password
+    Click topbar menu    Product
+    Navigate to Create merchant
+    Fill Merchant Info    ${Text-MerchantCompanyName}    ${Text-MerchantSlug}    ${Text-MerchantShopName}    ${Text-MerchantShopNameEN}    ${Text-MerchantShopURL}    ${Text-MerchantShopCate}
+    Upload Img Logo    ${Img_M_Logo}    ${Img_D_Logo}
+    Fill Contacts    ${Text-MerchantContactPerson}    ${Text-MerchantContactPhone}    ${Text-MerchantContactEmail}
+    Click Create Merchant
+    Search Merchant    ${Text-MerchantShopName}
+    Click waiting Status    ${Text-MerchantShopName}
+    Change status to Active    ${Text-MerchantShopName}
+    ${UrlMerchantID}=    Select Merchant    ${Text-MerchantShopName}
+    #Map user with shop via AAD portal
+    Click topbar menu    Administration
+    AAD User list - select user to edit by User ID    ${user_id}
+    AAD User Information - Associate to Shop    ${Text-MerchantShopName}    ${roles}
+    Topbar Logout
+    #Login to mechant center and verify dash board
+    Go To    ${MC_URL}
+    Login Merchant center    ${username}    ${password}
+    Assert Merchant center Top bar    ${first_name}    ${last_name}    ${Text-MerchantShopName}    ${menus}
+    [Teardown]    Run Keywords    close browser
+    ...    AND    Delete Merchant from PDS by Merchant ID    ${UrlMerchantID}
+    ...    AND    Delete AAD user from DB by userid    ${user_id}
+
+TC_ITMWME2E_00114 User with role "pricing_write_product_read_role" assigned see correct topbar when login Backend portal
+    [Documentation]    User with role "pricing_write_product_read_role" assigned see correct topbar when login Backend portal
+    [Tags]    Invalid_Test_Case    TC_ITMWME2E_00114
+    Log    Test case TC_ITMWME2E_00114 User with role "pricing_write_product_read_role" assigned see correct topbar when login Backend portal started!
+    ${epoch}    Get current epoch time
+    ${username}    Set Variable    TC_ITMWME2E_00114_${epoch}
+    ${first_name}    Set Variable    This is first nam
+    ${last_name}    Set Variable    This is last name
+    ${password}    Set Variable    Password
+    ${password_confirm}    Set Variable    Password
+    ${email}    Set Variable    oak@test.com
+    ${response}    AAD Create merchant user    ${username}    ${password}    ${password_confirm}    ${first_name}    ${last_name}
+    ...    ${email}
+    ${user_id}    AAD Verify return code and return message    ${response}    ${201}    username '${username}' already exist
+    #Create new shop via MCH portal
+    ${Text-MerchantCompanyName}    Set Variable    test
+    ${Text-MerchantSlug}    Set Variable    ${epoch}
+    ${Text-MerchantShopName}    Set Variable    TC_E2E_1001${epoch}
+    ${Text-MerchantShopNameEN}    Set Variable    Test EN
+    ${Text-MerchantShopURL}    Set Variable    test
+    ${Text-MerchantShopCate}    Set Variable    Mobile
+    ${Text-MerchantContactPerson}    Set Variable    test test    # ENG
+    ${Text-MerchantContactPhone}    Set Variable    1111111    # INT
+    ${Text-MerchantContactEmail}    Set Variable    test@test.com    # xxx@xxx.xx
+    ${Img_M_Logo}    Set Variable    Mlogo.jpg
+    ${Img_D_Logo}    Set Variable    Dlogo.jpg
+    ${roles}    Create List    pricing_write_product_read_role
+    ${menus}    Create List    Inventory    Order    Promotion    Report
+    ${report_submenus}    Create List    Sale Summary    Monthly
+    #Create Merchant
+    Open Browser    ${PDS_URL}    chrome
+    Login Merchant center    test    password
+    Click topbar menu    Product
+    Navigate to Create merchant
+    Fill Merchant Info    ${Text-MerchantCompanyName}    ${Text-MerchantSlug}    ${Text-MerchantShopName}    ${Text-MerchantShopNameEN}    ${Text-MerchantShopURL}    ${Text-MerchantShopCate}
+    Upload Img Logo    ${Img_M_Logo}    ${Img_D_Logo}
+    Fill Contacts    ${Text-MerchantContactPerson}    ${Text-MerchantContactPhone}    ${Text-MerchantContactEmail}
+    Click Create Merchant
+    Search Merchant    ${Text-MerchantShopName}
+    Click waiting Status    ${Text-MerchantShopName}
+    Change status to Active    ${Text-MerchantShopName}
+    ${UrlMerchantID}=    Select Merchant    ${Text-MerchantShopName}
+    #Map user with shop via AAD portal
+    Click topbar menu    Administration
+    AAD User list - select user to edit by User ID    ${user_id}
+    AAD User Information - Associate to Shop    ${Text-MerchantShopName}    ${roles}
+    Topbar Logout
+    #Login to mechant center and verify dash board
+    Go To    ${MC_URL}
+    Login Merchant center    ${username}    ${password}
+    Assert Merchant center Top bar    ${first_name}    ${last_name}    ${Text-MerchantShopName}    ${menus}
+    [Teardown]    Run Keywords    close browser
+    ...    AND    Delete Merchant from PDS by Merchant ID    ${UrlMerchantID}
+    ...    AND    Delete AAD user from DB by userid    ${user_id}
+
+TC_ITMWME2E_00119 User with role "product_read" assigned see correct topbar when login Backend portal
+    [Documentation]    User with role "product_read" assigned see correct topbar when login Backend portal
+    [Tags]    Invalid_Test_Case    TC_ITMWME2E_00119
+    Log    Test case TC_ITMWME2E_00114 User with role "pricing_write_product_read_role" assigned see correct topbar when login Backend portal started!
+    ${epoch}    Get current epoch time
+    ${username}    Set Variable    TC_ITMWME2E_00XXX_${epoch}
+    ${first_name}    Set Variable    This is first nam
+    ${last_name}    Set Variable    This is last name
+    ${password}    Set Variable    Password
+    ${password_confirm}    Set Variable    Password
+    ${email}    Set Variable    oak@test.com
+    ${response}    AAD Create merchant user    ${username}    ${password}    ${password_confirm}    ${first_name}    ${last_name}
+    ...    ${email}
+    ${user_id}    AAD Verify return code and return message    ${response}    ${201}    username '${username}' already exist
+    #Create new shop via MCH portal
+    ${Text-MerchantCompanyName}    Set Variable    test
+    ${Text-MerchantSlug}    Set Variable    ${epoch}
+    ${Text-MerchantShopName}    Set Variable    TC_E2E_1001${epoch}
+    ${Text-MerchantShopNameEN}    Set Variable    Test EN
+    ${Text-MerchantShopURL}    Set Variable    test
+    ${Text-MerchantShopCate}    Set Variable    Mobile
+    ${Text-MerchantContactPerson}    Set Variable    test test    # ENG
+    ${Text-MerchantContactPhone}    Set Variable    1111111    # INT
+    ${Text-MerchantContactEmail}    Set Variable    test@test.com    # xxx@xxx.xx
+    ${Img_M_Logo}    Set Variable    Mlogo.jpg
+    ${Img_D_Logo}    Set Variable    Dlogo.jpg
+    ${roles}    Create List    product_read
+    ${menus}    Create List    Inventory    Order    Promotion    Report
+    ${report_submenus}    Create List    Sale Summary    Monthly
+    #Create Merchant
+    Open Browser    ${PDS_URL}    chrome
+    Login Merchant center    test    password
+    Click topbar menu    Product
+    Navigate to Create merchant
+    Fill Merchant Info    ${Text-MerchantCompanyName}    ${Text-MerchantSlug}    ${Text-MerchantShopName}    ${Text-MerchantShopNameEN}    ${Text-MerchantShopURL}    ${Text-MerchantShopCate}
+    Upload Img Logo    ${Img_M_Logo}    ${Img_D_Logo}
+    Fill Contacts    ${Text-MerchantContactPerson}    ${Text-MerchantContactPhone}    ${Text-MerchantContactEmail}
+    Click Create Merchant
+    Search Merchant    ${Text-MerchantShopName}
+    Click waiting Status    ${Text-MerchantShopName}
+    Change status to Active    ${Text-MerchantShopName}
+    ${UrlMerchantID}=    Select Merchant    ${Text-MerchantShopName}
+    #Map user with shop via AAD portal
+    Click topbar menu    Administration
+    AAD User list - select user to edit by User ID    ${user_id}
+    AAD User Information - Associate to Shop    ${Text-MerchantShopName}    ${roles}
+    Topbar Logout
+    #Login to mechant center and verify dash board
+    Go To    ${MC_URL}
+    Login Merchant center    ${username}    ${password}
+    Assert Merchant center Top bar    ${first_name}    ${last_name}    ${Text-MerchantShopName}    ${menus}
+    [Teardown]    Run Keywords    close browser
+    ...    AND    Delete Merchant from PDS by Merchant ID    ${UrlMerchantID}
+    ...    AND    Delete AAD user from DB by userid    ${user_id}
+
+TC_ITMWME2E_00120 Topbar display Shop name of user that assocate with more than one shop correctly
+    [Documentation]    Topbar display Shop name of user that assocate with more than one shop correctly
+    [Tags]    Invalid_Test_Case    TC_ITMWME2E_00120
+    Log    Test case TC_ITMWME2E_00114 User with role "pricing_write_product_read_role" assigned see correct topbar when login Backend portal started!
+    ${epoch}    Get current epoch time
+    ${username}    Set Variable    TC_ITMWME2E_00XXX_${epoch}
+    ${first_name}    Set Variable    This is first nam
+    ${last_name}    Set Variable    This is last name
+    ${password}    Set Variable    Password
+    ${password_confirm}    Set Variable    Password
+    ${email}    Set Variable    oak@test.com
+    ${response}    AAD Create merchant user    ${username}    ${password}    ${password_confirm}    ${first_name}    ${last_name}
+    ...    ${email}
+    ${user_id}    AAD Verify return code and return message    ${response}    ${201}    username '${username}' already exist
+    #Create new shop via MCH portal
+    ${Text-MerchantCompanyName}    Set Variable    test
+    ${Text-MerchantSlug}    Set Variable    ${epoch}
+    ${Text-MerchantShopName}    Set Variable    TC_E2E_1001${epoch}
+    ${Text-MerchantShopNameEN}    Set Variable    Test EN
+    ${Text-MerchantShopURL}    Set Variable    test
+    ${Text-MerchantShopCate}    Set Variable    Mobile
+    ${Text-MerchantContactPerson}    Set Variable    test test    # ENG
+    ${Text-MerchantContactPhone}    Set Variable    1111111    # INT
+    ${Text-MerchantContactEmail}    Set Variable    test@test.com    # xxx@xxx.xx
+    ${Img_M_Logo}    Set Variable    Mlogo.jpg
+    ${Img_D_Logo}    Set Variable    Dlogo.jpg
+    ${roles}    Create List    manage_user
+    ${menus}    Create List    Administration
+    ${report_submenus}    Create List    Sale Summary    Monthly
+    #Create 2 Merchant
+    Open Browser    ${PDS_URL}    chrome
+    Login Merchant center    test    password
+    Click topbar menu    Product
+    Navigate to Create merchant
+    Fill Merchant Info    ${Text-MerchantCompanyName}1    ${Text-MerchantSlug}1    ${Text-MerchantShopName}1    ${Text-MerchantShopNameEN}1    ${Text-MerchantShopURL}1    ${Text-MerchantShopCate}1
+    Upload Img Logo    ${Img_M_Logo}    ${Img_D_Logo}
+    Fill Contacts    ${Text-MerchantContactPerson}    ${Text-MerchantContactPhone}    ${Text-MerchantContactEmail}
+    Click Create Merchant
+    Search Merchant    ${Text-MerchantShopName}1
+    Click waiting Status    ${Text-MerchantShopName}1
+    Change status to Active    ${Text-MerchantShopName}1
+    ${UrlMerchantID1}=    Select Merchant    ${Text-MerchantShopName}
+    Click Navigation bar - Create Merchant
+    Fill Merchant Info    ${Text-MerchantCompanyName}2    ${Text-MerchantSlug}2    ${Text-MerchantShopName}2    ${Text-MerchantShopNameEN}2    ${Text-MerchantShopURL}2    ${Text-MerchantShopCate}2
+    Upload Img Logo    ${Img_M_Logo}    ${Img_D_Logo}
+    Fill Contacts    ${Text-MerchantContactPerson}    ${Text-MerchantContactPhone}    ${Text-MerchantContactEmail}
+    Click Create Merchant
+    Search Merchant    ${Text-MerchantShopName}2
+    Click waiting Status    ${Text-MerchantShopName}2
+    Change status to Active    ${Text-MerchantShopName}2
+    ${UrlMerchantID2}=    Select Merchant    ${Text-MerchantShopName}
+    #Map user with shop via AAD portal
+    Click topbar menu    Administration
+    AAD User list - select user to edit by User ID    ${user_id}
+    AAD User Information - Associate to Shop    ${Text-MerchantShopName}1    ${roles}
+    Click Navigation bar - User list
+    AAD User list - select user to edit by User ID    ${user_id}
+    AAD User Information - Associate to Shop    ${Text-MerchantShopName}2    ${roles}
+    Topbar Logout
+    #Login to mechant center and verify dash board
+    Go To    ${MC_URL}
+    Login Merchant center    ${username}    ${password}
+    Assert Merchant center Top bar    ${first_name}    ${last_name}    ${Text-MerchantShopName}1    ${menus}
+    ${Shopnames}    Create List    ${Text-MerchantShopName}1    ${Text-MerchantShopName}2
+    Click shopname
+    Assert Multiple Shopname    ${Shopnames}
+    [Teardown]    Run Keywords    close browser
+    ...    AND    Delete Merchant from PDS by Merchant ID    ${UrlMerchantID1}
+    ...    AND    Delete AAD user from DB by userid    ${user_id}
+    ...    AND    sleep    3
+    ...    AND    Delete Merchant from PDS by Merchant ID    ${UrlMerchantID2}

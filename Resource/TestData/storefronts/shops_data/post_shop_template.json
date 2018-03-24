@@ -1,0 +1,11 @@
+{
+  "merchant_id": "",
+  "shop_name":"",
+  "slug": "",
+  "shop_status": "inactive",
+  "logo":{
+    "web":"//cdn.wemall-dev.com/th/hot-brands/temp_test/disney_store_logo.png?v=e4579626",
+    "mobile":"//cdn.wemall-dev.com/th/hot-brands/temp_test/disney_store_logo_mobile.png?v=a2cf697e"
+  },
+  "updated_by":"hulk_robot"
+}

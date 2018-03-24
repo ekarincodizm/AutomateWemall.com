@@ -1,0 +1,52 @@
+{
+  "name_local": "Test Promotion Freebie",
+  "name_en": "",
+  "description_local": "<p>Test Promotion Freebie Description</p>\n",
+  "description_en": "",
+  "short_description_local": "Test Promotion Freebie short note",
+  "short_description_en": "",
+  "start_period": ^^start_period^^,
+  "end_period": ^^end_period^^,
+  "enable": ^^enable^^,
+  "member": true,
+  "non_member": true,
+  "app_ids": "true",
+  "channel_type": "1",
+  "merchant_ids": "itruemart",
+  "type": "itm-freebie",
+  "img_web": null,
+  "img_web_translation": null,
+  "img_mobile": null,
+  "img_mobile_translation": null,
+  "campaign": {
+    "id": ^^campaign_id^^
+  },
+  "condition_data": {
+    "criteria_type": "variant",
+    "criteria_values": [
+       "^^criteria_values1^^",
+       "^^criteria_values2^^"
+    ],
+    "free_variants_selectable": false,
+    "freebie_conditions": [
+      {
+        "variant_id": "^^variant_id1^^",
+        "quantity": "^^quantity_free1^^"
+      }
+    ],
+    "quantity": "^^quantity_main^^"
+  },
+  "detail_data": {
+    "img_web": "//alpha-cdn.wemall-dev.com/th/cmp/images/400x400.jpg?v=5ba7d1fb",
+    "img_web_translation": "//alpha-cdn.wemall-dev.com/th/cmp/images/400x400.jpg?v=5ba7d1fb",
+    "img_mobile": "//alpha-cdn.wemall-dev.com/th/cmp/images/7073_598866853557751_8530349431314153996_n.jpg?v=78f0fbfc",
+    "img_mobile_translation": "//alpha-cdn.wemall-dev.com/th/cmp/images/7073_598866853557751_8530349431314153996_n.jpg?v=78f0fbfc",
+    "thumb_web": "//alpha-cdn.wemall-dev.com/th/cmp/images/40x40.jpg?v=cff87fbf",
+    "thumb_mobile": "//alpha-cdn.wemall-dev.com/th/cmp/images/40x40.jpg?v=cff87fbf",
+    "thumb_web_translation": "//alpha-cdn.wemall-dev.com/th/cmp/images/40x40.jpg?v=cff87fbf",
+    "thumb_mobile_translation": "//alpha-cdn.wemall-dev.com/th/cmp/images/40x40.jpg?v=cff87fbf",
+    "plain_note": "^^note^^",
+    "plain_note_translation": ""
+  },
+   "repeat": "^^repeat^^"
+}

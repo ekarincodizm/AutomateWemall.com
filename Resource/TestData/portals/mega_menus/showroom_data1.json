@@ -1,0 +1,124 @@
+{
+  "showroom": {
+    "th": {
+      "child": {
+        "1": {
+          "title": "ฟิก_1",
+          "src_web": "//cdn.wemall-dev.com/th/showrooms/showroom_id/Screen Shot 2558-09-24 at 19.19.44.png",
+          "src_mobile": "//cdn.wemall-dev.com/th/showrooms/showroom_id/Screen Shot 2558-09-24 at 19.19.44.png",
+          "link_target": "_self",
+          "link_url": "link_url_1"
+        },
+        "2": {
+          "title": "ฟิก_2",
+          "src_web": "//cdn.wemall-dev.com/th/showrooms/showroom_id/a7.png",
+          "src_mobile": "//cdn.wemall-dev.com/th/showrooms/showroom_id/a7.png",
+          "link_target": "_self",
+          "link_url": "link_url_2"
+        },
+        "3": {
+          "title": "ฟิก_3",
+          "src_web": "//cdn.wemall-dev.com/th/showrooms/showroom_id/a8.png",
+          "src_mobile": "//cdn.wemall-dev.com/th/showrooms/showroom_id/a8.png",
+          "link_target": "_self",
+          "link_url": "link_url_3"
+        },
+        "4": {
+          "title": "ฟิก_4",
+          "src_web": "//cdn.wemall-dev.com/th/showrooms/showroom_id/t1.png",
+          "src_mobile": "//cdn.wemall-dev.com/th/showrooms/showroom_id/t1.png",
+          "link_target": "_self",
+          "link_url": "link_url_4"
+        },
+        "5": {
+          "title": "ฟิก_5",
+          "src_web": "//cdn.wemall-dev.com/th/showrooms/showroom_id/t2.png",
+          "src_mobile": "//cdn.wemall-dev.com/th/showrooms/showroom_id/t2.png",
+          "link_target": "_self",
+          "link_url": "link_url_5"
+        },
+        "6": {
+          "title": "ฟิก_6",
+          "src_web": "//cdn.wemall-dev.com/th/showrooms/showroom_id/t3.png",
+          "src_mobile": "//cdn.wemall-dev.com/th/showrooms/showroom_id/t3.png",
+          "link_target": "_self",
+          "link_url": "link_url_6"
+        },
+        "7": {
+          "title": "ฟิก_7",
+          "src_web": "//cdn.wemall-dev.com/th/showrooms/showroom_id/t4.png",
+          "src_mobile": "//cdn.wemall-dev.com/th/showrooms/showroom_id/t4.png",
+          "link_target": "_self",
+          "link_url": "link_url_7"
+        },
+        "8": {
+          "title": "ฟิก_8",
+          "src_web": "//cdn.wemall-dev.com/th/showrooms/showroom_id/t5.png",
+          "src_mobile": "//cdn.wemall-dev.com/th/showrooms/showroom_id/t5.png",
+          "link_target": "_self",
+          "link_url": "link_url_8"
+        }
+      }
+    },
+    "en": {
+      "child": {
+        "1": {
+          "title": "ฟิก_1",
+          "src_web": "//cdn.wemall-dev.com/th/showrooms/showroom_id/Screen Shot 2558-09-24 at 19.19.44.png",
+          "src_mobile": "//cdn.wemall-dev.com/th/showrooms/showroom_id/Screen Shot 2558-09-24 at 19.19.44.png",
+          "link_target": "_self",
+          "link_url": "link_url_1"
+        },
+        "2": {
+          "title": "ฟิก_2",
+          "src_web": "//cdn.wemall-dev.com/th/showrooms/showroom_id/a7.png",
+          "src_mobile": "//cdn.wemall-dev.com/th/showrooms/showroom_id/a7.png",
+          "link_target": "_self",
+          "link_url": "link_url_2"
+        },
+        "3": {
+          "title": "ฟิก_3",
+          "src_web": "//cdn.wemall-dev.com/th/showrooms/showroom_id/a8.png",
+          "src_mobile": "//cdn.wemall-dev.com/th/showrooms/showroom_id/a8.png",
+          "link_target": "_self",
+          "link_url": "link_url_3"
+        },
+        "4": {
+          "title": "ฟิก_4",
+          "src_web": "//cdn.wemall-dev.com/th/showrooms/showroom_id/t1.png",
+          "src_mobile": "//cdn.wemall-dev.com/th/showrooms/showroom_id/t1.png",
+          "link_target": "_self",
+          "link_url": "link_url_4"
+        },
+        "5": {
+          "title": "ฟิก_5",
+          "src_web": "//cdn.wemall-dev.com/th/showrooms/showroom_id/t2.png",
+          "src_mobile": "//cdn.wemall-dev.com/th/showrooms/showroom_id/t2.png",
+          "link_target": "_self",
+          "link_url": "link_url_5"
+        },
+        "6": {
+          "title": "ฟิก_6",
+          "src_web": "//cdn.wemall-dev.com/th/showrooms/showroom_id/t3.png",
+          "src_mobile": "//cdn.wemall-dev.com/th/showrooms/showroom_id/t3.png",
+          "link_target": "_self",
+          "link_url": "link_url_6"
+        },
+        "7": {
+          "title": "ฟิก_7",
+          "src_web": "//cdn.wemall-dev.com/th/showrooms/showroom_id/t4.png",
+          "src_mobile": "//cdn.wemall-dev.com/th/showrooms/showroom_id/t4.png",
+          "link_target": "_self",
+          "link_url": "link_url_7"
+        },
+        "8": {
+          "title": "ฟิก_8",
+          "src_web": "//cdn.wemall-dev.com/th/showrooms/showroom_id/t5.png",
+          "src_mobile": "//cdn.wemall-dev.com/th/showrooms/showroom_id/t5.png",
+          "link_target": "_self",
+          "link_url": "link_url_8"
+        }
+      }
+    }
+  }
+}

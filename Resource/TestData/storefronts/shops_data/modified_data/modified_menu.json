@@ -1,0 +1,134 @@
+{
+  "version": "draft",
+  "type": "menu",
+  "data": {
+    "logo": null,
+    "menus": [
+      {
+        "children": [
+          {
+            "name": {
+              "link": "#demo2",
+              "name": "level2"
+            },
+            "name_translation": {
+              "link": "#demo2",
+              "name": "level2"
+            },
+            "order": 1,
+            "target": "_self"
+          },
+          {
+            "name": {
+              "link": "#camera1",
+              "name": "DSLR"
+            },
+            "name_translation": {
+              "link": "#camera1",
+              "name": "DSLR"
+            },
+            "order": 2,
+            "target": "_self"
+          }
+        ],
+        "name": {
+          "link": "#",
+          "name": "กล้อง"
+        },
+        "name_translation": {
+          "link": "#",
+          "name": "Camera"
+        },
+        "order": 1,
+        "target": "_self"
+      },
+      {
+        "name": {
+          "link": "#lens",
+          "name": "เลนส์"
+        },
+        "name_translation": {
+          "link": "#lens",
+          "name": "Lens"
+        },
+        "order": 2,
+        "target": "_self"
+      },
+      {
+        "name": {
+          "link": "#acc1",
+          "name": "อุปกรณ์เสริม"
+        },
+        "name_translation": {
+          "link": "#acc1",
+          "name": "Accessory"
+        },
+        "order": 3,
+        "target": "_self"
+      },
+      {
+        "name": {
+          "link": null,
+          "name": "เครื่องพิมพ์"
+        },
+        "name_translation": {
+          "link": null,
+          "name": "Printer"
+        },
+        "order": 4,
+        "target": "_self"
+      },
+      {
+        "children": [
+          {
+            "name": {
+              "link": "#",
+              "name": "Printer laser"
+            },
+            "name_translation": {
+              "link": "#",
+              "name": "Printer laser"
+            },
+            "order": 1,
+            "target": "_blank"
+          }
+        ],
+        "name": {
+          "link": "#",
+          "name": "หมึกพิมพ์"
+        },
+        "name_translation": {
+          "link": "#",
+          "name": "Ink"
+        },
+        "order": 5,
+        "target": "_self"
+      },
+      {
+        "name": {
+          "link": "http://www.wemall-dev.com/category/smartphones-3153226347149.html",
+          "name": "กระดาษพิมพ์"
+        },
+        "name_translation": {
+          "link": "http://www.wemall-dev.com/category/smartphones-3153226347149.html",
+          "name": "Papers"
+        },
+        "order": 6,
+        "target": "_self"
+      },
+      {
+        "name": {
+          "link": "http://www.wemall-dev.com/category/smartphones-3153226347149.html",
+          "name": "กล้อง Mirror less"
+        },
+        "name_translation": {
+          "link": "http://www.wemall-dev.com/category/smartphones-3153226347149.html",
+          "name": "Mirror less camera"
+        },
+        "order": 7,
+        "target": "_self"
+      }
+    ],
+    "status": "active"
+  }
+}

@@ -1,0 +1,230 @@
+Type password in password field at checkout1*** Settings ***
+Library       String
+
+*** Keywords ***
+Display checkout1 EN page
+	Location Should Contain    ${Checkout1Page_EN}
+Display checkout1 thai page
+	Location Should Contain 	${Checkout1Page_TH}
+Display checkout2 page
+	Location Should Contain    ${Checkout2Page}
+Display checkout3 page
+    Location Should Contain    ${Checkout3Page}
+Display checkout3 EN page
+    Location Should Contain    ${Checkout3Page_EN}
+
+#Checkout1 guest
+Username text box shows email@mail.com as default
+    Wait Until Element Is Visible    xpath=//*[@id="step1-username"]    10s
+    Element Should Be Visible    //*[@id="step1-username"][contains(@placeholder, "email@mail.com")]
+
+Username text box shows email@mail.com or true id as default
+    Wait Until Element Is Visible    //*[@id="step1-username"][contains(@placeholder, "email@mail.com หรือ ทรูไอดี(ถ้ามี)")]    10s
+    Element Should Be Visible    //*[@id="step1-username"][contains(@placeholder, "email@mail.com หรือ ทรูไอดี(ถ้ามี)")]
+
+Password text box shows type password here as default
+    Wait Until Element Is Visible    //*[@id="password"][contains(@placeholder, "พิมพ์รหัสผ่านของคุณที่นี่")]    10s
+    Element Should Be Visible    //*[@id="password"][contains(@placeholder, "พิมพ์รหัสผ่านของคุณที่นี่")]
+
+The error message "Please enter e-mail" is displayed
+	Element Should Be Visible    xpath=//input[@id="step1-username"]/following-sibling::div[@class="active-alert-text"]
+	Element Should Contain    xpath=//input[@id="step1-username"]/following-sibling::div[@class="active-alert-text"]   กรุณากรอกอีเมล์
+
+The error message "Please enter a valid e-mail" is displayed
+    Element Should Contain    xpath=//input[@id="step1-username"]/following-sibling::div[@class="active-alert-text"]    กรุณากรอกอีเมล์ที่ถูกต้อง
+
+The error message "Please enter password" is displayed
+	Element Should Be Visible    xpath=//input[@id="password"]/following-sibling::div[@class="active-alert-text"]
+	Element Should Contain    xpath=//input[@id="password"]/following-sibling::div[@class="active-alert-text"]    กรุณากรอกพาสเวิร์ด
+
+Click forget password link
+    Wait Until Element Is Visible    ${forgot-password-anchor}
+    Click Element 		${forgot-password-anchor}
+
+Login at checkout1 as member
+    Click Element    ${radio-login-member}
+
+Type email in username field at checkout1
+	[Arguments]    ${Email-address-checkout1}
+	Input Text    id=step1-username    ${Email-address-checkout1}
+
+Mobile type email in username field at checkout1
+	[Arguments]    ${Email-address-checkout1}
+	Input Text    id=username    ${Email-address-checkout1}
+
+Type password in password field at checkout1
+    Wait Until Element Is Visible    //*[@id="password"]
+	Input Text     //*[@id="password"]    Iam12345#
+
+Type password at checkout1
+	[Arguments]     ${password}
+	Input Text     id=password      ${password}
+
+Click Button Go To Checkout2 Page
+	Click Element	id=btnNext
+	Location Should Contain 		step2
+
+Display name shows as GUEST at the top right
+    Element Should Be Visible    //*[@class="name-profile"]    GUEST
+
+Display name shows as automatecheckout1 at the top right
+    Element Should Be Visible    //*[@class="name-profile"]    automatecheckout1
+
+Mini Cart Has Shipping Fee
+	Element Should Be Visible 		//*[contains(@class, "sum")]
+	Element Should Contain 	  //*[@class="total-list"]/*[contains(@class, "sum text-blink text-blink-animation")]    55.00
+
+Type first name and last name
+	[Arguments]    ${name}
+	Input Text    //*[@id="name"]    ${name}
+
+Type telephone number
+	[Arguments]    ${telephone}
+	Input Text    //*[@id="telephone"]    ${telephone}
+
+Select bangkok provice
+	Click Element 		xpath=//*[@id="province-control"]/option[@value="1"]
+
+Select dindaeng district
+	Element Should Be Visible    //*[@id="district-control"]/option[@value="26"]
+	Click Element    //*[@id="district-control"]/option[@value="26"]
+
+Select dindaeng subdistrict
+	Click Element 	xpath=//*[@id="sub-district-control"]/option[@value="103"]
+
+Select 10400 postcode
+	Click Element 	xpath=//*[@id="zip-code-control"]/option[@value="10400"]
+
+type address
+	[Arguments]		${address}
+	Input Text    //*[@id="address"]	${address}
+
+Click ship to here button go to checkout3 page
+	Click Element    //*[@id="btnSave"]
+
+Click counter service tab
+	Click Element    //*[@class="cservice"]//a
+
+Click buy button go to thank you page
+	Click Element    //*[@id="step3-submit"]
+
+Get Price From Mini Cart
+	Sleep   3s
+	${total-price}=     Get Text     xpath=//div[contains(@class, "sum_total_price")]
+	${total-price}=     Replace String     ${total-price}      ,     ${EMPTY}
+	Return From Keyword     ${total-price}
+
+Get Discount Price From Mini Cart
+	Sleep   3s
+	${discount-price}=     Get Text    xpath=//div[@class="sum text-blink text-blink-animation"]
+	${discount-price}=     Replace String     ${discount-price}    ,    ${EMPTY}
+	${discount-price}=     Replace String     ${discount-price}    -     ${EMPTY}
+	Return From Keyword    ${discount-price}
+
+Get Sub Total Price From Mini Cart
+	Sleep   3s
+
+	Wait Until Element Is Visible   //div[@id="minicart-container"]/div[contains(@class, "total-list")][5]/div[1]    60s
+	${sub-total}=      Get Text     //div[@id="minicart-container"]/div[contains(@class, "total-list")][5]/div[1]
+
+	${sub-total}=  Replace String  ${sub-total}  ,  ${EMPTY}
+	${sub-total}=  Replace String  ${sub-total}  \n  ${EMPTY}
+	${sub-total}=  Replace String  ${sub-total}  \r  ${EMPTY}
+	${sub-total}=  Replace String  ${sub-total}  <br><br>  ${EMPTY}
+	${sub-total}=  Replace String  ${sub-total}  <small>  ${EMPTY}
+	${sub-total}=  Replace String  ${sub-total}  </small>  ${EMPTY}
+	${sub-total}=  Replace String  ${sub-total}  (รวมภาษีมูลค่าเพิ่ม)  ${EMPTY}
+	Return From Keyword    ${sub-total}
+
+Get Shipping Price From Mini Cart
+	Sleep   3s
+	Log To Console    === Get Shipping price from mini cart ====
+	${xpath}=  Get Matching Xpath Count  //div[@id="minicart-container"]/div[@class="total-list"][2]/div[1]
+	Log To Console  xpath-count=${xpath}
+	Wait Until Element Is Visible   //div[@id="minicart-container"]/div[@class="total-list"][2]/div[1]    11s
+	${shipping-price}=   Get Text    //div[@id="minicart-container"]/div[@class="total-list"][2]/div[1]
+	Log To console   shipping-price-from-mini-cart=${shipping-price}
+
+	${shipping-price}=  Run Keyword If  '${shipping-price}' != 'ฟรี'  Replace String  ${shipping-price}  ,  ${EMPTY}   ELSE  Set Variable  ${shipping-price}
+	Log To Console  shipping-price=${shipping-price}
+	[Return]  ${shipping-price}
+
+Get Sub Total From Thankyou Page
+	${thankyou-sub-total}=      Get Text    id=thank_total_pay
+	Return From Keyword     ${thankyou-sub-total}
+
+Sub Total On Mini Cart Should Be Display
+	[Arguments]      ${calculate-sub-total}
+	${sub-total}=    Get Sub Total Price From Mini Cart
+	Should Be Equal As Strings      ${sub-total}    ${calculate-sub-total}
+
+
+User View Full Cart
+	Wait Until Element Is Visible      id=icn_cart_id     30s
+	Click Element      id=icn_cart_id
+
+Delete Cart By Inventory Id
+	[Arguments]     ${inv_id}
+	${product-name}=     Get Product Name     ${inv_id}
+
+	Open Full Cart Checkout Page
+	Wait Until Element Is Visible     id=cartlightbox-go-next
+
+	${total-items}=     Get Matching Xpath Count     //div[@class="cart-title-list"]
+	${total-items}=    Evaluate   ${total-items} + 1
+	:FOR  ${index}  IN RANGE  1   ${total-items}
+	\    ${p-name}=    Get Text     //div[@class="cart-title-list"][${index}]/div[@class="left"]/div[@class="cart-box-name"]/h2
+	\    ${is-found}=    Is Same As     ${product-name}      ${p-name}
+	\    Log to console    is-found=${is-found}
+	\    Run Keyword If    '${is-found}' == 'True'    Click Element    //div[@class="cart-title-list"][${index}]/div[@class="left"]/div[@class="cart-box-action"]/ul/li/a
+	\    Log to console    Before Confirm Action Keyword
+	\    Confirm Action
+	\    Run Keyword If    '${is-found}' == 'True'    Exit For Loop
+	\    Log To Console    After exit for loop
+
+	Sleep   5s
+
+    #Wait Until Element Is Visible    id=cartlightbox-go-next    60s
+    Click Element    id=cartlightbox-go-next
+
+
+Open Full Cart Checkout Page
+	Wait Until Element Is Visible      id=btn-edit-cart
+	Click Element     id=btn-edit-cart
+
+User Click Remove Promotion
+	Wait Until Element Is Visible    //img[contains(@src, "close.gif")]
+	Click Element      //img[contains(@src, "close.gif")]
+	Sleep    5s
+
+User Click Open Popup For Delete Item Conflict
+	Wait Until Element Is Visible     //a[contains(@class, "ui-msg-box_link show-manageitempayment-btn")]    20s
+	Click Element    //a[contains(@class, "ui-msg-box_link show-manageitempayment-btn")]
+	Wait Until Element Is Visible     //*[@class="cart-item__text-delete manage-itempayment-delete-btn"]    20s
+
+	Click Element     //*[@class="cart-item__text-delete manage-itempayment-delete-btn"]
+	Wait Until Element Is Visible      //input[@class="form-bot-default close-modal confirm-itempayment-delete-btn"]    20s
+	Click Element     //input[@class="form-bot-default close-modal confirm-itempayment-delete-btn"]
+	Sleep    5s
+
+User Choose BBL Bank For Pay Installment
+	Click Element
+
+Total Price On BBL Page
+	[Arguments]      ${total-price}     ${installment-rate}
+
+	Wait Until Element Is Visible     //form[@name="PayInfoForm"]/table
+
+	${bbl-total-price}=    Get Text    //form[@name="PayInfoForm"]/table/tbody/tr[16]/td[3]/span[@id="descriptions"]
+	${bbl-installment-rate}=    Get Text    //form[@name="PayInfoForm"]/table/tbody/tr[17]/td[3]/span[@id="descriptions2"]
+	${bbl-total-price}=    Replace String     ${bbl-total-price}    ,    ${EMPTY}
+	${bbl-installment-rate}=    Replace String    ${bbl-installment-rate}    ,    ${EMPTY}
+
+	${bbl-total-price}=    Py Convert To Float     ${bbl-total-price}
+	${bbl-installment-rate}=    Py Convert To Float     ${bbl-installment-rate}
+
+	Should Be Equal As Numbers     ${bbl-total-price}     ${total-price}
+	Should Be Equal As Numbers     ${bbl-installment-rate}    ${installment-rate}
+
+
+

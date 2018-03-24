@@ -1,0 +1,654 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'chromedriver' ]
+2 info using npm@2.13.4
+3 info using node@v0.12.2
+4 verbose install initial load of /Users/Benz/Documents/Ascend Work/robot_itruemart_thai/Test_Case/PCMS_Order/package.json
+5 verbose readDependencies loading dependencies from /Users/Benz/Documents/Ascend Work/robot_itruemart_thai/Test_Case/PCMS_Order/package.json
+6 silly cache add args [ 'chromedriver', null ]
+7 verbose cache add spec chromedriver
+8 silly cache add parsed spec { raw: 'chromedriver',
+8 silly cache add   scope: null,
+8 silly cache add   name: 'chromedriver',
+8 silly cache add   rawSpec: '',
+8 silly cache add   spec: '*',
+8 silly cache add   type: 'range' }
+9 silly addNamed chromedriver@*
+10 verbose addNamed "*" is a valid semver range for chromedriver
+11 silly addNameRange { name: 'chromedriver', range: '*', hasData: false }
+12 silly mapToRegistry name chromedriver
+13 silly mapToRegistry using default registry
+14 silly mapToRegistry registry https://registry.npmjs.org/
+15 silly mapToRegistry uri https://registry.npmjs.org/chromedriver
+16 verbose addNameRange registry:https://registry.npmjs.org/chromedriver not in flight; fetching
+17 verbose request uri https://registry.npmjs.org/chromedriver
+18 verbose request no auth needed
+19 info attempt registry request try #1 at 2:49:36 PM
+20 verbose request id 9e6433da336df685
+21 http request GET https://registry.npmjs.org/chromedriver
+22 http 200 https://registry.npmjs.org/chromedriver
+23 silly get cb [ 200,
+23 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+23 silly get     etag: '"DHO5OJOMNUKEMYMFP1F6KO7LC"',
+23 silly get     'content-type': 'application/json',
+23 silly get     'content-encoding': 'gzip',
+23 silly get     'cache-control': 'max-age=300',
+23 silly get     'content-length': '5474',
+23 silly get     'accept-ranges': 'bytes',
+23 silly get     date: 'Fri, 27 May 2016 07:49:37 GMT',
+23 silly get     via: '1.1 varnish',
+23 silly get     age: '88',
+23 silly get     connection: 'keep-alive',
+23 silly get     'x-served-by': 'cache-sin6924-SIN',
+23 silly get     'x-cache': 'HIT',
+23 silly get     'x-cache-hits': '1',
+23 silly get     'x-timer': 'S1464335377.346850,VS0,VE0',
+23 silly get     vary: 'Accept-Encoding' } ]
+24 verbose get saving chromedriver to /Users/Benz/.npm/registry.npmjs.org/chromedriver/.cache.json
+25 silly addNameRange number 2 { name: 'chromedriver', range: '*', hasData: true }
+26 silly addNameRange versions [ 'chromedriver',
+26 silly addNameRange   [ '2.0.0',
+26 silly addNameRange     '2.0.1',
+26 silly addNameRange     '2.2.0',
+26 silly addNameRange     '2.3.0',
+26 silly addNameRange     '2.6.0',
+26 silly addNameRange     '2.8.0',
+26 silly addNameRange     '2.8.1',
+26 silly addNameRange     '2.9.0',
+26 silly addNameRange     '2.9.1-0',
+26 silly addNameRange     '2.9.1-1',
+26 silly addNameRange     '2.10.0',
+26 silly addNameRange     '2.10.0-1',
+26 silly addNameRange     '2.11.0',
+26 silly addNameRange     '2.12.0',
+26 silly addNameRange     '2.13.0',
+26 silly addNameRange     '2.14.0',
+26 silly addNameRange     '2.14.1',
+26 silly addNameRange     '2.15.0',
+26 silly addNameRange     '2.15.1',
+26 silly addNameRange     '2.15.2',
+26 silly addNameRange     '2.16.0',
+26 silly addNameRange     '2.18.0',
+26 silly addNameRange     '2.19.0',
+26 silly addNameRange     '2.20.0',
+26 silly addNameRange     '2.21.0',
+26 silly addNameRange     '2.21.1',
+26 silly addNameRange     '2.21.2' ] ]
+27 silly addNamed chromedriver@2.21.2
+28 verbose addNamed "2.21.2" is a plain semver version for chromedriver
+29 silly mapToRegistry name chromedriver
+30 silly mapToRegistry using default registry
+31 silly mapToRegistry registry https://registry.npmjs.org/
+32 silly mapToRegistry uri https://registry.npmjs.org/chromedriver
+33 verbose addRemoteTarball https://registry.npmjs.org/chromedriver/-/chromedriver-2.21.2.tgz not in flight; adding
+34 verbose addRemoteTarball [ 'https://registry.npmjs.org/chromedriver/-/chromedriver-2.21.2.tgz',
+34 verbose addRemoteTarball   'f4dab2ab58b35f70209ffcd1d2bc13e26fb2ed64' ]
+35 info retry fetch attempt 1 at 2:49:37 PM
+36 info attempt registry request try #1 at 2:49:37 PM
+37 http fetch GET https://registry.npmjs.org/chromedriver/-/chromedriver-2.21.2.tgz
+38 http fetch 200 https://registry.npmjs.org/chromedriver/-/chromedriver-2.21.2.tgz
+39 silly fetchAndShaCheck shasum f4dab2ab58b35f70209ffcd1d2bc13e26fb2ed64
+40 verbose addTmpTarball /var/folders/q0/s4fnp7h552j4hpr7l40pz9br0000gn/T/npm-7189-d7e96a5d/registry.npmjs.org/chromedriver/-/chromedriver-2.21.2.tgz not in flight; adding
+41 verbose addTmpTarball already have metadata; skipping unpack for chromedriver@2.21.2
+42 silly cache afterAdd chromedriver@2.21.2
+43 verbose afterAdd /Users/Benz/.npm/chromedriver/2.21.2/package/package.json not in flight; writing
+44 verbose afterAdd /Users/Benz/.npm/chromedriver/2.21.2/package/package.json written
+45 silly install resolved [ { name: 'chromedriver',
+45 silly install resolved     version: '2.21.2',
+45 silly install resolved     keywords: [ 'chromedriver', 'selenium' ],
+45 silly install resolved     description: 'ChromeDriver for Selenium',
+45 silly install resolved     homepage: 'https://github.com/giggio/node-chromedriver',
+45 silly install resolved     repository:
+45 silly install resolved      { type: 'git',
+45 silly install resolved        url: 'git://github.com/giggio/node-chromedriver.git' },
+45 silly install resolved     licenses: [ [Object] ],
+45 silly install resolved     author:
+45 silly install resolved      { name: 'Giovanni Bassi',
+45 silly install resolved        email: 'giggio@giggio.net',
+45 silly install resolved        url: 'http://www.lambda3.com.br' },
+45 silly install resolved     main: 'lib/chromedriver',
+45 silly install resolved     bin: { chromedriver: './bin/chromedriver' },
+45 silly install resolved     scripts: { install: 'node install.js' },
+45 silly install resolved     dependencies:
+45 silly install resolved      { 'adm-zip': '^0.4.7',
+45 silly install resolved        kew: '^0.5.0',
+45 silly install resolved        mkdirp: '^0.5.0',
+45 silly install resolved        npmconf: '^2.1.1',
+45 silly install resolved        rimraf: '^2.0.3' },
+45 silly install resolved     gitHead: '0447b5d116b8cfb527e02205a398a395920f7016',
+45 silly install resolved     bugs: { url: 'https://github.com/giggio/node-chromedriver/issues' },
+45 silly install resolved     _id: 'chromedriver@2.21.2',
+45 silly install resolved     _shasum: 'f4dab2ab58b35f70209ffcd1d2bc13e26fb2ed64',
+45 silly install resolved     _from: 'chromedriver@*',
+45 silly install resolved     _npmVersion: '3.3.12',
+45 silly install resolved     _nodeVersion: '5.3.0',
+45 silly install resolved     _npmUser: { name: 'giggio', email: 'giggio@giggio.net' },
+45 silly install resolved     maintainers: [ [Object] ],
+45 silly install resolved     dist:
+45 silly install resolved      { shasum: 'f4dab2ab58b35f70209ffcd1d2bc13e26fb2ed64',
+45 silly install resolved        tarball: 'https://registry.npmjs.org/chromedriver/-/chromedriver-2.21.2.tgz' },
+45 silly install resolved     directories: {},
+45 silly install resolved     _resolved: 'https://registry.npmjs.org/chromedriver/-/chromedriver-2.21.2.tgz' } ]
+46 info install chromedriver@2.21.2 into /Users/Benz/Documents/Ascend Work/robot_itruemart_thai/Test_Case/PCMS_Order
+47 info installOne chromedriver@2.21.2
+48 verbose installOne of chromedriver to /Users/Benz/Documents/Ascend Work/robot_itruemart_thai/Test_Case/PCMS_Order not in flight; installing
+49 verbose lock using /Users/Benz/.npm/_locks/chromedriver-8ec4573214529ad3.lock for /Users/Benz/Documents/Ascend Work/robot_itruemart_thai/Test_Case/PCMS_Order/node_modules/chromedriver
+50 silly install write writing chromedriver 2.21.2 to /Users/Benz/Documents/Ascend Work/robot_itruemart_thai/Test_Case/PCMS_Order/node_modules/chromedriver
+51 verbose unbuild node_modules/chromedriver
+52 silly gentlyRm /Users/Benz/Documents/Ascend Work/robot_itruemart_thai/Test_Case/PCMS_Order/node_modules/chromedriver is being purged from base /Users/Benz/Documents/Ascend Work/robot_itruemart_thai/Test_Case/PCMS_Order
+53 verbose gentlyRm don't care about contents; nuking /Users/Benz/Documents/Ascend Work/robot_itruemart_thai/Test_Case/PCMS_Order/node_modules/chromedriver
+54 verbose tar unpack /Users/Benz/.npm/chromedriver/2.21.2/package.tgz
+55 verbose tar unpacking to /Users/Benz/Documents/Ascend Work/robot_itruemart_thai/Test_Case/PCMS_Order/node_modules/chromedriver
+56 silly gentlyRm /Users/Benz/Documents/Ascend Work/robot_itruemart_thai/Test_Case/PCMS_Order/node_modules/chromedriver is being purged
+57 verbose gentlyRm don't care about contents; nuking /Users/Benz/Documents/Ascend Work/robot_itruemart_thai/Test_Case/PCMS_Order/node_modules/chromedriver
+58 silly gunzTarPerm modes [ '755', '644' ]
+59 silly gunzTarPerm extractEntry package.json
+60 silly gunzTarPerm modified mode [ 'package.json', 436, 420 ]
+61 silly gunzTarPerm extractEntry .npmignore
+62 silly gunzTarPerm modified mode [ '.npmignore', 436, 420 ]
+63 silly gunzTarPerm extractEntry README.md
+64 silly gunzTarPerm modified mode [ 'README.md', 436, 420 ]
+65 silly gunzTarPerm extractEntry install.js
+66 silly gunzTarPerm modified mode [ 'install.js', 436, 420 ]
+67 silly gunzTarPerm extractEntry .travis.yml
+68 silly gunzTarPerm modified mode [ '.travis.yml', 436, 420 ]
+69 silly gunzTarPerm extractEntry bin/chromedriver
+70 silly gunzTarPerm modified mode [ 'bin/chromedriver', 509, 493 ]
+71 silly gunzTarPerm extractEntry lib/chromedriver.js
+72 silly gunzTarPerm modified mode [ 'lib/chromedriver.js', 436, 420 ]
+73 silly gunzTarPerm extractEntry lib/chromedriver/chromedriver
+74 silly gunzTarPerm extractEntry lib/chromedriver/chromedriver_linux64_2.0.zip
+75 silly gunzTarPerm modified mode [ 'lib/chromedriver/chromedriver_linux64_2.0.zip', 436, 420 ]
+76 silly gunzTarPerm extractEntry lib/chromedriver/chromedriver_linux64_2.2.zip
+77 silly gunzTarPerm modified mode [ 'lib/chromedriver/chromedriver_linux64_2.2.zip', 436, 420 ]
+78 verbose write writing to /Users/Benz/Documents/Ascend Work/robot_itruemart_thai/Test_Case/PCMS_Order/node_modules/chromedriver/package.json
+79 info preinstall chromedriver@2.21.2
+80 verbose readDependencies loading dependencies from /Users/Benz/Documents/Ascend Work/robot_itruemart_thai/Test_Case/PCMS_Order/node_modules/chromedriver/package.json
+81 silly prepareForInstallMany adding adm-zip@^0.4.7 from chromedriver dependencies
+82 silly prepareForInstallMany adding kew@^0.5.0 from chromedriver dependencies
+83 silly prepareForInstallMany adding mkdirp@^0.5.0 from chromedriver dependencies
+84 silly prepareForInstallMany adding npmconf@^2.1.1 from chromedriver dependencies
+85 silly prepareForInstallMany adding rimraf@^2.0.3 from chromedriver dependencies
+86 verbose readDependencies loading dependencies from /Users/Benz/Documents/Ascend Work/robot_itruemart_thai/Test_Case/PCMS_Order/node_modules/chromedriver/package.json
+87 silly cache add args [ 'adm-zip@^0.4.7', null ]
+88 verbose cache add spec adm-zip@^0.4.7
+89 silly cache add args [ 'kew@^0.5.0', null ]
+90 verbose cache add spec kew@^0.5.0
+91 silly cache add parsed spec { raw: 'adm-zip@^0.4.7',
+91 silly cache add   scope: null,
+91 silly cache add   name: 'adm-zip',
+91 silly cache add   rawSpec: '^0.4.7',
+91 silly cache add   spec: '>=0.4.7 <0.5.0',
+91 silly cache add   type: 'range' }
+92 silly addNamed adm-zip@>=0.4.7 <0.5.0
+93 verbose addNamed ">=0.4.7 <0.5.0" is a valid semver range for adm-zip
+94 silly addNameRange { name: 'adm-zip', range: '>=0.4.7 <0.5.0', hasData: false }
+95 silly mapToRegistry name adm-zip
+96 silly mapToRegistry using default registry
+97 silly mapToRegistry registry https://registry.npmjs.org/
+98 silly mapToRegistry uri https://registry.npmjs.org/adm-zip
+99 verbose addNameRange registry:https://registry.npmjs.org/adm-zip not in flight; fetching
+100 silly cache add parsed spec { raw: 'kew@^0.5.0',
+100 silly cache add   scope: null,
+100 silly cache add   name: 'kew',
+100 silly cache add   rawSpec: '^0.5.0',
+100 silly cache add   spec: '>=0.5.0 <0.6.0',
+100 silly cache add   type: 'range' }
+101 silly addNamed kew@>=0.5.0 <0.6.0
+102 verbose addNamed ">=0.5.0 <0.6.0" is a valid semver range for kew
+103 silly addNameRange { name: 'kew', range: '>=0.5.0 <0.6.0', hasData: false }
+104 silly mapToRegistry name kew
+105 silly mapToRegistry using default registry
+106 silly mapToRegistry registry https://registry.npmjs.org/
+107 silly mapToRegistry uri https://registry.npmjs.org/kew
+108 verbose addNameRange registry:https://registry.npmjs.org/kew not in flight; fetching
+109 silly cache add args [ 'mkdirp@^0.5.0', null ]
+110 verbose cache add spec mkdirp@^0.5.0
+111 silly cache add parsed spec { raw: 'mkdirp@^0.5.0',
+111 silly cache add   scope: null,
+111 silly cache add   name: 'mkdirp',
+111 silly cache add   rawSpec: '^0.5.0',
+111 silly cache add   spec: '>=0.5.0 <0.6.0',
+111 silly cache add   type: 'range' }
+112 silly addNamed mkdirp@>=0.5.0 <0.6.0
+113 verbose addNamed ">=0.5.0 <0.6.0" is a valid semver range for mkdirp
+114 silly addNameRange { name: 'mkdirp', range: '>=0.5.0 <0.6.0', hasData: false }
+115 silly mapToRegistry name mkdirp
+116 silly mapToRegistry using default registry
+117 silly mapToRegistry registry https://registry.npmjs.org/
+118 silly mapToRegistry uri https://registry.npmjs.org/mkdirp
+119 verbose addNameRange registry:https://registry.npmjs.org/mkdirp not in flight; fetching
+120 silly cache add args [ 'npmconf@^2.1.1', null ]
+121 verbose cache add spec npmconf@^2.1.1
+122 silly cache add parsed spec { raw: 'npmconf@^2.1.1',
+122 silly cache add   scope: null,
+122 silly cache add   name: 'npmconf',
+122 silly cache add   rawSpec: '^2.1.1',
+122 silly cache add   spec: '>=2.1.1 <3.0.0',
+122 silly cache add   type: 'range' }
+123 silly addNamed npmconf@>=2.1.1 <3.0.0
+124 verbose addNamed ">=2.1.1 <3.0.0" is a valid semver range for npmconf
+125 silly addNameRange { name: 'npmconf', range: '>=2.1.1 <3.0.0', hasData: false }
+126 silly mapToRegistry name npmconf
+127 silly mapToRegistry using default registry
+128 silly mapToRegistry registry https://registry.npmjs.org/
+129 silly mapToRegistry uri https://registry.npmjs.org/npmconf
+130 verbose addNameRange registry:https://registry.npmjs.org/npmconf not in flight; fetching
+131 silly cache add args [ 'rimraf@^2.0.3', null ]
+132 verbose cache add spec rimraf@^2.0.3
+133 silly cache add parsed spec { raw: 'rimraf@^2.0.3',
+133 silly cache add   scope: null,
+133 silly cache add   name: 'rimraf',
+133 silly cache add   rawSpec: '^2.0.3',
+133 silly cache add   spec: '>=2.0.3 <3.0.0',
+133 silly cache add   type: 'range' }
+134 silly addNamed rimraf@>=2.0.3 <3.0.0
+135 verbose addNamed ">=2.0.3 <3.0.0" is a valid semver range for rimraf
+136 silly addNameRange { name: 'rimraf', range: '>=2.0.3 <3.0.0', hasData: false }
+137 silly mapToRegistry name rimraf
+138 silly mapToRegistry using default registry
+139 silly mapToRegistry registry https://registry.npmjs.org/
+140 silly mapToRegistry uri https://registry.npmjs.org/rimraf
+141 verbose addNameRange registry:https://registry.npmjs.org/rimraf not in flight; fetching
+142 verbose request uri https://registry.npmjs.org/adm-zip
+143 verbose request no auth needed
+144 info attempt registry request try #1 at 2:49:46 PM
+145 http request GET https://registry.npmjs.org/adm-zip
+146 verbose request uri https://registry.npmjs.org/kew
+147 verbose request no auth needed
+148 info attempt registry request try #1 at 2:49:46 PM
+149 http request GET https://registry.npmjs.org/kew
+150 verbose request uri https://registry.npmjs.org/mkdirp
+151 verbose request no auth needed
+152 info attempt registry request try #1 at 2:49:46 PM
+153 verbose etag "3S0RKN8WWE613Z2LN0KUKL1DS"
+154 http request GET https://registry.npmjs.org/mkdirp
+155 verbose request uri https://registry.npmjs.org/npmconf
+156 verbose request no auth needed
+157 info attempt registry request try #1 at 2:49:46 PM
+158 verbose etag "BCJGZTO6DWJS3OL63R8VZG32S"
+159 http request GET https://registry.npmjs.org/npmconf
+160 verbose request uri https://registry.npmjs.org/rimraf
+161 verbose request no auth needed
+162 info attempt registry request try #1 at 2:49:46 PM
+163 verbose etag "JCZVC94EONTOK3HYNFT0LBQO"
+164 http request GET https://registry.npmjs.org/rimraf
+165 http 200 https://registry.npmjs.org/adm-zip
+166 silly get cb [ 200,
+166 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+166 silly get     etag: '"UY8XOSAQ0VD2PXZBJ6IU6XFX"',
+166 silly get     'content-type': 'application/json',
+166 silly get     'content-encoding': 'gzip',
+166 silly get     'cache-control': 'max-age=300',
+166 silly get     'content-length': '3673',
+166 silly get     'accept-ranges': 'bytes',
+166 silly get     date: 'Fri, 27 May 2016 07:49:46 GMT',
+166 silly get     via: '1.1 varnish',
+166 silly get     age: '183',
+166 silly get     connection: 'keep-alive',
+166 silly get     'x-served-by': 'cache-sin6922-SIN',
+166 silly get     'x-cache': 'HIT',
+166 silly get     'x-cache-hits': '2',
+166 silly get     'x-timer': 'S1464335386.678840,VS0,VE0',
+166 silly get     vary: 'Accept-Encoding' } ]
+167 verbose get saving adm-zip to /Users/Benz/.npm/registry.npmjs.org/adm-zip/.cache.json
+168 http 200 https://registry.npmjs.org/mkdirp
+169 silly get cb [ 200,
+169 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+169 silly get     etag: '"49NNM1W5LG8VL5C772Y5YGQ5X"',
+169 silly get     'content-type': 'application/json',
+169 silly get     'content-encoding': 'gzip',
+169 silly get     'cache-control': 'max-age=300',
+169 silly get     'content-length': '4826',
+169 silly get     'accept-ranges': 'bytes',
+169 silly get     date: 'Fri, 27 May 2016 07:49:46 GMT',
+169 silly get     via: '1.1 varnish',
+169 silly get     age: '178',
+169 silly get     connection: 'keep-alive',
+169 silly get     'x-served-by': 'cache-sin6924-SIN',
+169 silly get     'x-cache': 'HIT',
+169 silly get     'x-cache-hits': '38',
+169 silly get     'x-timer': 'S1464335386.684055,VS0,VE0',
+169 silly get     vary: 'Accept-Encoding' } ]
+170 verbose get saving mkdirp to /Users/Benz/.npm/registry.npmjs.org/mkdirp/.cache.json
+171 http 200 https://registry.npmjs.org/kew
+172 silly get cb [ 200,
+172 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+172 silly get     etag: '"AW5RY0MTQ5G4Q0BRIPRCKNB5D"',
+172 silly get     'content-type': 'application/json',
+172 silly get     'content-encoding': 'gzip',
+172 silly get     'cache-control': 'max-age=300',
+172 silly get     'content-length': '7463',
+172 silly get     'accept-ranges': 'bytes',
+172 silly get     date: 'Fri, 27 May 2016 07:49:46 GMT',
+172 silly get     via: '1.1 varnish',
+172 silly get     age: '163',
+172 silly get     connection: 'keep-alive',
+172 silly get     'x-served-by': 'cache-sin6923-SIN',
+172 silly get     'x-cache': 'HIT',
+172 silly get     'x-cache-hits': '2',
+172 silly get     'x-timer': 'S1464335386.678021,VS0,VE0',
+172 silly get     vary: 'Accept-Encoding' } ]
+173 verbose get saving kew to /Users/Benz/.npm/registry.npmjs.org/kew/.cache.json
+174 http 200 https://registry.npmjs.org/rimraf
+175 silly get cb [ 200,
+175 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+175 silly get     etag: '"BG2O2E5SRP6ER77O12ERHPH5Z"',
+175 silly get     'content-type': 'application/json',
+175 silly get     'content-encoding': 'gzip',
+175 silly get     'cache-control': 'max-age=300',
+175 silly get     'content-length': '8350',
+175 silly get     'accept-ranges': 'bytes',
+175 silly get     date: 'Fri, 27 May 2016 07:49:46 GMT',
+175 silly get     via: '1.1 varnish',
+175 silly get     age: '78',
+175 silly get     connection: 'keep-alive',
+175 silly get     'x-served-by': 'cache-sin6924-SIN',
+175 silly get     'x-cache': 'HIT',
+175 silly get     'x-cache-hits': '5',
+175 silly get     'x-timer': 'S1464335386.690127,VS0,VE0',
+175 silly get     vary: 'Accept-Encoding' } ]
+176 verbose get saving rimraf to /Users/Benz/.npm/registry.npmjs.org/rimraf/.cache.json
+177 http 200 https://registry.npmjs.org/npmconf
+178 silly get cb [ 200,
+178 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+178 silly get     etag: '"3709V1FMG4KCP1MGTPY0VQ7ZF"',
+178 silly get     'content-type': 'application/json',
+178 silly get     'content-encoding': 'gzip',
+178 silly get     'cache-control': 'max-age=300',
+178 silly get     'content-length': '9077',
+178 silly get     'accept-ranges': 'bytes',
+178 silly get     date: 'Fri, 27 May 2016 07:49:46 GMT',
+178 silly get     via: '1.1 varnish',
+178 silly get     age: '279',
+178 silly get     connection: 'keep-alive',
+178 silly get     'x-served-by': 'cache-sin6922-SIN',
+178 silly get     'x-cache': 'HIT',
+178 silly get     'x-cache-hits': '1',
+178 silly get     'x-timer': 'S1464335386.693885,VS0,VE0',
+178 silly get     vary: 'Accept-Encoding' } ]
+179 verbose get saving npmconf to /Users/Benz/.npm/registry.npmjs.org/npmconf/.cache.json
+180 silly addNameRange number 2 { name: 'adm-zip', range: '>=0.4.7 <0.5.0', hasData: true }
+181 silly addNameRange versions [ 'adm-zip',
+181 silly addNameRange   [ '0.1.1',
+181 silly addNameRange     '0.1.2',
+181 silly addNameRange     '0.1.3',
+181 silly addNameRange     '0.1.4',
+181 silly addNameRange     '0.1.5',
+181 silly addNameRange     '0.1.6',
+181 silly addNameRange     '0.1.7',
+181 silly addNameRange     '0.1.8',
+181 silly addNameRange     '0.1.9',
+181 silly addNameRange     '0.2.0',
+181 silly addNameRange     '0.2.1',
+181 silly addNameRange     '0.4.3',
+181 silly addNameRange     '0.4.4',
+181 silly addNameRange     '0.4.5',
+181 silly addNameRange     '0.4.6',
+181 silly addNameRange     '0.4.7' ] ]
+182 silly addNamed adm-zip@0.4.7
+183 verbose addNamed "0.4.7" is a plain semver version for adm-zip
+184 silly addNameRange number 2 { name: 'mkdirp', range: '>=0.5.0 <0.6.0', hasData: true }
+185 silly addNameRange versions [ 'mkdirp',
+185 silly addNameRange   [ '0.0.1',
+185 silly addNameRange     '0.0.2',
+185 silly addNameRange     '0.0.3',
+185 silly addNameRange     '0.0.4',
+185 silly addNameRange     '0.0.5',
+185 silly addNameRange     '0.0.6',
+185 silly addNameRange     '0.0.7',
+185 silly addNameRange     '0.1.0',
+185 silly addNameRange     '0.2.0',
+185 silly addNameRange     '0.2.1',
+185 silly addNameRange     '0.2.2',
+185 silly addNameRange     '0.3.0',
+185 silly addNameRange     '0.3.1',
+185 silly addNameRange     '0.3.2',
+185 silly addNameRange     '0.3.3',
+185 silly addNameRange     '0.3.4',
+185 silly addNameRange     '0.3.5',
+185 silly addNameRange     '0.4.0',
+185 silly addNameRange     '0.4.1',
+185 silly addNameRange     '0.4.2',
+185 silly addNameRange     '0.5.0',
+185 silly addNameRange     '0.5.1' ] ]
+186 silly addNamed mkdirp@0.5.1
+187 verbose addNamed "0.5.1" is a plain semver version for mkdirp
+188 silly addNameRange number 2 { name: 'kew', range: '>=0.5.0 <0.6.0', hasData: true }
+189 silly addNameRange versions [ 'kew',
+189 silly addNameRange   [ '0.0.1',
+189 silly addNameRange     '0.0.2',
+189 silly addNameRange     '0.0.3',
+189 silly addNameRange     '0.0.4',
+189 silly addNameRange     '0.1.0',
+189 silly addNameRange     '0.1.1',
+189 silly addNameRange     '0.1.2',
+189 silly addNameRange     '0.1.3',
+189 silly addNameRange     '0.1.4',
+189 silly addNameRange     '0.1.5',
+189 silly addNameRange     '0.1.6',
+189 silly addNameRange     '0.1.7',
+189 silly addNameRange     '0.2.1',
+189 silly addNameRange     '0.2.2',
+189 silly addNameRange     '0.3.0',
+189 silly addNameRange     '0.3.1',
+189 silly addNameRange     '0.3.2',
+189 silly addNameRange     '0.3.3',
+189 silly addNameRange     '0.3.4',
+189 silly addNameRange     '0.4.0',
+189 silly addNameRange     '0.5.0-alpha',
+189 silly addNameRange     '0.5.0-alpha.1',
+189 silly addNameRange     '0.5.0',
+189 silly addNameRange     '0.6.0',
+189 silly addNameRange     '0.7.0' ] ]
+190 silly addNamed kew@0.5.0
+191 verbose addNamed "0.5.0" is a plain semver version for kew
+192 silly mapToRegistry name adm-zip
+193 silly mapToRegistry using default registry
+194 silly mapToRegistry registry https://registry.npmjs.org/
+195 silly mapToRegistry uri https://registry.npmjs.org/adm-zip
+196 verbose addRemoteTarball https://registry.npmjs.org/adm-zip/-/adm-zip-0.4.7.tgz not in flight; adding
+197 verbose addRemoteTarball [ 'https://registry.npmjs.org/adm-zip/-/adm-zip-0.4.7.tgz',
+197 verbose addRemoteTarball   '8606c2cbf1c426ce8c8ec00174447fd49b6eafc1' ]
+198 silly mapToRegistry name kew
+199 silly mapToRegistry using default registry
+200 silly mapToRegistry registry https://registry.npmjs.org/
+201 silly mapToRegistry uri https://registry.npmjs.org/kew
+202 verbose addRemoteTarball https://registry.npmjs.org/kew/-/kew-0.5.0.tgz not in flight; adding
+203 verbose addRemoteTarball [ 'https://registry.npmjs.org/kew/-/kew-0.5.0.tgz',
+203 verbose addRemoteTarball   'ece11cb5d8d01a81f8ce804c8d0bba06e6b25ca2' ]
+204 info retry fetch attempt 1 at 2:49:46 PM
+205 info attempt registry request try #1 at 2:49:46 PM
+206 http fetch GET https://registry.npmjs.org/adm-zip/-/adm-zip-0.4.7.tgz
+207 silly addNameRange number 2 { name: 'rimraf', range: '>=2.0.3 <3.0.0', hasData: true }
+208 silly addNameRange versions [ 'rimraf',
+208 silly addNameRange   [ '1.0.0',
+208 silly addNameRange     '1.0.1',
+208 silly addNameRange     '1.0.2',
+208 silly addNameRange     '1.0.4',
+208 silly addNameRange     '1.0.5',
+208 silly addNameRange     '1.0.6',
+208 silly addNameRange     '1.0.7',
+208 silly addNameRange     '1.0.8',
+208 silly addNameRange     '1.0.9',
+208 silly addNameRange     '2.0.0',
+208 silly addNameRange     '2.0.1',
+208 silly addNameRange     '2.0.2',
+208 silly addNameRange     '2.0.3',
+208 silly addNameRange     '2.1.0',
+208 silly addNameRange     '2.1.1',
+208 silly addNameRange     '2.1.2',
+208 silly addNameRange     '2.1.3',
+208 silly addNameRange     '2.1.4',
+208 silly addNameRange     '2.2.0',
+208 silly addNameRange     '2.2.1',
+208 silly addNameRange     '2.2.2',
+208 silly addNameRange     '2.2.3',
+208 silly addNameRange     '2.2.4',
+208 silly addNameRange     '2.2.5',
+208 silly addNameRange     '2.2.6',
+208 silly addNameRange     '2.2.8',
+208 silly addNameRange     '2.3.0',
+208 silly addNameRange     '2.3.1',
+208 silly addNameRange     '2.3.2',
+208 silly addNameRange     '2.3.3',
+208 silly addNameRange     '2.3.4',
+208 silly addNameRange     '2.4.0',
+208 silly addNameRange     '2.4.1',
+208 silly addNameRange     '2.4.2',
+208 silly addNameRange     '2.4.3',
+208 silly addNameRange     '2.4.4',
+208 silly addNameRange     '2.4.5',
+208 silly addNameRange     '2.5.0',
+208 silly addNameRange     '2.5.1',
+208 silly addNameRange     '2.5.2' ] ]
+209 silly addNamed rimraf@2.5.2
+210 verbose addNamed "2.5.2" is a plain semver version for rimraf
+211 info retry fetch attempt 1 at 2:49:46 PM
+212 info attempt registry request try #1 at 2:49:46 PM
+213 http fetch GET https://registry.npmjs.org/kew/-/kew-0.5.0.tgz
+214 silly mapToRegistry name rimraf
+215 silly mapToRegistry using default registry
+216 silly mapToRegistry registry https://registry.npmjs.org/
+217 silly mapToRegistry uri https://registry.npmjs.org/rimraf
+218 verbose addRemoteTarball https://registry.npmjs.org/rimraf/-/rimraf-2.5.2.tgz not in flight; adding
+219 verbose addRemoteTarball [ 'https://registry.npmjs.org/rimraf/-/rimraf-2.5.2.tgz',
+219 verbose addRemoteTarball   '62ba947fa4c0b4363839aefecd4f0fbad6059726' ]
+220 silly addNameRange number 2 { name: 'npmconf', range: '>=2.1.1 <3.0.0', hasData: true }
+221 silly addNameRange versions [ 'npmconf',
+221 silly addNameRange   [ '0.0.1',
+221 silly addNameRange     '0.0.2',
+221 silly addNameRange     '0.0.3',
+221 silly addNameRange     '0.0.4',
+221 silly addNameRange     '0.0.5',
+221 silly addNameRange     '0.0.6',
+221 silly addNameRange     '0.0.7',
+221 silly addNameRange     '0.0.8',
+221 silly addNameRange     '0.0.9',
+221 silly addNameRange     '0.0.10',
+221 silly addNameRange     '0.0.11',
+221 silly addNameRange     '0.0.12',
+221 silly addNameRange     '0.0.14',
+221 silly addNameRange     '0.0.15',
+221 silly addNameRange     '0.0.16',
+221 silly addNameRange     '0.0.17',
+221 silly addNameRange     '0.0.18',
+221 silly addNameRange     '0.0.19',
+221 silly addNameRange     '0.0.20',
+221 silly addNameRange     '0.0.21',
+221 silly addNameRange     '0.0.22',
+221 silly addNameRange     '0.0.23',
+221 silly addNameRange     '0.0.24',
+221 silly addNameRange     '0.0.25',
+221 silly addNameRange     '0.1.0',
+221 silly addNameRange     '0.1.1',
+221 silly addNameRange     '0.1.2',
+221 silly addNameRange     '0.1.3',
+221 silly addNameRange     '0.1.4',
+221 silly addNameRange     '0.1.5',
+221 silly addNameRange     '0.1.6',
+221 silly addNameRange     '0.1.7',
+221 silly addNameRange     '0.1.8',
+221 silly addNameRange     '0.1.9',
+221 silly addNameRange     '0.1.11',
+221 silly addNameRange     '0.1.12',
+221 silly addNameRange     '0.1.13',
+221 silly addNameRange     '0.1.14',
+221 silly addNameRange     '0.1.15',
+221 silly addNameRange     '0.1.16',
+221 silly addNameRange     '0.2.0',
+221 silly addNameRange     '1.0.0',
+221 silly addNameRange     '1.0.1',
+221 silly addNameRange     '1.0.2',
+221 silly addNameRange     '1.0.3',
+221 silly addNameRange     '1.0.4',
+221 silly addNameRange     '1.0.5',
+221 silly addNameRange     '1.0.6',
+221 silly addNameRange     '1.1.0',
+221 silly addNameRange     '1.1.1',
+221 silly addNameRange     '1.1.2',
+221 silly addNameRange     '1.1.3',
+221 silly addNameRange     '1.1.4',
+221 silly addNameRange     '2.0.0',
+221 silly addNameRange     '2.0.1',
+221 silly addNameRange     '2.0.2',
+221 silly addNameRange     '2.0.3',
+221 silly addNameRange     '2.0.4',
+221 silly addNameRange     '2.0.5',
+221 silly addNameRange     '1.1.5',
+221 silly addNameRange     '2.0.6',
+221 silly addNameRange     '2.0.7',
+221 silly addNameRange     '2.0.8',
+221 silly addNameRange     '1.1.6',
+221 silly addNameRange     '1.1.7',
+221 silly addNameRange     '1.1.8',
+221 silly addNameRange     '2.0.9',
+221 silly addNameRange     '2.1.0',
+221 silly addNameRange     '2.1.1',
+221 silly addNameRange     '1.1.9',
+221 silly addNameRange     '2.1.2' ] ]
+222 silly addNamed npmconf@2.1.2
+223 verbose addNamed "2.1.2" is a plain semver version for npmconf
+224 warn deprecated npmconf@2.1.2: this package has been reintegrated into npm and is now out of date with respect to npm
+225 silly cache afterAdd mkdirp@0.5.1
+226 verbose afterAdd /Users/Benz/.npm/mkdirp/0.5.1/package/package.json not in flight; writing
+227 info retry fetch attempt 1 at 2:49:46 PM
+228 info attempt registry request try #1 at 2:49:46 PM
+229 http fetch GET https://registry.npmjs.org/rimraf/-/rimraf-2.5.2.tgz
+230 verbose afterAdd /Users/Benz/.npm/mkdirp/0.5.1/package/package.json written
+231 silly cache afterAdd npmconf@2.1.2
+232 verbose afterAdd /Users/Benz/.npm/npmconf/2.1.2/package/package.json not in flight; writing
+233 verbose afterAdd /Users/Benz/.npm/npmconf/2.1.2/package/package.json written
+234 http fetch 200 https://registry.npmjs.org/adm-zip/-/adm-zip-0.4.7.tgz
+235 http fetch 200 https://registry.npmjs.org/rimraf/-/rimraf-2.5.2.tgz
+236 silly fetchAndShaCheck shasum 62ba947fa4c0b4363839aefecd4f0fbad6059726
+237 verbose addTmpTarball /var/folders/q0/s4fnp7h552j4hpr7l40pz9br0000gn/T/npm-7189-d7e96a5d/registry.npmjs.org/rimraf/-/rimraf-2.5.2.tgz not in flight; adding
+238 verbose addTmpTarball already have metadata; skipping unpack for rimraf@2.5.2
+239 silly fetchAndShaCheck shasum 8606c2cbf1c426ce8c8ec00174447fd49b6eafc1
+240 verbose addTmpTarball /var/folders/q0/s4fnp7h552j4hpr7l40pz9br0000gn/T/npm-7189-d7e96a5d/registry.npmjs.org/adm-zip/-/adm-zip-0.4.7.tgz not in flight; adding
+241 verbose addTmpTarball already have metadata; skipping unpack for adm-zip@0.4.7
+242 silly cache afterAdd adm-zip@0.4.7
+243 verbose afterAdd /Users/Benz/.npm/adm-zip/0.4.7/package/package.json not in flight; writing
+244 verbose afterAdd /Users/Benz/.npm/adm-zip/0.4.7/package/package.json written
+245 http fetch 200 https://registry.npmjs.org/kew/-/kew-0.5.0.tgz
+246 silly fetchAndShaCheck shasum ece11cb5d8d01a81f8ce804c8d0bba06e6b25ca2
+247 verbose addTmpTarball /var/folders/q0/s4fnp7h552j4hpr7l40pz9br0000gn/T/npm-7189-d7e96a5d/registry.npmjs.org/kew/-/kew-0.5.0.tgz not in flight; adding
+248 verbose addTmpTarball already have metadata; skipping unpack for kew@0.5.0
+249 silly cache afterAdd kew@0.5.0
+250 verbose afterAdd /Users/Benz/.npm/kew/0.5.0/package/package.json not in flight; writing
+251 verbose afterAdd /Users/Benz/.npm/kew/0.5.0/package/package.json written
+252 verbose about to build /Users/Benz/Documents/Ascend Work/robot_itruemart_thai/Test_Case/PCMS_Order/node_modules/chromedriver
+253 verbose unlock done using /Users/Benz/.npm/_locks/chromedriver-8ec4573214529ad3.lock for /Users/Benz/Documents/Ascend Work/robot_itruemart_thai/Test_Case/PCMS_Order/node_modules/chromedriver
+254 verbose stack Error: EACCES, mkdir '/Users/Benz/.npm/rimraf/2.5.2'
+254 verbose stack     at Error (native)
+255 verbose cwd /Users/Benz/Documents/Ascend Work/robot_itruemart_thai/Test_Case/PCMS_Order
+256 error Darwin 15.4.0
+257 error argv "node" "/usr/local/bin/npm" "install" "chromedriver"
+258 error node v0.12.2
+259 error npm  v2.13.4
+260 error path /Users/Benz/.npm/rimraf/2.5.2
+261 error code EACCES
+262 error errno -13
+263 error Error: EACCES, mkdir '/Users/Benz/.npm/rimraf/2.5.2'
+263 error     at Error (native)
+263 error  { [Error: EACCES, mkdir '/Users/Benz/.npm/rimraf/2.5.2']
+263 error   errno: -13,
+263 error   code: 'EACCES',
+263 error   path: '/Users/Benz/.npm/rimraf/2.5.2',
+263 error   parent: 'chromedriver' }
+264 error Please try running this command again as root/Administrator.
+265 verbose exit [ -13, true ]
+266 verbose unbuild node_modules/chromedriver
+267 info preuninstall chromedriver@2.21.2
+268 info uninstall chromedriver@2.21.2
+269 verbose unbuild rmStuff chromedriver@2.21.2 from /Users/Benz/Documents/Ascend Work/robot_itruemart_thai/Test_Case/PCMS_Order/node_modules
+270 silly gentlyRm /Users/Benz/Documents/Ascend Work/robot_itruemart_thai/Test_Case/PCMS_Order/node_modules/.bin/chromedriver is being gently removed
+271 silly gentlyRm verifying /Users/Benz/Documents/Ascend Work/robot_itruemart_thai/Test_Case/PCMS_Order is an npm working directory
+272 silly gentlyRm containing path /Users/Benz/Documents/Ascend Work/robot_itruemart_thai/Test_Case/PCMS_Order is under npm's control, in /Users/Benz/Documents/Ascend Work/robot_itruemart_thai/Test_Case/PCMS_Order
+273 silly gentlyRm deletion target /Users/Benz/Documents/Ascend Work/robot_itruemart_thai/Test_Case/PCMS_Order/node_modules/.bin/chromedriver is under /Users/Benz/Documents/Ascend Work/robot_itruemart_thai/Test_Case/PCMS_Order
+274 verbose gentlyRm vacuuming from /Users/Benz/Documents/Ascend Work/robot_itruemart_thai/Test_Case/PCMS_Order/node_modules/.bin/chromedriver up to /Users/Benz/Documents/Ascend Work/robot_itruemart_thai/Test_Case/PCMS_Order
+275 info postuninstall chromedriver@2.21.2
+276 silly gentlyRm /Users/Benz/Documents/Ascend Work/robot_itruemart_thai/Test_Case/PCMS_Order/node_modules/chromedriver is being purged from base /Users/Benz/Documents/Ascend Work/robot_itruemart_thai/Test_Case/PCMS_Order
+277 verbose gentlyRm don't care about contents; nuking /Users/Benz/Documents/Ascend Work/robot_itruemart_thai/Test_Case/PCMS_Order/node_modules/chromedriver
+278 silly vacuum-fs purging /Users/Benz/Documents/Ascend Work/robot_itruemart_thai/Test_Case/PCMS_Order/node_modules/chromedriver
+279 silly vacuum-fs removing /Users/Benz/Documents/Ascend Work/robot_itruemart_thai/Test_Case/PCMS_Order/node_modules
+280 silly vacuum-fs finished vacuuming up to /Users/Benz/Documents/Ascend Work/robot_itruemart_thai/Test_Case/PCMS_Order

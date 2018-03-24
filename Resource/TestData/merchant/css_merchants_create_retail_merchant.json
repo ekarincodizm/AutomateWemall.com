@@ -1,0 +1,30 @@
+{
+    "business_unit": "HULK_BUSINESS_UNIT2",
+    "company_name": "HULK_COMPANY2",
+    "merchant_name": {
+        "name": "HULK_MERCHANT_NAME2",
+        "name_translation": "HULK_MERCHANT_NAME_TRANSLATION2"
+    },
+    "slug": {
+        "name": "hulkslug2"
+    },
+    "shop_category": "HULK_CATEGORY2",
+    "shop_url": "HULK_URL2",
+    "contacts": {
+        "value": [{
+            "name": "HULK_TEST_NAME2",
+            "phone": "HULK_TEST_PHONE2",
+            "email": "HULK_TEST2@test.com"
+        }]
+        
+    },
+    "images": {
+        "mobile": [{
+            "large": "HULK_IMAGES_MOBILE2"
+        }],
+        "desktop": [{
+            "large": "HULK_IMAGES_DESKTOP2"
+        }]
+      
+    }
+}

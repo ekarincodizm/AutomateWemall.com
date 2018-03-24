@@ -1,0 +1,58 @@
+*** Variables ***
+${PCMS-HOST-API-PROTOCOL}     http
+${HOST}			http://www.itruemart.com
+${HOST-SSL}     https://www.itruemart.com
+${PCMS-HOST}	http://pcms.itruemart.com
+${PCMS-HOST-API}    pcms.itruemart.com
+${PCMS-HOST-API-REPORT}   pcms-report.itruemart.com
+${WEB-HOME}		http://www.itruemart.com
+${WEB-HOME-SSL}		https://www.itruemart.com
+${MOBILE-HOME}	http://m.itruemart.com
+${MOBILE-HOME-ANTMAN}    http://antman-m.itruemart.com
+${WEB-HOME-ANTMAN}    http://antman-www.itruemart.com
+${MOBILE-HOME-SSL}		https://m.itruemart.com
+${PCMS-API-APP-PKEY}      /api/45311375168544
+${MOBILE-ANTMAN}    antman-m.itruemart.com
+
+
+${WEB-AUTO-LOGIN-FOR-TEST}	http://www.itruemart.com/auto_login_for_test
+${M-AUTO-LOGIN-FOR-TEST}	http://m.itruemart.com/auto_login_for_test
+${SECURE-WEB-AUTO-LOGIN-FOR-TEST}	https://www.itruemart.com/auto_login_for_test
+${SECURE-M-AUTO-LOGIN-FOR-TEST}		https://m.itruemart.com/auto_login_for_test
+
+${HOST-GMAIL}		https://mail.google.com
+${HOST-EN}			http://www.itruemart.com/en
+${WEB-AUTO-LOGIN-FOR-TEST-EN}	http://www.alpha-itruemart.com/en/auto_login_for_test
+
+${thankyou-header}    xpath=//*[contains(@class, "thank-icon")]
+${cod-header}    เก็บเงินปลายทาง
+
+
+${PCMS-PRODUCT-LIST-PAGE}     ${PCMS-HOST}/products
+${PCMS-PROUDCT-SET-CONTENT-PAGE}    ${PCMS-HOST}/products/set-content
+
+&{URL_MNP}  LANDING=${HOST}/truemove-h/MNP
+ ...  LANDING_NOCACHE=${HOST}/truemove-h/MNP?no-cache=1
+ ...  LANDING_PREVIEW=${HOST}/truemove-h/MNP?previews=LS2&no-cache=1
+ ...  VERIFY=${HOST}/truemove-h/MNP/verify
+ ...  REGISTER=${HOST}/truemove-h/MNP/register
+ ...  HANDSET=${HOST}/truemove-h/MNP/handset
+
+
+&{URL_MNP_MOBILE}  LANDING=${MOBILE-HOME}/truemove-h/MNP
+ ...  LANDING_NOCACHE=${MOBILE-HOME}/truemove-h/MNP?no-cache=1
+ ...  LANDING_PREVIEW=${MOBILE-HOME}/truemove-h/MNP?previews=LS2&no-cache=1
+ ...  VERIFY=${MOBILE-HOME}/truemove-h/MNP/verify
+ ...  REGISTER=${MOBILE-HOME}/truemove-h/MNP/register
+ ...  HANDSET=${MOBILE-HOME}/truemove-h/MNP/handset
+
+&{URL_MNP_PROPO}    MANAGE_PROPO=${PCMS-HOST}/truemoveh/proposition
+ ...  CREATE_PROPO=${PCMS-HOST}/truemoveh/proposition/create
+
+&{URL_ITM}  CHECKOUT_STEP1=${HOST-SSL}/checkout/step1
+ ...   CHECKOUT_STEP2=${HOST}/checkout/step2
+ ...   CHECKOUT_STEP3=${HOST-SSL}/checkout/step3
+ ...   CHECKOUT_STEP1_CONTAIN=/checkout/step1
+ ...   CHECKOUT_STEP2_CONTAIN=/checkout/step2
+ ...   CHECKOUT_STEP3_CONTAIN=/checkout/step3
+

@@ -1,0 +1,17 @@
+*** Variables ***
+${SS_OrderTracking_Container}             //*[@id="SScontainerFoot"]//div[@id="div_order_tracking"]
+${SS_SelfService_Button}             //*[@id="chatbar"]
+${SS_SelfService_Dropdown}             //*[@id="SSdropdown"]
+${SS_SelfService_LiveChat}             //*[@id="SSChatBtn"]
+
+&{SS_ReportProblem}   not_found_order_image=//*[@class="not-found-order-img"]
+ ...   not_found_order_txt=//*[@class="not-found-order"]
+ ...   report_problem_expand=//*[@id="img_1"]
+ ...   report_problem_up_img=//*[@src="//cdn-static.itruemart.com/pcms/uploads/images/_up.png"]
+ ...   report_problem_down_img=//*[@src="//cdn-static.itruemart.com/pcms/uploads/images/_down.png"]
+ ...   table_expand=//table[@id="1"]
+ ...   close_btn=//*[@id="SSclose"]
+ ...   back_btn=//*[@id="SSback"]
+ ...   self_service_container=//*[@id="SScontainer"]
+ ...   txt_head_report_problem=//div[@id="SStitle"]
+ ...   head_report_problem=//*[@id="SScontainer_head"]

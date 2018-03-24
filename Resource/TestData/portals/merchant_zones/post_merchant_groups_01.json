@@ -1,0 +1,212 @@
+{
+  "en_US": {
+    "brands": [
+      {
+        "title": "title",
+        "brand_id": "001",
+        "sort_index": 1
+      },
+      {
+        "title": "title",
+        "brand_id": "002",
+        "sort_index": 2
+      },
+      {
+        "title": "title",
+        "brand_id": "003",
+        "sort_index": 3
+      },
+      {
+        "title": "title",
+        "brand_id": "004",
+        "sort_index": 4
+      },
+      {
+        "title": "title",
+        "brand_id": "005",
+        "sort_index": 5
+      },
+      {
+        "title": "title",
+        "brand_id": "006",
+        "sort_index": 6
+      },
+      {
+        "title": "title",
+        "brand_id": "007",
+        "sort_index": 7
+      },
+      {
+        "title": "title",
+        "brand_id": "008",
+        "sort_index": 8
+      },
+      {
+        "title": "title",
+        "brand_id": "009",
+        "sort_index": 9
+      },
+      {
+        "title": "title",
+        "brand_id": "010",
+        "sort_index": 10
+      },
+      {
+        "title": "title",
+        "brand_id": "011",
+        "sort_index": 11
+      },
+      {
+        "title": "title",
+        "brand_id": "012",
+        "sort_index": 12
+      },
+      {
+        "title": "title",
+        "brand_id": "013",
+        "sort_index": 13
+      },
+      {
+        "title": "title",
+        "brand_id": "014",
+        "sort_index": 14
+      },
+      {
+        "title": "title",
+        "brand_id": "015",
+        "sort_index": 15
+      },
+      {
+        "title": "title",
+        "brand_id": "016",
+        "sort_index": 16
+      },
+      {
+        "title": "title",
+        "brand_id": "017",
+        "sort_index": 17
+      },
+      {
+        "title": "title",
+        "brand_id": "018",
+        "sort_index": 18
+      },
+      {
+        "title": "title",
+        "brand_id": "019",
+        "sort_index": 19
+      },
+      {
+        "title": "title",
+        "brand_id": "020",
+        "sort_index": 20
+      }
+    ],
+    "title": "Gadget"
+  },
+  "th_TH": {
+    "brands": [
+    {
+        "title": "title",
+        "brand_id": "001",
+        "sort_index": 1
+      },
+      {
+        "title": "title",
+        "brand_id": "002",
+        "sort_index": 2
+      },
+      {
+        "title": "title",
+        "brand_id": "003",
+        "sort_index": 3
+      },
+      {
+        "title": "title",
+        "brand_id": "004",
+        "sort_index": 4
+      },
+      {
+        "title": "title",
+        "brand_id": "005",
+        "sort_index": 5
+      },
+      {
+        "title": "title",
+        "brand_id": "006",
+        "sort_index": 6
+      },
+      {
+        "title": "title",
+        "brand_id": "007",
+        "sort_index": 7
+      },
+      {
+        "title": "title",
+        "brand_id": "008",
+        "sort_index": 8
+      },
+      {
+        "title": "title",
+        "brand_id": "009",
+        "sort_index": 9
+      },
+      {
+        "title": "title",
+        "brand_id": "010",
+        "sort_index": 10
+      },
+      {
+        "title": "title",
+        "brand_id": "011",
+        "sort_index": 11
+      },
+      {
+        "title": "title",
+        "brand_id": "012",
+        "sort_index": 12
+      },
+      {
+        "title": "title",
+        "brand_id": "013",
+        "sort_index": 13
+      },
+      {
+        "title": "title",
+        "brand_id": "014",
+        "sort_index": 14
+      },
+      {
+        "title": "title",
+        "brand_id": "015",
+        "sort_index": 15
+      },
+      {
+        "title": "title",
+        "brand_id": "016",
+        "sort_index": 16
+      },
+      {
+        "title": "title",
+        "brand_id": "017",
+        "sort_index": 17
+      },
+      {
+        "title": "title",
+        "brand_id": "018",
+        "sort_index": 18
+      },
+      {
+        "title": "title",
+        "brand_id": "019",
+        "sort_index": 19
+      },
+      {
+        "title": "title",
+        "brand_id": "020",
+        "sort_index": 20
+      }
+    ],
+    "title": "อุปกรณ์ไฮเทค"
+  }
+}

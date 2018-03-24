@@ -1,0 +1,24 @@
+{
+   "enable":${enable},
+   "member":${member},
+   "non_member":${nonmember},
+   "short_description":${short_desc},
+   "short_description_translation":${short_desc_trans},
+   "start_period":${start_date},
+   "end_period":${end_date},
+   "name":${name},
+   "name_translation":${name_trans},
+   "type":${type},
+   "app_id":{
+      "id":1,
+      "name":"iTruemart"
+   },
+   "flashsale_condition":{
+      "limit_item_per_cart":${limit},
+      "payment_types":[
+         "test1",
+         "test2"
+      ],
+      "flashsale_products":${flash_sale_product}
+   }
+}

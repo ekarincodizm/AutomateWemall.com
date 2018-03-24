@@ -1,0 +1,40 @@
+{
+  "logo": null,
+  "menus": [
+    {
+      "order": 1,
+      "target": "_blank",
+      "name_translation": {
+        "link": "http://www.itruemart.com",
+        "name": "Mac"
+      },
+      "children": [
+        {
+          "order": 1,
+          "target": "_blank",
+          "name_translation": {
+            "link": "http://www.itruemart.com/en",
+            "name": "Macbook"
+          }
+        },
+        {
+          "order": 2,
+          "target": "_blank",
+          "name_translation": {
+            "link": "http://www.itruemart.com",
+            "name": "ไอแม็ค"
+          }
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "target": "_blank",
+      "name_translation": {
+        "link": "http://www.itruemart.com",
+        "name": "ไอแพด"
+      }
+    }
+  ],
+  "status": "inactive"
+}

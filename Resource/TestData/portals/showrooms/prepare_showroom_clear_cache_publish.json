@@ -1,0 +1,170 @@
+{
+  "sort_index": 4,
+  "status": "active",
+  "en_US": {
+    "awesome_font": "icon-babies",
+    "banners": {
+      "1": {
+        "id": "1",
+        "link_target": "_blank",
+        "link_url": "http://www.itruemart.com/en",
+        "position": "1",
+        "src_mobile": "//alpha-cdn.wemall-dev.com/th/showrooms/showroom_id/P1m.png",
+        "src_web": "//alpha-cdn.wemall-dev.com/th/showrooms/showroom_id/P1.png",
+        "title": "P1"
+      },
+      "2": {
+        "id": "2",
+        "link_target": "_blank",
+        "link_url": "http://www.itruemart.com/en",
+        "position": "2",
+        "src_mobile": "//alpha-cdn.wemall-dev.com/th/showrooms/showroom_id/P2m.png",
+        "src_web": "//alpha-cdn.wemall-dev.com/th/showrooms/showroom_id/P2.png",
+        "title": "P2"
+      },
+      "3": {
+        "id": "3",
+        "link_target": "_blank",
+        "link_url": "http://www.itruemart.com/en",
+        "position": "3",
+        "src_mobile": "//alpha-cdn.wemall-dev.com/th/showrooms/showroom_id/P3m.png",
+        "src_web": "//alpha-cdn.wemall-dev.com/th/showrooms/showroom_id/P3.png",
+        "title": "P3"
+      },
+      "4": {
+        "id": "4",
+        "link_target": "_blank",
+        "link_url": "http://www.itruemart.com/en",
+        "position": "4",
+        "src_mobile": "//alpha-cdn.wemall-dev.com/th/showrooms/showroom_id/P4m.png",
+        "src_web": "//alpha-cdn.wemall-dev.com/th/showrooms/showroom_id/P4.png",
+        "title": "P4"
+      },
+      "5": {
+        "id": "5",
+        "link_target": "_blank",
+        "link_url": "http://www.itruemart.com/en",
+        "position": "5",
+        "src_mobile": "//alpha-cdn.wemall-dev.com/th/showrooms/showroom_id/P5m.png",
+        "src_web": "//alpha-cdn.wemall-dev.com/th/showrooms/showroom_id/P5.png",
+        "title": "P5"
+      },
+      "6": {
+        "id": "6",
+        "link_target": "_blank",
+        "link_url": "http://www.itruemart.com/en",
+        "position": "6",
+        "src_mobile": "//alpha-cdn.wemall-dev.com/th/showrooms/showroom_id/P6m.png",
+        "src_web": "//alpha-cdn.wemall-dev.com/th/showrooms/showroom_id/P6.png",
+        "title": "P6"
+      },
+      "7": {
+        "id": "7",
+        "link_target": "_blank",
+        "link_url": "http://www.itruemart.com/en",
+        "position": "7",
+        "src_mobile": "//alpha-cdn.wemall-dev.com/th/showrooms/showroom_id/P7m.png",
+        "src_web": "//alpha-cdn.wemall-dev.com/th/showrooms/showroom_id/P7.png",
+        "title": "P7"
+      }
+    },
+    "color_rgb": "4EB6EB",
+    "link_url": "http://www.itruemart.com/en",
+    "optionalBanners": {
+      "1": {
+        "id": "1",
+        "link_target": "_blank",
+        "link_url": "http://www.itruemart.com/en",
+        "position": "1",
+        "src_mobile": "//alpha-cdn.wemall-dev.com/th/showrooms/showroom_id/P_optionalm.png",
+        "src_web": "//alpha-cdn.wemall-dev.com/th/showrooms/showroom_id/P_optional.png",
+        "title": "Banner"
+      }
+    },
+    "template_id": "3",
+    "title": "Cache Showroom"
+  },
+  "th_TH": {
+    "awesome_font": "icon-babies",
+    "banners": {
+      "1": {
+        "id": "1",
+        "link_target": "_blank",
+        "link_url": "http://www.itruemart.com",
+        "position": "1",
+        "src_mobile": "//alpha-cdn.wemall-dev.com/th/showrooms/showroom_id/P1m.png",
+        "src_web": "//alpha-cdn.wemall-dev.com/th/showrooms/showroom_id/P1.png",
+        "title": "พี1"
+      },
+      "2": {
+        "id": "2",
+        "link_target": "_blank",
+        "link_url": "http://www.itruemart.com",
+        "position": "2",
+        "src_mobile": "//alpha-cdn.wemall-dev.com/th/showrooms/showroom_id/P2m.png",
+        "src_web": "//alpha-cdn.wemall-dev.com/th/showrooms/showroom_id/P2.png",
+        "title": "พี2"
+      },
+      "3": {
+        "id": "3",
+        "link_target": "_blank",
+        "link_url": "http://www.itruemart.com",
+        "position": "3",
+        "src_mobile": "//alpha-cdn.wemall-dev.com/th/showrooms/showroom_id/P3m.png",
+        "src_web": "//alpha-cdn.wemall-dev.com/th/showrooms/showroom_id/P3.png",
+        "title": "พี3"
+      },
+      "4": {
+        "id": "4",
+        "link_target": "_blank",
+        "link_url": "http://www.itruemart.com",
+        "position": "4",
+        "src_mobile": "//alpha-cdn.wemall-dev.com/th/showrooms/showroom_id/P4m.png",
+        "src_web": "//alpha-cdn.wemall-dev.com/th/showrooms/showroom_id/P4.png",
+        "title": "พี4"
+      },
+      "5": {
+        "id": "5",
+        "link_target": "_blank",
+        "link_url": "http://www.itruemart.com",
+        "position": "5",
+        "src_mobile": "//alpha-cdn.wemall-dev.com/th/showrooms/showroom_id/P6m.png",
+        "src_web": "//alpha-cdn.wemall-dev.com/th/showrooms/showroom_id/P5.png",
+        "title": "พี5"
+      },
+      "6": {
+        "id": "6",
+        "link_target": "_blank",
+        "link_url": "http://www.itruemart.com",
+        "position": "6",
+        "src_mobile": "//alpha-cdn.wemall-dev.com/th/showrooms/showroom_id/P6m.png",
+        "src_web": "//alpha-cdn.wemall-dev.com/th/showrooms/showroom_id/P6.png",
+        "title": "พี6"
+      },
+      "7": {
+        "id": "7",
+        "link_target": "_blank",
+        "link_url": "http://www.itruemart.com",
+        "position": "7",
+        "src_mobile": "//alpha-cdn.wemall-dev.com/th/showrooms/showroom_id/P7m.png",
+        "src_web": "//alpha-cdn.wemall-dev.com/th/showrooms/showroom_id/P7m.png",
+        "title": "พี7"
+      }
+    },
+    "color_rgb": "4EB6EB",
+    "link_url": "http://www.itruemart.com",
+    "optionalBanners": {
+      "1": {
+        "id": "1",
+        "link_target": "_blank",
+        "link_url": "http://www.itruemart.com",
+        "position": "1",
+        "src_mobile": "//alpha-cdn.wemall-dev.com/th/showrooms/showroom_id/P_optionalm.png",
+        "src_web": "//alpha-cdn.wemall-dev.com/th/showrooms/showroom_id/P_optional.png",
+        "title": "แบนเนอร์"
+      }
+    },
+    "template_id": "3",
+    "title": "แคชโขว์รูม"
+  }
+}

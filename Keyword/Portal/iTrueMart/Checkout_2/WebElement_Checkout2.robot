@@ -1,0 +1,21 @@
+*** Variables ***
+${Checkout2_LoadingImg}    //*[@class="ajaxloading-widget-background"]
+${Checkout2_NextBtn}    //*[@id="btnSave"]
+${Checkout2_NextBtn_Member}    jquery=.form-bot-address-active:eq(0)
+${Checkout2_InputName}    //*[@id="name"]
+${Checkout2_InputPhone}    //*[@id="telephone"]
+${Checkout2_Province}    //*[@id="province-control"]
+${Checkout2_District}    //*[@id="district-control"]
+${Checkout2_SubDistrict}    //*[@id="sub-district-control"]
+${Checkout2_ZipCode}    //*[@id="zip-code-control"]
+${Checkout2_InputAddress}    //*[@id="address"]
+${Checkout2_Email}    //*[@id="email"]
+&{XPATH_CHECKOUT_STEP2}    address_list_container=//div[@id="address_list_container"]    btn_first_select_address=//div[@id="address_list_container"]/div[1]/div/p[5]/button    txt_name=//input[@id="name"]    txt_mobile=//input[@id="telephone"]    txt_email=//input[@id="email"]    cbo_province=//select[@id="province-control"]    cbo_city=//select[@id="district-control"]
+...               cbo_district=//select[@id="sub-district-control"]    cbo_zipcode=//select[@id="zip-code-control"]    txt_address=//textarea[@id="address"]    btn_next=//button[@id="btnSave"]    btn_add_new_address=//div[@id="add-address-btn"]    active_address=//div[@class="address-box-active"]    alerttext_name=//div[@id="fill-address-form"]/form/div/div[1]/div/div
+...               alert_province=//div[@id="fill-address-form"]/form/div/div[4]/div/div    alert_district=//div[@id="fill-address-form"]/form/div/div[6]/div/div    alert_sub_district=//div[@id="fill-address-form"]/form/div/div[8]/div/div    alert_postcode=//div[@id="fill-address-form"]/form/div/div[10]/div/div    alert_address=//div[@id="fill-address-form"]/form/div/div[12]/div/div    btn_edit_address=//div[@class="address-box-active"]/div/div/div[2]    btn_delete_address=//div[@class="address-box-active"]/div/div/div[1]
+...               btn_confirm_delete=//button[@id="btnConfirmDelete"]    btn_ok_deletesuccess=//button[@id="btnOK"]    addressbox_notactive=//div[@class="address-box"]/div    btn_send_the_address=//input[@class="form-bot-address-active"]    name_in_active_textbox=//div[@class="address-box-active"]/div/h2    district_text=//span[@id="district-name"]    text_sub_district=//span[@id="sub-district-name"]
+&{XPATH_CHECKOUT_STEP2}    address_list_container=//div[@id="address_list_container"]    btn_first_select_address=//div[@id="address_list_container"]/div/div/p[4]/input    txt_name=//input[@id="name"]    txt_mobile=//input[@id="telephone"]    txt_email=//input[@id="email"]    cbo_province=//select[@id="province-control"]    cbo_city=//select[@id="district-control"]
+...               cbo_district=//select[@id="sub-district-control"]    cbo_zipcode=//select[@id="zip-code-control"]    txt_address=//textarea[@id="address"]    btn_next=//input[@id="btnSave"]    btn_add_new_address=//div[@id="add-address-btn"]
+${Checkout2_AddShippingAddress}    //*[@id="add-address-btn"]
+${Checkout2_ShippingFirstAddress}    //*[@id="address_list_container"]/div[1]/div/p[5]
+${Checkout2_MiniCart}    //*[@id="minicart-container"]

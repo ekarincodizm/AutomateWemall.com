@@ -1,0 +1,81 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          WebElement_KBank_PaymentGateway.txt
+Resource          ../../Common/Keywords_Common.robot
+
+*** Keywords ***
+Select card type
+    [Arguments]    ${input}
+    sleep    5
+    Select From List By Value    ${card_type}    ${input}
+
+Input credit card number
+    [Arguments]    ${input}
+    Input Text    ${card_Number}    ${input}
+
+Input credit card number in textbox1
+    [Arguments]    ${input}
+    Input Text    ${txtCreditCard1}    ${input}
+
+Input credit card number in textbox2
+    [Arguments]    ${input}
+    Input Text    ${txtCreditCard2}    ${input}
+
+Input credit card number in textbox3
+    [Arguments]    ${input}
+    Input Text    ${txtCreditCard3}    ${input}
+
+Input credit card number in textbox4
+    [Arguments]    ${input}
+    Input Text    ${txtCreditCard4}    ${input}
+
+Input security code
+    [Arguments]    ${input}
+    Input Text    ${security_code}    ${input}
+
+Select expire month
+    [Arguments]    ${input}
+    Select From List By Value    ${expire_month}    ${input}
+
+Select expire year
+    [Arguments]    ${input}
+    Select From List By Value    ${expire_year}    ${input}
+
+Input card holder name
+    [Arguments]    ${input}
+    Input Text    ${card_holder_name}    ${input}
+
+Click pay now button
+    Wait Until Element is ready and click    ${paynow_button}    30
+
+Click cancel button
+    Wait Until Element is ready and click    ${cancle_button}    30
+
+Fill in KBank CC payment gateway and submit
+    [Arguments]    ${cardtype}    ${cardnumber}    ${securitycode}    ${expiremonth}    ${expireyear}    ${holdername}
+    Select card type    ${cardtype}
+    Input credit card number    ${cardnumber}
+    Input security code    ${securitycode}
+    Select expire month    ${expiremonth}
+    Select expire year    ${expireyear}
+    Input card holder name    ${holdername}
+    Click pay now button
+    Click Continue button
+
+Fill in KBank payment gateway and submit
+    [Arguments]    ${cardtype}    ${cardnumber1}    ${cardnumber2}    ${cardnumber3}    ${cardnumber4}    ${securitycode}
+    ...    ${expiremonth}    ${expireyear}    ${holdername}
+    Select card type    ${cardtype}
+    Input credit card number in textbox1    ${cardnumber1}
+    Input credit card number in textbox2    ${cardnumber2}
+    Input credit card number in textbox3    ${cardnumber3}
+    Input credit card number in textbox4    ${cardnumber4}
+    Input security code    ${securitycode}
+    Select expire month    ${expiremonth}
+    Select expire year    ${expireyear}
+    Input card holder name    ${holdername}
+    Click pay now button
+    Click Continue button
+
+Click Continue button
+    Wait Until Element is ready and click    ${countinue_button}    10

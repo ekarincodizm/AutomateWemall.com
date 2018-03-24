@@ -1,0 +1,66 @@
+{
+  "showroom": {
+    "th": {
+      "child": {
+        "1": {
+          "name": "Group 1",
+          "status": "active",
+          "banners": {
+            "1": {
+              "title": "คาโรเซลตำแหน่ง 1",
+              "src_web": "//cdn.wemall-dev.com/th/showrooms/showroom_id/Screen Shot 2558-09-24 at 19.19.44.png",
+              "src_mobile": "//cdn.wemall-dev.com/th/showrooms/showroom_id/Screen Shot 2558-09-24 at 19.19.44.png",
+              "link_target": "_self",
+              "link_url": "link_url_1"
+            },
+            "2": {
+              "title": "คาโรเซลตำแหน่ง 2",
+              "src_web": "//cdn.wemall-dev.com/th/showrooms/showroom_id/a7.png",
+              "src_mobile": "//cdn.wemall-dev.com/th/showrooms/showroom_id/a7.png",
+              "link_target": "_self",
+              "link_url": "link_url_2"
+            },
+            "3": {
+              "title": "คาโรเซลตำแหน่ง 3",
+              "src_web": "//cdn.wemall-dev.com/th/showrooms/showroom_id/a8.png",
+              "src_mobile": "//cdn.wemall-dev.com/th/showrooms/showroom_id/a8.png",
+              "link_target": "_self",
+              "link_url": "link_url_3"
+            }
+          }
+        }
+      }
+    },
+    "en": {
+      "child": {
+        "1": {
+          "name": "Group 1",
+          "status": "active",
+          "banners": {
+            "1": {
+              "title": "carousel 1",
+              "src_web": "//cdn.wemall-dev.com/th/showrooms/showroom_id/Screen Shot 2558-09-24 at 19.19.44.png",
+              "src_mobile": "//cdn.wemall-dev.com/th/showrooms/showroom_id/Screen Shot 2558-09-24 at 19.19.44.png",
+              "link_target": "_self",
+              "link_url": "link_url_1"
+            },
+            "2": {
+              "title": "carousel 2",
+              "src_web": "//cdn.wemall-dev.com/th/showrooms/showroom_id/a7.png",
+              "src_mobile": "//cdn.wemall-dev.com/th/showrooms/showroom_id/a7.png",
+              "link_target": "_self",
+              "link_url": "link_url_2"
+            },
+            "3": {
+              "title": "carousel 3",
+              "src_web": "//cdn.wemall-dev.com/th/showrooms/showroom_id/a8.png",
+              "src_mobile": "//cdn.wemall-dev.com/th/showrooms/showroom_id/a8.png",
+              "link_target": "_self",
+              "link_url": "link_url_3"
+            }
+          }
+        }
+      }
+    }
+  }
+}

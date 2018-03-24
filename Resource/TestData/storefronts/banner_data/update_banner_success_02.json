@@ -1,0 +1,174 @@
+{
+  "version": "draft",
+  "type": "banner",
+  "data": [
+    {
+      "title": "Active Range Date 01",
+      "order": 12,
+      "status": "active",
+      "target": "_blank",
+      "start_date": "2016-06-28T11:00:00+0700",
+      "end_date": "2019-03-11T11:00:00+0700",
+      "name": {
+        "alt": "Active Range Date 01"
+      },
+      "name_translation": {
+        "alt": "Active Range Date 01"
+      }
+    },
+    {
+      "title": "Active Range Date 02",
+      "order": 12,
+      "status": "active",
+      "target": "_blank",
+      "start_date": "2019-03-11T11:00:00+0700",
+      "end_date": "2019-06-28T11:00:00+0700",
+      "name": {
+        "alt": "Active Range Date 02"
+      },
+      "name_translation": {
+        "alt": "Active Range Date 02"
+      }
+    },
+    {
+      "title": "Active Range Date 03",
+      "order": 12,
+      "status": "active",
+      "target": "_blank",
+      "start_date": "2019-06-28T11:00:00+0700",
+      "end_date": "2019-08-12T00:00:00+0700",
+      "name": {
+        "alt": "Active Range Date 03"
+      },
+      "name_translation": {
+        "alt": "Active Range Date 03"
+      }
+    },
+    {
+      "title": "Active Range Date 04",
+      "order": 12,
+      "status": "active",
+      "target": "_blank",
+      "start_date": "2019-08-12T00:00:00+0700",
+      "end_date": "2019-11-05T00:00:00+0700",
+      "name": {
+        "alt": "Active Range Date 04"
+      },
+      "name_translation": {
+        "alt": "Active Range Date 04"
+      }
+    },
+    {
+      "title": "Active Range Date 05",
+      "order": 12,
+      "status": "active",
+      "target": "_blank",
+      "start_date": "2019-11-05T00:00:00+0700",
+      "end_date": "2020-03-11T00:00:00+0700",
+      "name": {
+        "alt": "Active Range Date 05"
+      },
+      "name_translation": {
+        "alt": "Active Range Date 05"
+      }
+    },
+    {
+      "title": "Active Range Date 06",
+      "order": 12,
+      "status": "active",
+      "target": "_blank",
+      "start_date": "2020-03-11T00:00:00+0700",
+      "end_date": "2020-06-28T00:00:00+0700",
+      "name": {
+        "alt": "Active Range Date 06"
+      },
+      "name_translation": {
+        "alt": "Active Range Date 06"
+      }
+    },
+    {
+      "title": "Active Range Date 07",
+      "order": 12,
+      "status": "active",
+      "target": "_blank",
+      "start_date": "2020-06-28T00:00:00+0700",
+      "end_date": "2020-08-12T00:00:00+0700",
+      "name": {
+        "alt": "Active Range Date 07"
+      },
+      "name_translation": {
+        "alt": "Active Range Date 07"
+      }
+    },
+    {
+      "title": "Active Range Date 08",
+      "order": 12,
+      "status": "active",
+      "target": "_blank",
+      "start_date": "2020-08-12T00:00:00+0700",
+      "end_date": "2020-11-05T00:00:00+0700",
+      "name": {
+        "alt": "Active Range Date 08"
+      },
+      "name_translation": {
+        "alt": "Active Range Date 08"
+      }
+    },
+    {
+      "title": "Active Range Date 09",
+      "order": 12,
+      "status": "active",
+      "target": "_blank",
+      "start_date": "2020-11-05T00:00:00+0700",
+      "end_date": "2021-03-11T00:00:00+0700",
+      "name": {
+        "alt": "Active Range Date 09"
+      },
+      "name_translation": {
+        "alt": "Active Range Date 09"
+      }
+    },
+    {
+      "title": "Active Range Date 10",
+      "order": 12,
+      "status": "active",
+      "target": "_blank",
+      "start_date": "2021-03-11T00:00:00+0700",
+      "end_date": "2021-06-28T00:00:00+0700",
+      "name": {
+        "alt": "Active Range Date 10"
+      },
+      "name_translation": {
+        "alt": "Active Range Date 10"
+      }
+    },
+    {
+      "title": "Active Range Date 11",
+      "order": 12,
+      "status": "active",
+      "target": "_blank",
+      "start_date": "2021-06-28T00:00:00+0700",
+      "end_date": "2021-08-12T00:00:00+0700",
+      "name": {
+        "alt": "Active Range Date 11"
+      },
+      "name_translation": {
+        "alt": "Active Range Date 11"
+      }
+    },
+    {
+      "title": "Active Range Date 12",
+      "order": 12,
+      "status": "active",
+      "target": "_blank",
+      "start_date": "2021-08-12T00:00:00+0700",
+      "end_date": "2021-11-05T00:00:00+0700",
+      "name": {
+        "alt": "Active Range Date 12"
+      },
+      "name_translation": {
+        "alt": "Active Range Date 12"
+      }
+    }
+  ]
+}
